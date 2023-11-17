@@ -1,0 +1,1597 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="NeSI Support Documentation">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/nesi/support-docs-concept/Scientific_Computing/Profiling_and_Debugging/Profiler-ARM_MAP/">
+      
+      
+        <link rel="prev" href="../Debugging/">
+      
+      
+        <link rel="next" href="../Profiler-VTune/">
+      
+      
+      <link rel="icon" href="../../../assets/icons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Profiler: ARM MAP - NeSI Support Center</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/neoteroi-mkdocs.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/footer.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/custom_admonations.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/theme.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-profiling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<style>
+#banner{
+    font-size: larger;
+    text-align: center;
+    background: lightgoldenrodyellow;
+}
+#banner a:link {
+    color: blue;
+}
+#banner a:visited {
+    color: purple;
+}
+#banner a:focus,
+#banner a:hover {
+    border-bottom: 1px solid;
+}
+</style>
+
+<div id="banner">
+    <p>This site is in Beta. All content is a duplication of  
+    <a href="https://support.nesi.org.nz/hc/en-gb">offical NeSI support documentation.</a>
+    </p>
+</div>
+
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeSI Support Center" class="md-header__button md-logo" aria-label="NeSI Support Center" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeSI Support Center
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Profiler: ARM MAP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nesi/support-docs-concept" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeSI Support Center" class="md-nav__button md-logo" aria-label="NeSI Support Center" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo.svg" alt="logo">
+
+    </a>
+    NeSI Support Center
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nesi/support-docs-concept" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../General/Announcements/Accessing_NeSI_Support_during_the_holiday_break/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scientific Computing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Scientific Computing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    HPC Software Environment
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Interactive_computing_using_Jupyter/Jupyter_kernels_Manual_management/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Interactive computing using Jupyter
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Manuals_and_User_Guides/Manuals/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Manuals and User Guides
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Profiling and Debugging
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Profiling and Debugging
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Debugging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Profiler: ARM MAP
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Profiler: ARM MAP
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-profiling" class="md-nav__link">
+    Introduction to profiling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling-test-cases" class="md-nav__link">
+    Profiling test cases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-profiler" class="md-nav__link">
+    MAP profiler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-express-launch" class="md-nav__link">
+    MAP “Express Launch”
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-gui-launch" class="md-nav__link">
+    MAP GUI launch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-profile" class="md-nav__link">
+    MAP Profile
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profiler-VTune/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profiler: VTune
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Slurm_Native_Profiling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Native Profiling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_02-02-2023/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Release Notes jupyter nesi org nz
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Running_Jobs_on_Maui_and_Mahuika/Checking_your_projects_usage_using_nn_corehour_usage/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Running Jobs on Maui and Mahuika
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Supported_Applications/ABAQUS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Supported Applications
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Terminal_Setup/Git_Bash_Windows/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Terminal Setup
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    The NeSI High Performance Computers
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Training/Introduction_to_computing_on_the_NeSI_HPC/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Training
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Storage/Data_Recovery/File_Recovery/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../NeSI_Service_Subscriptions/Contracts_and_billing_processes/Billing_process/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NeSI Service Subscriptions
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-profiling" class="md-nav__link">
+    Introduction to profiling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling-test-cases" class="md-nav__link">
+    Profiling test cases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-profiler" class="md-nav__link">
+    MAP profiler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-express-launch" class="md-nav__link">
+    MAP “Express Launch”
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-gui-launch" class="md-nav__link">
+    MAP GUI launch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-profile" class="md-nav__link">
+    MAP Profile
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+  
+    <a href="https://github.com/nesi/support-docs-concept/edit/master/docs/Scientific_Computing/Profiling_and_Debugging/Profiler-ARM_MAP.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Profiler: ARM MAP</h1>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page has been automatically migrated and may contain formatting errors.</p>
+</div>
+<ul>
+<li><a href="#introduction-to-profiling">Introduction to profiling</a></li>
+<li><a href="#h_23e5a159-4e9c-4f25-9395-53f03e1187f7">Profiling test cases</a></li>
+<li><a href="#h_e444a43e-f0a5-45a5-8ed2-8bd06abae1a9">MAP profiler</a></li>
+<li><a href="#using-the-express-launch">MAP “Express Launch”</a></li>
+<li><a href="#h_f78992f8-3f55-4b6f-ac5f-8bc82ff16873">MAP GUI launch</a></li>
+<li><a href="#map-profile">MAP Profile</a></li>
+</ul>
+<p>The ARM (previously known as Allinea) provides a package called <em>forge</em>,
+which consists of a debugger, DDT and a profiler, MAP.</p>
+<h2 id="introduction-to-profiling">Introduction to profiling<a class="headerlink" href="#introduction-to-profiling" title="Permanent link">&para;</a></h2>
+<p>Profiling tools help you understand how much resources are consumed
+during run time. This can be time, memory, or MPI communication. One
+main goal is to understand in which parts of your code most time is
+spent. Depending on the profiler and the applied methods, profiles can
+be gathered on basis of functions, loops within functions, or source
+code lines. Profiling information is important for optimising code, as
+it enables you to focus your efforts on improving the parts of the code
+that will result in the biggest gains in performance.</p>
+<h2 id="profiling-test-cases">Profiling test cases<a class="headerlink" href="#profiling-test-cases" title="Permanent link">&para;</a></h2>
+<p>During a optimisation process profiling will be used regularly to
+monitor the behaviour and change in behaviour of the code. Therefore, it
+is advisable to have a representative but reasonable short test case. It
+should trigger all the desired features of the code. But keep in mind
+that with a reduced run time (e.g. fewer iterations) other parts of the
+code could become more dominant (e.g. initialisation phase).
+Furthermore, due to possible overhead from the profiling tool, the code
+could run slower than normal.</p>
+<h2 id="map-profiler">MAP profiler<a class="headerlink" href="#map-profiler" title="Permanent link">&para;</a></h2>
+<p>MAP is a commercial product, which can profile parallel, multi-threaded
+and single-threaded C/C++, Fortran, as well as Python code. MAP supports
+codes with OpenMP threads and/or MPI communication and can be used
+without code modification.</p>
+<p>MAP can be launched with a graphical user interface (GUI Launch) or
+without GUI (Express Launch). With the GUI the user specifies all the
+parameters including executables, options and parallelisation parameters
+in a guided form, while with the Express Launch a pre-existing script is
+modified. The “Express Launch”, is preferable especially for jobs in
+complex scripts and workflows.</p>
+<p>In either case, the analysis of the profiling data will be undertaken in
+the MAP GUI. This conveniently provides access to different metrics and
+allows the user to navigate through different levels of details,
+browsing through the code, and focusing on specific functions, loops and
+source code lines.  See section <a href="#map-profile">MAP profile</a> below.</p>
+<p>There is also an <a href="https://developer.arm.com/tools-and-software/server-and-hpc/arm-architecture-tools/downloads/download-arm-forge">Arm Forge
+Client</a>
+you can download to your local machine. Therewith you can browse through
+your downloaded profiling data or even start your profiling/debug tasks
+from remote (not described in detail here).</p>
+<p><strong>Note:</strong> If you want to use the GUI on the NeSI systems, please
+remember to start your ssh session using X11 forwarding (e.g. using the
+<code>ssh -Y</code> option).</p>
+<h2 id="map-express-launch">MAP “Express Launch”<a class="headerlink" href="#map-express-launch" title="Permanent link">&para;</a></h2>
+<p>To use MAP we need to load the <em>forge</em> module in our batch script and
+add <code>map --profile</code> in front of the parallel run statements. For
+example:</p>
+<p>Upon execution, a <code>.map</code> file will be generated. The results can be
+viewed, for instance, with</p>
+<p>(the <code>.map</code> file name will vary with each run.) See section <a href="#map-profile">MAP
+profile</a> below for how to interpret the results.</p>
+<h2 id="map-gui-launch">MAP GUI launch<a class="headerlink" href="#map-gui-launch" title="Permanent link">&para;</a></h2>
+<p>The GUI can be started after loading <code>module load forge</code> and launching</p>
+<p><a href="https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_main.png"><img alt="Arm MAP
+main" src="../../../assets/images/Profiler-ARM_MAP.png" /></a></p>
+<p>Click on “PROFILE”.</p>
+<p><img alt="MAP_profile_python.PNG" src="../../../assets/images/Profiler-ARM_MAP.PNG" /></p>
+<p>In the profile menu we need to specify the <em>executable/application</em> (in
+this case <code>python</code>), the arguments (here <code>scatter.py</code> and any additional
+options and arguments if necessary). Select the working directory,
+number of MPI processes, and OpenMP threads. Furthermore, the “submit to
+queue” parameter needs to be checked, for example the
+<code>--hint=nomultithread</code> can be specified there. In the environment
+Variables block, e.g. modules could be loaded or variables defined.</p>
+<p>After <em>submit</em>ting, MAP will wait until the job is allocated, connect to
+the processes, run the program, gather all the data and present the
+profile information.</p>
+<h2 id="map-profile">MAP Profile<a class="headerlink" href="#map-profile" title="Permanent link">&para;</a></h2>
+<p>By default the profile window is divided into the following three main
+sections (click on picture to enlarge).</p>
+<p><a href="https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi.png"><img alt="example-map-scatter" src="../../../assets/images/Profiler-ARM_MAP_0.png" /></a></p>
+<p>On top, various metrics can be selected in the “Metrics” menu. In the
+middle part, a source code navigator connects line by line source code
+with its profiling data. Most interesting is the profiling table at the
+bottom, which sorts the most time consuming parts of the program,
+providing function names, source code and line numbers.</p>
+<p>There are various options to get even more information.</p>
+<p>In the top part the metrics graphs can be changed to:</p>
+<ul>
+<li>Activity timeline</li>
+<li>CPU instructions</li>
+<li>CPU Time</li>
+<li>IO</li>
+<li>Memory</li>
+<li>MPI</li>
+</ul>
+<p>using the <em>Metrics</em> Menu<em>.</em></p>
+<p>As an example, “CPU instructions” presents the usage of different
+instruction sets during the program run time.</p>
+<p><a href="https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi_CPU.png"><img alt="example-map-scatter_CPU" src="../../../assets/images/Profiler-ARM_MAP_1.png" /></a></p>
+<p>The lower part can also be used to check the <em>application output</em> or
+show statistics on basis of <em>files</em> or <em>functions</em>.</p>
+<p><strong>Note:</strong> often you can get additional information while hovering with
+your mouse over a certain item.</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2021</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+
+
+<div class="md-source-date">
+    <small>
+        Authors: <span class='git-page-authors git-authors'><a href='mailto:callum.walley@auckland.ac.nz'>Callum Walley</a>, <a href='mailto:callum.walley@nesi.org.nz'>cal</a></span>
+    </small>
+</div>
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div id="new-footer">
+        <div id="partners">
+          <div id="logos">
+            <a href="https://nesi.org.nz" class="nesi-footer-logo" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/LogoNeSI-footer.png"></a>
+            <a href="http://www.mbie.govt.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoMBIE.png"></a>
+            <a href="https://www.auckland.ac.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoUoA.png"></a>
+            <a href="https://www.niwa.co.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoNIWA.png"></a>
+            <a href="https://www.otago.ac.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoUoO.png"></a>
+            <a href="http://www.landcareresearch.co.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/LogoManaakiWhenuaLandcareResearch.png"></a>
+          </div>
+        </div>
+        <div id="inner">
+          <span id="links"><a href="https://www.nesi.org.nz/copyright" target="_blank">Copyright © <span id="year">2023</span> · New Zealand eScience Infrastructure</a> | <a href="https://www.nesi.org.nz//disclaimer" target="_blank">Disclaimer</a> | <a href="https://www.nesi.org.nz//privacy" target="_blank">Privacy</a>
+          </span>
+        </div>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.top", "navigation.prune", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      
+    
+  </body>
+</html>

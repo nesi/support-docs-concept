@@ -1,0 +1,1035 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="NeSI Support Documentation">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/nesi/support-docs-concept/specification/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/icons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Specification - NeSI Support Center</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/neoteroi-mkdocs.css">
+    
+      <link rel="stylesheet" href="../assets/stylesheets/footer.css">
+    
+      <link rel="stylesheet" href="../assets/stylesheets/custom_admonations.css">
+    
+      <link rel="stylesheet" href="../assets/stylesheets/theme.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#specification" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<style>
+#banner{
+    font-size: larger;
+    text-align: center;
+    background: lightgoldenrodyellow;
+}
+#banner a:link {
+    color: blue;
+}
+#banner a:visited {
+    color: purple;
+}
+#banner a:focus,
+#banner a:hover {
+    border-bottom: 1px solid;
+}
+</style>
+
+<div id="banner">
+    <p>This site is in Beta. All content is a duplication of  
+    <a href="https://support.nesi.org.nz/hc/en-gb">offical NeSI support documentation.</a>
+    </p>
+</div>
+
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="NeSI Support Center" class="md-header__button md-logo" aria-label="NeSI Support Center" data-md-component="logo">
+      
+  <img src="../assets/icons/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeSI Support Center
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Specification
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nesi/support-docs-concept" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="NeSI Support Center" class="md-nav__button md-logo" aria-label="NeSI Support Center" data-md-component="logo">
+      
+  <img src="../assets/icons/logo.svg" alt="logo">
+
+    </a>
+    NeSI Support Center
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nesi/support-docs-concept" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../General/Announcements/Accessing_NeSI_Support_during_the_holiday_break/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../Scientific_Computing/HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Scientific Computing
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../Storage/Data_Recovery/File_Recovery/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../NeSI_Service_Subscriptions/Contracts_and_billing_processes/Billing_process/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NeSI Service Subscriptions
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#article-namelocation" class="md-nav__link">
+    Article Name/Location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#title" class="md-nav__link">
+    Title
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sub-headers" class="md-nav__link">
+    Sub Headers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meta" class="md-nav__link">
+    Meta
+  </a>
+  
+    <nav class="md-nav" aria-label="Meta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-parameters" class="md-nav__link">
+    Mkdocs Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-parameters" class="md-nav__link">
+    Material Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-parameters" class="md-nav__link">
+    Custom Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zendesk-imported" class="md-nav__link">
+    Zendesk Imported
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    Templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macros" class="md-nav__link">
+    Macros
+  </a>
+  
+    <nav class="md-nav" aria-label="Macros">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#includes" class="md-nav__link">
+    Includes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#style-guide" class="md-nav__link">
+    Style Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Style Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessability-standards" class="md-nav__link">
+    Accessability standards
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+  
+    <a href="https://github.com/nesi/support-docs-concept/edit/master/docs/specification.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">&para;</a></h1>
+<h2 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h2>
+<p>Public facing articles are found in the <code>docs</code> folder. Any markdown files inside will be rendered, any directory will be subcategories.
+Pages can be excluded from being shown in the nav by adding them to <code>mkdocs.yml: not_in_nav</code>, as in the case of <code>includes</code>.</p>
+<p>By default, all categories are a group only (e.g. they have nothing rendered, only children),
+However, if the folder contains an <code>index.md</code> file, it will be rendered instead.</p>
+<h3 id="article-namelocation">Article Name/Location<a class="headerlink" href="#article-namelocation" title="Permanent link">&para;</a></h3>
+<p>An articles location is determined by its location in the <code>docs</code> directory.
+Article file can be nested up to two folders deep, and use the title name, in snake_case.</p>
+<h3 id="title">Title<a class="headerlink" href="#title" title="Permanent link">&para;</a></h3>
+<p>Headers should have a blank line before and after.</p>
+<h4 id="succession">Succession<a class="headerlink" href="#succession" title="Permanent link">&para;</a></h4>
+<p>Article title has the follong succession,</p>
+<ul>
+<li>A title defined in the 'title' meta-data.</li>
+<li>A level 1 Markdown header on the first line of the document body.</li>
+<li>The filename of a document.</li>
+</ul>
+<p>Our preference is the opposite (filename &gt; H1 &gt; meta).</p>
+<h4 id="filename-rendering">Filename Rendering<a class="headerlink" href="#filename-rendering" title="Permanent link">&para;</a></h4>
+<p>When converting a filename for the nav/title the <code>.md</code> will be dropped and 'snake_case' and 'kebab-case' will both be rendered with spaces, e.g. 'Snake case' and 'Kebab case' respectively.</p>
+<p>The first letter of the filename will be capitalised, but not any subsiquent words.</p>
+<p>(Note: Choose only one for naming convention)</p>
+<h3 id="sub-headers">Sub Headers<a class="headerlink" href="#sub-headers" title="Permanent link">&para;</a></h3>
+<p>Unless setting a title, the first 'real' header will be an H2.
+It's fine to have text before the first header if it is relevent to the entire page.</p>
+<p>No skipping levels, e.g.</p>
+<div class="highlight"><pre><span></span><code>H2
+H3
+H4
+</code></pre></div>
+<p>never</p>
+<div class="highlight"><pre><span></span><code>H2
+H4
+</code></pre></div>
+<p>Try to avoid only-child headers (e.g shares a parent with at least one other header)</p>
+<h2 id="meta">Meta<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h2>
+<p>Article metadata is yaml format at the top of the page between two <code>---</code></p>
+<h3 id="mkdocs-parameters">Mkdocs Parameters<a class="headerlink" href="#mkdocs-parameters" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>template</code> : which <a href="#templates">template</a> to use.</li>
+<li><code>title</code>    : <a href="#title">title</a>.</li>
+</ul>
+<h3 id="material-parameters">Material Parameters<a class="headerlink" href="#material-parameters" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>description</code> : used for site meta.           : <code>string</code></li>
+<li><code>icon</code>        : page icon.                    : <code>path</code></li>
+<li><code>status</code>      : Will dsiplay a symbol on nav  : <code>new</code>, <code>deprecated</code>.</li>
+<li><code>hide</code>        : Used to turn off features.    : <code>tags</code></li>
+</ul>
+<h3 id="custom-parameters">Custom Parameters<a class="headerlink" href="#custom-parameters" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>prereq</code>      : List of prerequisites. Formatted in markdown. Will be rendered inside a admonation.</li>
+<li><code>postreq</code>     : List of what next. Formatted in markdown. Will be rendered inside a admonation.</li>
+<li><code>suggested</code>   : Page similar pages to link to. (Not implimented).</li>
+</ul>
+<h3 id="zendesk-imported">Zendesk Imported<a class="headerlink" href="#zendesk-imported" title="Permanent link">&para;</a></h3>
+<p>Not used for anything currently. Info imported from Zendesk Page.</p>
+<ul>
+<li><code>created_at</code>:</li>
+<li><code>hidden</code>:</li>
+<li><code>label_names</code>: []</li>
+<li><code>position</code>:</li>
+<li><code>vote_count</code>:</li>
+<li><code>vote_sum</code>:</li>
+<li><code>zendesk_article_id</code>:</li>
+<li><code>zendesk_section_id</code>:</li>
+</ul>
+<h2 id="templates">Templates<a class="headerlink" href="#templates" title="Permanent link">&para;</a></h2>
+<p>Template can be set in article meta.</p>
+<ul>
+<li><code>main.html</code>                : Used for regular pages (default).</li>
+<li><code>application.html</code>         : Used for 'application' pages, will include software details header (and be linked in supported apps page).</li>
+<li><code>supportedApplication.html</code>: For supported applications page.</li>
+<li><code>home.html</code>                : Homepage.</li>
+</ul>
+<p>By default, the <code>main</code> theme will be used. template of a theme to render Markdown pages. You can use the template meta-data key to define a different template file for that specific page. The template file must be available on the path(s) defined in the theme's environment.</p>
+<h2 id="macros">Macros<a class="headerlink" href="#macros" title="Permanent link">&para;</a></h2>
+<p>Macros allow use of Jinja filter syntax <em>inside the mardown files</em> allowing for much more flexable templating.
+Details <a href="https://mkdocs-macros-plugin.readthedocs.io/">here</a></p>
+<p><code>module load ANSYS/2023R1</code></p>
+<div class="highlight"><pre><span></span><code><span class="sb">`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`</span>
+</code></pre></div>
+<details>
+<summary>Fancy Example</summary>
+<p>Our Python modules come prebuilt with the following packages: </p>
+<p><table>
+<tr><th>Package</th></tr></p>
+<p><tr><td>altair-4.2.0</td></tr></p>
+<p><tr><td>ase-3.22.1</td></tr></p>
+<p><tr><td>biom-format-2.1.12</td></tr></p>
+<p><tr><td>biopython-1.79</td></tr></p>
+<p><tr><td>bokeh-2.4.3</td></tr></p>
+<p><tr><td>Bottleneck-1.3.4</td></tr></p>
+<p><tr><td>cftime-1.6.0</td></tr></p>
+<p><tr><td>click-8.0.3</td></tr></p>
+<p><tr><td>click-plugins-1.1.1</td></tr></p>
+<p><tr><td>colorcet-3.0.0</td></tr></p>
+<p><tr><td>Cython-0.29.30</td></tr></p>
+<p><tr><td>dask-2022.5.2</td></tr></p>
+<p><tr><td>dask-jobqueue-0.7.3</td></tr></p>
+<p><tr><td>dask-mpi-2022.4.0</td></tr></p>
+<p><tr><td>datashader-0.14.0</td></tr></p>
+<p><tr><td>datashape-0.5.2</td></tr></p>
+<p><tr><td>decorator-5.1.1</td></tr></p>
+<p><tr><td>DendroPy-4.5.2</td></tr></p>
+<p><tr><td>distlib-0.3.4</td></tr></p>
+<p><tr><td>docopt-ng-0.8.1</td></tr></p>
+<p><tr><td>flake8-black-0.3.3</td></tr></p>
+<p><tr><td>future-0.18.2</td></tr></p>
+<p><tr><td>h5py-3.7.0</td></tr></p>
+<p><tr><td>hdf5storage-0.1.18</td></tr></p>
+<p><tr><td>holoviews-1.14.9</td></tr></p>
+<p><tr><td>HTSeq-2.0.1</td></tr></p>
+<p><tr><td>hvplot-0.8.0</td></tr></p>
+<p><tr><td>ipython-8.4.0</td></tr></p>
+<p><tr><td>ipywidgets-7.7.0</td></tr></p>
+<p><tr><td>joblib-1.1.0</td></tr></p>
+<p><tr><td>kiwisolver-1.3.2</td></tr></p>
+<p><tr><td>liac-arff-2.5.0</td></tr></p>
+<p><tr><td>llvmlite-0.38.1</td></tr></p>
+<p><tr><td>lockfile-0.12.2</td></tr></p>
+<p><tr><td>lxml-4.9.0</td></tr></p>
+<p><tr><td>Mako-1.1.6</td></tr></p>
+<p><tr><td>Markdown-3.3.7</td></tr></p>
+<p><tr><td>matplotlib-3.5.2</td></tr></p>
+<p><tr><td>mpi4py-3.1.3</td></tr></p>
+<p><tr><td>mpmath-1.2.1</td></tr></p>
+<p><tr><td>NeSI-1.0</td></tr></p>
+<p><tr><td>netCDF4-1.5.8</td></tr></p>
+<p><tr><td>networkx-2.8.4</td></tr></p>
+<p><tr><td>numba-0.55.2</td></tr></p>
+<p><tr><td>numexpr_fakename-2.8.1</td></tr></p>
+<p><tr><td>numpy-1.22.4</td></tr></p>
+<p><tr><td>obspy-1.3.0</td></tr></p>
+<p><tr><td>openpyxl-3.0.9</td></tr></p>
+<p><tr><td>pandas-1.4.2</td></tr></p>
+<p><tr><td>panel-0.13.1</td></tr></p>
+<p><tr><td>patsy-0.5.2</td></tr></p>
+<p><tr><td>paycheck-1.0.2</td></tr></p>
+<p><tr><td>Pillow-9.1.1</td></tr></p>
+<p><tr><td>pipenv-2022.5.2</td></tr></p>
+<p><tr><td>plotly-5.8.2</td></tr></p>
+<p><tr><td>poetry-core-1.0.8</td></tr></p>
+<p><tr><td>prettytable-3.3.0</td></tr></p>
+<p><tr><td>psycopg-3.0.15</td></tr></p>
+<p><tr><td>psycopg2-binary-2.9.3</td></tr></p>
+<p><tr><td>pudb-2022.1.1</td></tr></p>
+<p><tr><td>py-spy-0.3.11</td></tr></p>
+<p><tr><td>Py6S-1.9.1</td></tr></p>
+<p><tr><td>pybedtools-0.9.0</td></tr></p>
+<p><tr><td>pyct-0.4.8</td></tr></p>
+<p><tr><td>PYPIpybind11-2.9.2</td></tr></p>
+<p><tr><td>pysam-0.19.1</td></tr></p>
+<p><tr><td>pysolar-0.10</td></tr></p>
+<p><tr><td>pytest-7.1.2</td></tr></p>
+<p><tr><td>python-dateutil-2.8.2</td></tr></p>
+<p><tr><td>pythran-0.11.0</td></tr></p>
+<p><tr><td>pytz_deprecation_shim-0.1.0.post0</td></tr></p>
+<p><tr><td>pyviz_comms-2.2.0</td></tr></p>
+<p><tr><td>qutip-4.7.0</td></tr></p>
+<p><tr><td>reportlab-3.6.9</td></tr></p>
+<p><tr><td>requests-2.27.1</td></tr></p>
+<p><tr><td>rich-12.4.4</td></tr></p>
+<p><tr><td>scalene-1.5.8</td></tr></p>
+<p><tr><td>scikit-bio-0.5.7</td></tr></p>
+<p><tr><td>scikit-image-0.19.2</td></tr></p>
+<p><tr><td>scikit-learn-1.1.1</td></tr></p>
+<p><tr><td>scipy-1.8.1</td></tr></p>
+<p><tr><td>seaborn-0.11.2</td></tr></p>
+<p><tr><td>six-1.16.0</td></tr></p>
+<p><tr><td>SQLAlchemy-1.4.28</td></tr></p>
+<p><tr><td>statsmodels-0.13.2</td></tr></p>
+<p><tr><td>streamlit-1.10.0</td></tr></p>
+<p><tr><td>sympy-1.10.1</td></tr></p>
+<p><tr><td>tabulate-0.8.9</td></tr></p>
+<p><tr><td>tqdm-4.64.0</td></tr></p>
+<p><tr><td>tzdata-2022.1</td></tr></p>
+<p><tr><td>tzlocal-4.2</td></tr></p>
+<p><tr><td>virtualenv-20.14.1</td></tr></p>
+<p><tr><td>wheel-0.37.1</td></tr></p>
+<p><tr><td>xarray-2022.3.0</td></tr></p>
+<p><tr><td>xlrd-2.0.1</td></tr></p>
+</table>
+<div class="highlight"><pre><span></span><code>Our Python modules come prebuilt with the following packages: 
+{% set pyexts=applications.Python.extensions.split(&#39;, &#39;) %}
+&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;Package&lt;/th&gt;&lt;/tr&gt;
+{% for pyext in pyexts %}
+&lt;tr&gt;&lt;td&gt;{{ pyext }}&lt;/td&gt;&lt;/tr&gt;
+{% endfor %}
+
+&lt;/table&gt;
+</code></pre></div>
+</details>
+<h3 id="includes">Includes<a class="headerlink" href="#includes" title="Permanent link">&para;</a></h3>
+<p>The macro plugin also allows the use of 'includes',</p>
+<div class="highlight"><pre><span></span><code>{% include &#39;snippet.md&#39; %}
+</code></pre></div>
+<h2 id="style-guide">Style Guide<a class="headerlink" href="#style-guide" title="Permanent link">&para;</a></h2>
+<h3 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h3>
+<p>Try to avoid putting links on ambiguous words, e.g.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Bad</label><label for="__tabbed_1_2">Better</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>View the software homepage <a href="https://www.example.com">here</a>.</p>
+<div class="highlight"><pre><span></span><code>View the homepage [<span class="nt">here</span>](<span class="na">https://www.example.com</span>).
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>View the <a href="https://www.example.com">software homepage</a>.</p>
+<div class="highlight"><pre><span></span><code>View the [<span class="nt">software homepage</span>](<span class="na">https://www.example.com</span>).
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="accessability-standards">Accessability standards<a class="headerlink" href="#accessability-standards" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.digital.govt.nz/standards-and-guidance/nz-government-web-standards/web-accessibility-standard-1-1/">nz spec</a></li>
+<li><a href="https://www.w3.org/TR/WCAG21/">WCAG spec</a></li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 10, 2023</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+
+
+<div class="md-source-date">
+    <small>
+        Authors: <span class='git-page-authors git-authors'><a href='mailto:35017184+callumwalley@users.noreply.github.com'>Cal</a>, <a href='mailto:callum.walley@nesi.org.nz'>cal</a></span>
+    </small>
+</div>
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div id="new-footer">
+        <div id="partners">
+          <div id="logos">
+            <a href="https://nesi.org.nz" class="nesi-footer-logo" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/LogoNeSI-footer.png"></a>
+            <a href="http://www.mbie.govt.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoMBIE.png"></a>
+            <a href="https://www.auckland.ac.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoUoA.png"></a>
+            <a href="https://www.niwa.co.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoNIWA.png"></a>
+            <a href="https://www.otago.ac.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoUoO.png"></a>
+            <a href="http://www.landcareresearch.co.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/LogoManaakiWhenuaLandcareResearch.png"></a>
+          </div>
+        </div>
+        <div id="inner">
+          <span id="links"><a href="https://www.nesi.org.nz/copyright" target="_blank">Copyright © <span id="year">2023</span> · New Zealand eScience Infrastructure</a> | <a href="https://www.nesi.org.nz//disclaimer" target="_blank">Disclaimer</a> | <a href="https://www.nesi.org.nz//privacy" target="_blank">Privacy</a>
+          </span>
+        </div>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.top", "navigation.prune", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      
+    
+  </body>
+</html>

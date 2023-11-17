@@ -1,0 +1,1696 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="NeSI Support Documentation">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/nesi/support-docs-concept/Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service/">
+      
+      
+        <link rel="prev" href="../../File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas/">
+      
+      
+        <link rel="next" href="../Preparing_small_files_for_migration_to_Nearline_storage/">
+      
+      
+      <link rel="icon" href="../../../assets/icons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Nearline Long-Term Storage Service - NeSI Support Center</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/neoteroi-mkdocs.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/footer.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/custom_admonations.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/theme.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#viewing-files-in-nearline" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<style>
+#banner{
+    font-size: larger;
+    text-align: center;
+    background: lightgoldenrodyellow;
+}
+#banner a:link {
+    color: blue;
+}
+#banner a:visited {
+    color: purple;
+}
+#banner a:focus,
+#banner a:hover {
+    border-bottom: 1px solid;
+}
+</style>
+
+<div id="banner">
+    <p>This site is in Beta. All content is a duplication of  
+    <a href="https://support.nesi.org.nz/hc/en-gb">offical NeSI support documentation.</a>
+    </p>
+</div>
+
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeSI Support Center" class="md-header__button md-logo" aria-label="NeSI Support Center" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeSI Support Center
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Nearline Long-Term Storage Service
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nesi/support-docs-concept" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeSI Support Center" class="md-nav__button md-logo" aria-label="NeSI Support Center" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo.svg" alt="logo">
+
+    </a>
+    NeSI Support Center
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nesi/support-docs-concept" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../General/Announcements/Accessing_NeSI_Support_during_the_holiday_break/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Scientific_Computing/HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Scientific Computing
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Data_Recovery/File_Recovery/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Data Recovery
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Data_Transfer_Services/Data_Transfer_using_Globus_V5/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Data Transfer Services
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    File Systems and Quotas
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Nearline long term storage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Nearline long term storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Nearline Long-Term Storage Service
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Nearline Long-Term Storage Service
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-files-in-nearline" class="md-nav__link">
+    Viewing files in nearline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traversing-files-within-nearline" class="md-nav__link">
+    Traversing files within nearline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-files-in-nearline-to-those-on-disk" class="md-nav__link">
+    Comparing files in nearline to those on disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#puttingingesting-files-into-nearline" class="md-nav__link">
+    Putting/Ingesting files into nearline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#put-directory" class="md-nav__link">
+    Put - directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#put-file-list" class="md-nav__link">
+    Put - file list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    Update
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gettingretrieving-files-from-nearline" class="md-nav__link">
+    Getting/Retrieving files from nearline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#purgingremoving-files-from-nearline" class="md-nav__link">
+    Purging/Removing files from nearline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-nearline-job-status" class="md-nav__link">
+    View nearline  job status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-nearline-quota" class="md-nav__link">
+    View nearline quota
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-management" class="md-nav__link">
+    Data management
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#underlying-mechanism" class="md-nav__link">
+    Underlying mechanism
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support-contact" class="md-nav__link">
+    Support contact
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Preparing_small_files_for_migration_to_Nearline_storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preparing small files for migration to Nearline storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verifying_uploads_to_Nearline_storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verifying uploads to Nearline storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Release_Notes_Nearline/Long_Term_Storage_Nearline_release_notes_v1-1-0-14/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Release Notes Nearline
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../NeSI_Service_Subscriptions/Contracts_and_billing_processes/Billing_process/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NeSI Service Subscriptions
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-files-in-nearline" class="md-nav__link">
+    Viewing files in nearline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traversing-files-within-nearline" class="md-nav__link">
+    Traversing files within nearline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-files-in-nearline-to-those-on-disk" class="md-nav__link">
+    Comparing files in nearline to those on disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#puttingingesting-files-into-nearline" class="md-nav__link">
+    Putting/Ingesting files into nearline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#put-directory" class="md-nav__link">
+    Put - directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#put-file-list" class="md-nav__link">
+    Put - file list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    Update
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gettingretrieving-files-from-nearline" class="md-nav__link">
+    Getting/Retrieving files from nearline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#purgingremoving-files-from-nearline" class="md-nav__link">
+    Purging/Removing files from nearline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-nearline-job-status" class="md-nav__link">
+    View nearline  job status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-nearline-quota" class="md-nav__link">
+    View nearline quota
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-management" class="md-nav__link">
+    Data management
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#underlying-mechanism" class="md-nav__link">
+    Underlying mechanism
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support-contact" class="md-nav__link">
+    Support contact
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">storage</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">nearline</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">tape</span>
+    
+  
+</nav>
+
+
+  
+    <a href="https://github.com/nesi/support-docs-concept/edit/master/docs/Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Nearline Long-Term Storage Service</h1>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page has been automatically migrated and may contain formatting errors.</p>
+</div>
+<p>Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline</p>
+<h2 id="viewing-files-in-nearline">Viewing files in nearline<a class="headerlink" href="#viewing-files-in-nearline" title="Permanent link">&para;</a></h2>
+<p>With the following command, you can print the list of files and
+directories within the specified Nearline directory:</p>
+<div class="highlight"><pre><span></span><code>nlls /nesi/nearline/&lt;projectID&gt;
+</code></pre></div>
+<p>Similar to the shell command <code>ls</code> you can list subdirectories as well:</p>
+<div class="highlight"><pre><span></span><code>nlls /nesi/nearline/&lt;projectID&gt;/results/
+</code></pre></div>
+<p>Furthermore, you can use the additional option <code>-l</code> to get the detailed
+list including <code>mode</code>, <code>owner</code>, <code>group</code>, <code>filesize</code>, and <code>timestamp</code>.
+The option <code>-s</code>, an alternative to <code>-l</code>, will additionally show each
+file's migration status. Note that, due to technical limitations, <code>-s</code>
+does not work on single files and so <code>nlls -s</code> requires a directory as
+its argument.</p>
+<div class="highlight"><pre><span></span><code>$ nlls -s /nesi/nearline/nesi12345/results/
+mode        s  owner               group      filesize    timestamp    filename
+___________________________________________________________________________________________________________________________
+-rw-rw----+ r  userName        nesi12345      33.93 MB       Jun 17    file1.tar.gz
+-rw-rw----+ r  userName        nesi12345      33.93 MB       Jun 17    file2.tar.gz
+-rw-rw----+ r  userName        nesi12345      34.03 MB       Jun 17    file3.tar.gz
+</code></pre></div>
+<p>Status ("s" column of the <code>-s</code> output) legend:</p>
+<ul>
+<li>migrated (<strong>m</strong>) - data of a specific Nearline file is on tape (does
+    not necessarily mean that the file is replicated across sites)</li>
+<li>pre-migrated (<strong>p</strong>) - data of a specific Nearline file is on both
+    the staging filesystem and the tape.</li>
+<li>resident (<strong>r</strong>) - data of a specific Nearline file is only on the
+    staging filesystem.</li>
+</ul>
+<p><strong>BUG WARNING:</strong> The <code>-l</code> and  <code>-s</code>flags may fail if the nearline
+directory has a large amount of files.  You will receive a long Python
+stack trace if this occurs.</p>
+<h2 id="traversing-files-within-nearline">Traversing files within nearline<a class="headerlink" href="#traversing-files-within-nearline" title="Permanent link">&para;</a></h2>
+<p>If you want to see all the files within a Nearline directory and its
+subdirectories, you can run <code>nltraverse</code>.</p>
+<div class="highlight"><pre><span></span><code>nltraverse /nesi/nearline/&lt;projectID&gt;
+</code></pre></div>
+<p>Optionally, you can run <code>nltraverse</code> with the <code>-s</code> command-line switch,
+which, as with <code>nlls</code>, will display the migration status of each file
+found.</p>
+<p><strong>BUG WARNING:</strong> The<code>-s</code>flag may fail if a nearline directory has a
+large amount of files.  You will receive a long Python stack trace if
+this occurs.</p>
+<h2 id="comparing-files-in-nearline-to-those-on-disk">Comparing files in nearline to those on disk<a class="headerlink" href="#comparing-files-in-nearline-to-those-on-disk" title="Permanent link">&para;</a></h2>
+<p>If you want to compare a local (online storage) directory to a directory
+on Nearline, you can use the <code>nlcompare</code> command. The syntax of this
+command is:</p>
+<div class="highlight"><pre><span></span><code>nlcompare &lt;local_directory&gt; &lt;nearline_directory&gt;
+</code></pre></div>
+<p>This command will print out the lists of files giving their last
+modified times, sizes and file paths.</p>
+<p><code>nlcompare</code> is particularly useful if you want to compare a directory on
+Nearline to a corresponding directory in <code>/nesi/project</code> or
+<code>/nesi/nobackup</code>. See <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001482516">Verifying uploads to Nearline
+storage</a> for
+more information on how to do a comparison and verification.</p>
+<p>If the contents of the Nearline directory and the corresponding local
+directory differ, the lists will be kept, and can be compared using any
+text file comparison program, such as <code>diff</code> or <code>vimdiff</code>.</p>
+<h2 id="puttingingesting-files-into-nearline">Putting/Ingesting files into nearline<a class="headerlink" href="#puttingingesting-files-into-nearline" title="Permanent link">&para;</a></h2>
+<p>Data can be copied to Nearline using the <code>nlput</code> command. The syntax is:</p>
+<div class="highlight"><pre><span></span><code>nlput [ --nowait ] &lt;projectID&gt; { &lt;src_dir&gt; | &lt;file_list&gt; }
+</code></pre></div>
+<p>The source directory or file list needs to be located under
+<code>/nesi/</code><strong><code>project</code></strong><code>/</code> or <code>/nesi/</code><strong><code>nobackup</code></strong><code>/</code>and specified as
+such. </p>
+<div class="admonition prerequisite note">
+<p class="admonition-title">Prerequisite</p>
+<p>The following will not work:
+ <div class="highlight"><pre><span></span><code>cd /nesi/project/nesi12345
+nlput nesi12345 some_directory
+</code></pre></div>
+ It is necessary to do this instead:
+ <div class="highlight"><pre><span></span><code>nlput nesi12345 /nesi/project/nesi12345/some_directory
+</code></pre></div></p>
+</div>
+<p>The data will be mapped into the same directory structure under
+<code>/nesi/</code><strong><code>nearline</code></strong><code>/</code> (see below).</p>
+<div class="admonition prerequisite warning">
+<p class="admonition-title">Prerequisite</p>
+<p>Please ensure your file or directory names do not contain spaces,
+ non-standard characters or symbols. This may cause issues when
+ uploading or downloading files.</p>
+</div>
+<p>The recommended file size to archive is between 1 GB and 1 TB. The
+client <strong>will not</strong> accept any directory or file list containing any
+file smaller than 64 MB or larger than 1 TB.</p>
+<p>The Nearline client also checks file and directory permissions.
+Specifically, before uploading a directory or the contents of a file
+list, <code>nlput</code> will check the following, and will reject any directory or
+file list that does not satisfy all these criteria:</p>
+<ul>
+<li>Every file must be readable by you, the operator.</li>
+<li>Every file must be readable and writable by its owner.</li>
+<li>Every file must be readable and writable by its group.</li>
+<li>The POSIX group of every file must be the project selected for
+    upload.</li>
+</ul>
+<p>If you are uploading a directory rather than the contents of a file
+list, the following additional permission restrictions apply:</p>
+<ul>
+<li>Every subdirectory must be readable, writable and executable by its
+    owner.</li>
+<li>Every subdirectory must be readable, writable and executable by its
+    group.</li>
+<li>The POSIX group of every subdirectory must be the project selected
+    for upload.</li>
+</ul>
+<p>The existing directory structure starting after
+<code>/nesi/project/&lt;projectID&gt;/</code> or <code>/nesi/nobackup/&lt;projectID&gt;/</code> will be
+mapped onto <code>/nesi/nearline/&lt;projectID&gt;/</code></p>
+<div class="admonition prerequisite warning">
+<p class="admonition-title">Prerequisite</p>
+<p>Files and directories are checked for existence and only new files are
+ transferred to Nearline. <strong>Files already on Nearline will not be
+ updated to reflect newer source files</strong>. Thus, files that already
+ exist on Nearline (either tape or staging disk) will be skipped in the
+ migration process, though you should receive a notification of this
+ If you wish to replace an existing file at a specific file path
+ (instead of creating a copy at a different file path) then the
+ original copy on Nearline must be purged.</p>
+</div>
+<p><code>nlput</code> takes only a directory or a file list. <strong>A single file is
+treated as a file list</strong> and read line by line, searching for valid file
+names. Single files can only be migrated using a file list containing
+the full path of the file to be transferred.</p>
+<h2 id="put-directory">Put - directory<a class="headerlink" href="#put-directory" title="Permanent link">&para;</a></h2>
+<div class="admonition prerequisite warning">
+<p class="admonition-title">Prerequisite</p>
+<p>If you try to upload to Nearline a path containing spaces, especially
+ multiple consecutive spaces, you will get some very unexpected
+ results, such as the job being dropped. We are aware of the issue and
+ may introduce a fix in a future release. In the meantime, we suggest
+ avoiding supplying such arguments to <code>nlput</code>. You can work around it
+ by renaming the directory and all its ancestors to avoid spaces, or by
+ putting the directory (or its ancestor whose name contains a space)
+ into an archive file.
+ This problem does not affect when your directory to upload happens to
+ have contents (files or directories) with spaces in their names, i.e.
+ to cause a problem the space must be in the name of the directory to
+ be uploaded or one of its ancestor directories.</p>
+</div>
+<p>All files and subdirectories within a specified directory will be
+transferred into Nearline. The target location maps with the source
+location. As an example:</p>
+<div class="highlight"><pre><span></span><code>nlput nesi12345 /nesi/nobackup/nesi12345/To/Archive/Results/
+</code></pre></div>
+<p>will copy all data within the <code>Results</code> directory into</p>
+<p><code>/nesi/nearline/nesi12345/</code><strong><code>To/Archive/Results/</code></strong>.</p>
+<div class="admonition prerequisite warning">
+<p class="admonition-title">Prerequisite</p>
+<p>If you put <code>/nesi/</code><strong><code>project</code></strong><code>/nesi12345/To/Archive/Results/</code> on
+ Nearline as well as
+ <code>/nesi/</code><strong><code>nobackup</code></strong><code>/nesi12345/To/Archive/Results/</code>, the contents
+ of both source locations (<code>project</code> and <code>nobackup</code>) will be merged
+ into <code>/nesi/nearline/nesi12345/To/Archive/Results/</code>. Within
+ <code>/nesi/nearline/nesi12345/</code>, files with the same name and path will be
+ skipped.</p>
+</div>
+<h2 id="put-file-list">Put - file list<a class="headerlink" href="#put-file-list" title="Permanent link">&para;</a></h2>
+<div class="admonition prerequisite warning">
+<p class="admonition-title">Prerequisite</p>
+<p>The file list must be located within <code>/nesi/project</code> or
+ <code>/nesi/nobackup</code>. Any other location will cause obscure errors and
+ failures.</p>
+</div>
+<p>The <code>file_list</code> is a file containing a list of files to be transferred.
+It can specify <strong>only one file per line</strong> and <strong>directories are
+ignored</strong>.</p>
+<p>The target location will again map with the source location, see above.</p>
+<h2 id="update">Update<a class="headerlink" href="#update" title="Permanent link">&para;</a></h2>
+<p>As a good practice:</p>
+<ul>
+<li>migrate only large files (SquashFS archives, tarballs, or files that
+    are individually large), or directories containing exclusively large
+    files.</li>
+<li>Do not try to modify a file in the source (nobackup or project)
+    directory once there is a copy of it on Nearline.</li>
+<li>Before deleting any data from your project or nobackup directory
+    that has been uploaded to Nearline, please consider whether you
+    require <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001482516">verification of the
+    transfer</a>.
+    We recommend that you do at least a basic verification of all
+    transfers.</li>
+</ul>
+<p>If you need to update data on the Nearline file system with a newer
+version of data from nobackup or project:</p>
+<ol>
+<li>Compare the contents of the source directory
+    (on <code>/nesi/project</code> or <code>/nesi/nobackup</code>) and the target directory
+    (on <code>/nesi/nearline</code>). To look at one directory
+    on <code>/nesi/nearline</code> at a time, use <code>nlls</code>; if you need to compare a
+    large number of files across a range of directories, or for more
+    thorough verification (e.g. checksums), read <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001482516">this
+    article</a>
+    or <a href="https://support.nesi.org.nz/hc/requests/new">contact our support
+    team</a>.</li>
+<li>Once you know which files you need to update (i.e. only files whose
+    Nearline version is out of date), remove the old files on Nearline
+    using <code>nlpurge</code>.</li>
+<li>Copy the updated files to the Nearline file system using <code>nlput</code>.</li>
+</ol>
+<div class="admonition prerequisite warning">
+<p class="admonition-title">Prerequisite</p>
+<p>For technical reasons, files (data and metadata) and directory
+ structures on Nearline cannot be safely changed once present, even by
+ the system administrators, except by deletion and recreation. If you
+ wish to rename your files or restructure your directories, you must
+ follow the process below.</p>
+</div>
+<p>If you need to edit data, rename files, or restructure directories that
+exist on Nearline but are no longer on project or nobackup:</p>
+<ol>
+<li>Retrieve the files and directories you wish to change using the
+    <code>nlget</code> command (see below).</li>
+<li>Make the changes you wish to make.</li>
+<li>Follow the instructions above for updating data on Nearline with a
+    new version of the data from project or nobackup.</li>
+</ol>
+<h2 id="gettingretrieving-files-from-nearline">Getting/Retrieving files from nearline<a class="headerlink" href="#gettingretrieving-files-from-nearline" title="Permanent link">&para;</a></h2>
+<p>Data can be retrieved from Nearline using then <code>nlget</code> command. The
+syntax is:</p>
+<div class="highlight"><pre><span></span><code>nlget [ --nowait ] &lt;projectID&gt; { &lt;src_dir&gt; | &lt;file_list&gt; } &lt;dest_dir&gt;
+</code></pre></div>
+<p>Similar to <code>nlput</code> (see above), nlget accepts a Nearline<strong> directory</strong>
+<code>src_dir</code> <strong>(no single files on Nearline accepted)</strong> or a <strong>local file
+list</strong> <code>file_list</code>, defining the source of the data to be retrieved from
+Nearline.</p>
+<div class="admonition prerequisite warnings">
+<p class="admonition-title">Prerequisite</p>
+<ul>
+<li>The local file list must be located within <code>/nesi/project</code> or
+     <code>/nesi/nobackup</code>. Any other location will be rejected.</li>
+<li>Paths to files or directories to be retrieved must be absolute and
+     start with <code>/nesi/nearline</code>, whether supplied on the command line
+     (as a directory) or as entries in a file list.</li>
+<li>Directories whose names contain spaces, especially multiple
+     consecutive spaces, cannot be retrieved from Nearline directly
+     using <code>nlget</code>. You must retrieve the contents of such a directory
+     using a filelist, or retrieve one of its ancestors that doesn't
+     have a space in the name or path. That is, instead of retrieving
+     <code>/nesi/project/nesi12345/ab/c  d</code> directly, retrieve
+     <code>/nesi/project/nesi12345/ab</code>. We are aware of the problem and may
+     address it in a later Nearline release.</li>
+</ul>
+</div>
+<p>The destination <code>dest_dir</code> needs to be defined. The whole directory
+structure after <code>/nesi/nearline/</code> will be created at the destination and
+the specified data written into it. For example,</p>
+<div class="highlight"><pre><span></span><code>nlget nesi00000 /nesi/nearline/nesi00000/dir/to/results/ /nesi/nobackup/nesi00000
+</code></pre></div>
+<p>will create the directory structure
+<code>/nesi/nobackup/nesi00000/nesi00000/</code><strong><code>dir/to/results/</code></strong> if that
+directory structure does not already exist, and copy the data within the
+<code>Results</code> directory into it.  Note that the output pathe will include
+the project root in the path.</p>
+<div class="admonition prerequisite warning">
+<p class="admonition-title">Prerequisite</p>
+<p>Any given file <strong>will not be retrieved</strong> if a file of the same name
+ already exists in the destination directory. If you wish to retrieve a
+ new copy of a file that already exists at the destination directory
+ then you must either change the destination directory, or delete the
+ existing copy of the file in the that directory.</p>
+</div>
+<p><code>nlget</code> takes only one directory or one file list. <strong>Single files, if
+local, are treated as a file list</strong> and read line by line, searching for
+valid file names. A single Nearline file can only be retrieved using a
+local file list specifying the full path of the file to be retrieved.</p>
+<h2 id="purgingremoving-files-from-nearline">Purging/Removing files from nearline<a class="headerlink" href="#purgingremoving-files-from-nearline" title="Permanent link">&para;</a></h2>
+<p>The <code>nlpurge</code> command deletes specified data on the Nearline file system
+permanently. The syntax is</p>
+<div class="highlight"><pre><span></span><code>nlpurge [--nowait] &lt;src_dir&gt;
+nlpurge [ --nowait ] &lt;projectID&gt; { &lt;src_dir&gt; | &lt;file_list&gt; }
+</code></pre></div>
+<p>A <strong>directory</strong> <code>src_dir</code> already on Nearline <strong>(no single files
+accepted)</strong> or a file list <code>file_list</code> needs to be specified (see
+<code>nlput</code> above).</p>
+<p>If the thing to be deleted is a directory, the project code is optional.
+If you are instead deleting the entries of a file list, the project code
+is compulsory, and moreover all entries in the file list must denote
+files within (or supposed to be within) the chosen project's Nearline
+directory.</p>
+<div class="admonition prerequisite warnings">
+<p class="admonition-title">Prerequisite</p>
+<ul>
+<li>If a file list is used, it must be located within <code>/nesi/project</code>
+     or <code>/nesi/nobackup</code> and referred to by its full path starting with
+     one of those places (symlinks in the path are OK).</li>
+<li>Paths to files or directories to be purged must be absolute and
+     start with <code>/nesi/nearline</code>, whether supplied on the command line
+     (as a directory) or as entries in a file list.</li>
+<li>Purging the entire Nearline directory for a project, e.g.
+     <code>nlpurge /nesi/nearline/nesi12345</code>, is not permitted. To empty a
+     project's Nearline directory, you must purge its contents one by
+     one (if directories), or by means of a filelist (if files).</li>
+</ul>
+</div>
+<h2 id="view-nearline-job-status">View nearline  job status<a class="headerlink" href="#view-nearline-job-status" title="Permanent link">&para;</a></h2>
+<p>The tool <code>nljobstatus</code> provides current status of submitted (queued,
+running and completed) tasks. The syntax is:</p>
+<div class="highlight"><pre><span></span><code>nljobstatus [ &lt;jobid&gt; ]
+</code></pre></div>
+<p>If no job ID is specified the full list of your successfully submitted
+and accepted jobs is returned. In this list, each job looks like the
+following:</p>
+<div class="highlight"><pre><span></span><code>$ nljobstatus
++----------+------------+----------------------------+-----------+-------------+
+|  Jobid   | Project ID |         Job Status         | Job Host  |  Job User   |
++----------+------------+----------------------------+-----------+-------------+
+| 4e23f517 |     13     |   job done successfully    | librarian | userName    |
+| -dfef-40 |            |                            |           |             |
+| e9-a83c- |            |                            |           |             |
+| 3da78b06 |            |                            |           |             |
+|   0310   |            |                            |           |             |
++----------+------------+----------------------------+-----------+-------------+
+</code></pre></div>
+<p>With a job identifier <code>jobid</code>, information for a specific job can be
+listed:</p>
+<div class="highlight"><pre><span></span><code>$ nljobstatus 4e23f517-dfef-40e9-a83c-3da78b060310
++--------------------------------------+
+|                Jobid                 |
++--------------------------------------+
+| 4e23f517-dfef-40e9-a83c-3da78b060310 |
++--------------------------------------+
++------------+-----------------------+-----------+-------------+
+| Project ID |      Job Status       | Job Host  |  Job User   |
++------------+-----------------------+-----------+-------------+
+|     13     | job done successfully | librarian | userName    |
++------------+-----------------------+-----------+-------------+
++---------------------+---------------------+---------------------+
+|   Job Start Time    |   Job Update Time   |    Job End Time     |
++---------------------+---------------------+---------------------+
+| 2019-09-13T03:11:22 | 2019-09-13T03:11:44 | 2019-09-13T03:11:45 |
++---------------------+---------------------+---------------------+
+</code></pre></div>
+<p>If an <code>nlput</code> or <code>nlpurge</code> is running in that project, the project is
+locked until the task is finished.</p>
+<p><strong>If a job stays in one state for an unexpectedly long time, please
+<a href="https://support.nesi.org.nz/hc/request/new">contact NeSI Support</a></strong>.</p>
+<h2 id="view-nearline-quota">View nearline quota<a class="headerlink" href="#view-nearline-quota" title="Permanent link">&para;</a></h2>
+<p>With the command <code>nlquotalist</code>, the usage and limits of a Nearline
+project quota can be listed:</p>
+<p>The output looks like:</p>
+<div class="highlight"><pre><span></span><code>$ nlquotalist nesi12345
+Projectname                                       Available           Used                Inodes         IUsed
+___________________________________________________________________________________________________________________________
+nesi12345                                         30.00 TB            27.16 TB            1000000        412
+</code></pre></div>
+<p>This quota is different from the project quota on GPFS
+(<code>/nesi/project/&lt;projectID&gt;</code>).</p>
+<h2 id="data-management">Data management<a class="headerlink" href="#data-management" title="Permanent link">&para;</a></h2>
+<p>In case you have the same directory structure on your project and
+nobackup directories, be careful when archiving data from both. They
+will be merged in the Nearline file system. Further, when retrieving
+data from Nearline, keep in mind that the directory structure up to your
+projectID will be retrieved:</p>
+<p><img alt="librarian_get_put.jpeg" src="../../../assets/images/Nearline_Long_Term_Storage_Service.png" /></p>
+<h2 id="underlying-mechanism">Underlying mechanism<a class="headerlink" href="#underlying-mechanism" title="Permanent link">&para;</a></h2>
+<p>The Nearline file system consists of two parts: Disk, mainly for
+buffering data, and the tape library. It consists of a client running on
+the login/compute node and the backend on the Nearline file system. It
+is important to know that <strong>even if you cancel a client process, the
+corresponding backend process remains scheduled or running</strong> until
+finished.</p>
+<p>The process of what data goes into tape and when is automated, and is
+not something you will have control over. The service is designed to
+optimise interaction with the Nearline filesystem and avoid problem
+workloads for the benefit of all users.</p>
+<p>If your files are on tape, it will take time to retrieve them. Access to
+tape readers is on a first come first served basis, and the amount of
+wait time will vary dramatically depending on overall usage. We cannot
+guarantee access to your files within any particular timeframe, and
+indeed wait times could be hours or even in some cases more than a day.</p>
+<h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
+<div class="admonition prerequisite retrievals">
+<p class="admonition-title">Prerequisite</p>
+<p>Some users of Nearline have reported that attempts to retrieve files
+ from tape using <code>nlget</code> (see below) will not retrieve all files.
+ Instead, only some files will come back, and the job will finish with
+ the following output:
+ <div class="highlight"><pre><span></span><code>recall failed some syncs might still run (042)
+</code></pre></div>
+ We are aware of this problem, which is caused by the Nearline job
+ timing out while waiting for a tape drive to become available. This
+ problem may also occur if you attempt to retrieve multiple files,
+ together adding to a large amount of data, from Nearline.
+ Unfortunately, a proper fix requires a fundamental redesign and
+ rebuild of the Nearline server architecture, work that is on hold
+ pending decisions regarding the direction in which we take NeSI's data
+ services. We appreciate your patience as we work through these
+ decisions.
+ In the meantime, if you encounter this problem, the recommended
+ workaround is to wait a couple of hours (or overnight, if at the end
+ of a day) and try again once a tape drive is more likely to be free.
+ You may have to try several times, waiting between each attempt. We
+ apologise for any inconvenience caused to you by tape drive
+ contention.</p>
+</div>
+<h2 id="support-contact">Support contact<a class="headerlink" href="#support-contact" title="Permanent link">&para;</a></h2>
+<p>Please <strong>send feedback</strong> about your user experience at
+<a href="https://support.nesi.org.nz/hc/requests/new">https://support.nesi.org.nz/hc/requests/new</a>, which may include
+functionality issues, intuitive or counter-intuitive behaviours,
+behaviours or features that you like, suggestions for improvements,
+transfers taking too long, etc.</p>
+<p>We welcome feedback from our users.</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2021</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+
+
+<div class="md-source-date">
+    <small>
+        Authors: <span class='git-page-authors git-authors'><a href='mailto:35017184+callumwalley@users.noreply.github.com'>Cal</a>, <a href='mailto:callum.walley@auckland.ac.nz'>Callum Walley</a>, <a href='mailto:callum.walley@nesi.org.nz'>cal</a></span>
+    </small>
+</div>
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div id="new-footer">
+        <div id="partners">
+          <div id="logos">
+            <a href="https://nesi.org.nz" class="nesi-footer-logo" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/LogoNeSI-footer.png"></a>
+            <a href="http://www.mbie.govt.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoMBIE.png"></a>
+            <a href="https://www.auckland.ac.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoUoA.png"></a>
+            <a href="https://www.niwa.co.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoNIWA.png"></a>
+            <a href="https://www.otago.ac.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoUoO.png"></a>
+            <a href="http://www.landcareresearch.co.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/LogoManaakiWhenuaLandcareResearch.png"></a>
+          </div>
+        </div>
+        <div id="inner">
+          <span id="links"><a href="https://www.nesi.org.nz/copyright" target="_blank">Copyright © <span id="year">2023</span> · New Zealand eScience Infrastructure</a> | <a href="https://www.nesi.org.nz//disclaimer" target="_blank">Disclaimer</a> | <a href="https://www.nesi.org.nz//privacy" target="_blank">Privacy</a>
+          </span>
+        </div>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.top", "navigation.prune", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      
+    
+  </body>
+</html>

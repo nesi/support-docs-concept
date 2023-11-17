@@ -1,0 +1,2032 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="NeSI Support Documentation">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions/">
+      
+      
+        <link rel="prev" href="../Job_prioritisation/">
+      
+      
+        <link rel="next" href="../Maui_Slurm_Partitions/">
+      
+      
+      <link rel="icon" href="../../../assets/icons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Mahuika Slurm Partitions - NeSI Support Center</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/neoteroi-mkdocs.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/footer.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/custom_admonations.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/theme.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#definitions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<style>
+#banner{
+    font-size: larger;
+    text-align: center;
+    background: lightgoldenrodyellow;
+}
+#banner a:link {
+    color: blue;
+}
+#banner a:visited {
+    color: purple;
+}
+#banner a:focus,
+#banner a:hover {
+    border-bottom: 1px solid;
+}
+</style>
+
+<div id="banner">
+    <p>This site is in Beta. All content is a duplication of  
+    <a href="https://support.nesi.org.nz/hc/en-gb">offical NeSI support documentation.</a>
+    </p>
+</div>
+
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeSI Support Center" class="md-header__button md-logo" aria-label="NeSI Support Center" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeSI Support Center
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mahuika Slurm Partitions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nesi/support-docs-concept" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeSI Support Center" class="md-nav__button md-logo" aria-label="NeSI Support Center" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo.svg" alt="logo">
+
+    </a>
+    NeSI Support Center
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nesi/support-docs-concept" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../General/Announcements/Accessing_NeSI_Support_during_the_holiday_break/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scientific Computing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Scientific Computing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    HPC Software Environment
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Interactive_computing_using_Jupyter/Jupyter_kernels_Manual_management/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Interactive computing using Jupyter
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Manuals_and_User_Guides/Manuals/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Manuals and User Guides
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Profiling_and_Debugging/Debugging/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Profiling and Debugging
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_02-02-2023/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Release Notes jupyter nesi org nz
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Running Jobs on Maui and Mahuika
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Running Jobs on Maui and Mahuika
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Checking_your_projects_usage_using_nn_corehour_usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checking your project's usage using nn_corehour_usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Checksums/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checksums
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fair_Share/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fair Share
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPU_use_on_NeSI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GPU use on NeSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hyperthreading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hyperthreading
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Job_Checkpointing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Job Checkpointing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Job_prioritisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Job prioritisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Mahuika Slurm Partitions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Mahuika Slurm Partitions
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    Definitions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-limits" class="md-nav__link">
+    General Limits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partitions" class="md-nav__link">
+    Partitions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-of-service" class="md-nav__link">
+    Quality of Service
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality of Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    Debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive" class="md-nav__link">
+    Interactive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requesting-gpus" class="md-nav__link">
+    Requesting GPUs
+  </a>
+  
+    <nav class="md-nav" aria-label="Requesting GPUs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limits-on-gpu-jobs" class="md-nav__link">
+    Limits on GPU Jobs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-a100-gpus-in-the-hgx-partition" class="md-nav__link">
+    Accessing A100 GPUs in the hgx partition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mahuika-infiniband-islands" class="md-nav__link">
+    Mahuika Infiniband Islands
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Maui_Slurm_Partitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Māui Slurm Partitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Milan_Compute_Nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Milan Compute Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NetCDF-HDF5_file_locking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NetCDF / HDF5 file locking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLURM-Best_Practice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SLURM: Best Practice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Slurm_Interactive_Sessions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Interactive Sessions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Supported_Applications/ABAQUS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Supported Applications
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Terminal_Setup/Git_Bash_Windows/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Terminal Setup
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    The NeSI High Performance Computers
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Training/Introduction_to_computing_on_the_NeSI_HPC/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Training
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Storage/Data_Recovery/File_Recovery/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../NeSI_Service_Subscriptions/Contracts_and_billing_processes/Billing_process/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NeSI Service Subscriptions
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    Definitions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-limits" class="md-nav__link">
+    General Limits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partitions" class="md-nav__link">
+    Partitions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-of-service" class="md-nav__link">
+    Quality of Service
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality of Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    Debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive" class="md-nav__link">
+    Interactive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requesting-gpus" class="md-nav__link">
+    Requesting GPUs
+  </a>
+  
+    <nav class="md-nav" aria-label="Requesting GPUs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limits-on-gpu-jobs" class="md-nav__link">
+    Limits on GPU Jobs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-a100-gpus-in-the-hgx-partition" class="md-nav__link">
+    Accessing A100 GPUs in the hgx partition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mahuika-infiniband-islands" class="md-nav__link">
+    Mahuika Infiniband Islands
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">mahuika</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">slurm</span>
+    
+  
+</nav>
+
+
+  
+    <a href="https://github.com/nesi/support-docs-concept/edit/master/docs/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Mahuika Slurm Partitions</h1>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page has been automatically migrated and may contain formatting errors.</p>
+</div>
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
+<p><strong>CPU:</strong> A logical core, also known as a hardware thread. Referred to as
+a "CPU" in the Slurm documentation.  Since
+<a href="https://support.nesi.org.nz/hc/en-gb/articles/360000568236/">Hyperthreading</a>
+is enabled, there are two CPUs per physical core, and every task— and
+therefore every job — is allocated an even number of CPUs.</p>
+<p><strong>Fairshare Weight:</strong> CPU hours are multiplied by this factor to
+determine usage for the purpose of calculating a project's <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000743536/">fair-share
+score</a>.</p>
+<p><strong>Job:</strong> A running batch script and any other processes which it might
+launch with <em>srun</em>.</p>
+<p><strong>Node: </strong>A single computer within the cluster with its own CPUs and RAM
+(memory), and sometimes also GPUs. A node is analogous to a workstation
+(desktop PC) or laptop.</p>
+<p><strong>Task:</strong> An instance of a running computer program, consisting of one
+or more threads. All of a task's threads must run within the same node.</p>
+<p><strong>Thread:</strong> A sequence of instructions executed by a CPU.</p>
+<p><strong>Walltime: </strong>Real world time, as opposed to CPU time (walltime x CPUs).</p>
+<h2 id="general-limits">General Limits<a class="headerlink" href="#general-limits" title="Permanent link">&para;</a></h2>
+<ul>
+<li>No individual job can request more than 20,000 CPU hours. This has
+    the consequence that a job can request more CPUs if it is shorter
+    (short-and-wide vs long-and-skinny).</li>
+<li>No individual job can request more than 576 CPUs (8 full nodes),
+    since larger MPI jobs are scheduled less efficiently and are
+    probably suitable for running on Māui.</li>
+<li>No user can have more than 1,000 jobs in the queue at a time.</li>
+</ul>
+<p>These limits are defaults and can be altered on a per-account basis if
+there is a good reason. For example we will increase the limit on queued
+jobs for those who need to submit large numbers of jobs, provided that
+they undertake to do so with job arrays.</p>
+<h2 id="partitions">Partitions<a class="headerlink" href="#partitions" title="Permanent link">&para;</a></h2>
+<p>A partition can be specified via the appropriate <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000691716/">sbatch
+option</a>,
+e.g.:</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --partition=milan
+</code></pre></div>
+<p>However on Mahuika there is generally no need to do so, since the
+default behaviour is that your job will be assigned to the most suitable
+partition(s) automatically, based on the resources it requests,
+including particularly its memory/CPU ratio and time limit.</p>
+<p>The <em>milan</em> partition is currently an exception - since it has a
+different operating system version it is currently configured to be
+opt-in only - your job will not land there it unless you request it.</p>
+<p>If you do specify a partition and your job is not a good fit for that
+partition then you may receive a warning, please do not ignore this.
+E.g.:</p>
+<div class="highlight"><pre><span></span><code>sbatch: &quot;bigmem&quot; is not the most appropriate partition for this job, which would otherwise default to &quot;large&quot;. If you believe this is incorrect then please contact support@nesi.org.nz and quote the Job ID number.
+</code></pre></div>
+<table style="width: 950px; height: 460px;">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<tbody>
+<tr class="odd" style="height: 44px;">
+<td
+style="width: 88.328125px; height: 44px"><p><strong>Name</strong></p></td>
+<td style="width: 95.34375px; height: 44px"><p><strong>Max
+Walltime</strong></p></td>
+<td
+style="width: 54.203125px; height: 44px"><p><strong>Nodes</strong></p></td>
+<td
+style="width: 96.34375px; height: 44px"><p><strong>CPUs/Node</strong></p></td>
+<td style="width: 138.484375px; height: 44px"><p><strong>GPUs/Node<br />
+</strong></p></td>
+<td style="width: 83.3125px; height: 44px"><p><strong>Available
+Mem/CPU</strong></p></td>
+<td style="width: 114.40625px; height: 44px"><p><strong>Available
+Mem/Node</strong></p></td>
+<td
+style="width: 190.640625px; height: 44px"><p><strong>Description</strong></p></td>
+</tr>
+<tr class="even" style="height: 44px;">
+<td style="width: 88.328125px; height: 44px"><p>long</p></td>
+<td style="width: 95.34375px; height: 44px"><p>3 weeks</p></td>
+<td style="width: 54.203125px; height: 44px"><p>69</p></td>
+<td style="width: 96.34375px; height: 44px"><p>72</p></td>
+<td style="width: 138.484375px; height: 44px"><p> </p></td>
+<td style="width: 83.3125px; height: 44px"><p>1500 MB</p></td>
+<td style="width: 114.40625px; height: 44px"><p>105 GB</p></td>
+<td style="width: 190.640625px; height: 44px"><p>For jobs that need to
+run for longer than 3 days.</p></td>
+</tr>
+<tr class="odd" style="height: 44px;">
+<td style="width: 88.328125px; height: 44px"><p>large</p></td>
+<td style="width: 95.34375px; height: 44px"><p>3 days</p></td>
+<td style="width: 54.203125px; height: 44px"><p><em>long</em> +
+157</p></td>
+<td style="width: 96.34375px; height: 44px"><p>72</p></td>
+<td style="width: 138.484375px; height: 44px"><p> </p></td>
+<td style="width: 83.3125px; height: 44px"><p>1500 MB</p></td>
+<td style="width: 114.40625px; height: 44px"><p>105 GB</p></td>
+<td style="width: 190.640625px; height: 44px"><p>Default
+partition.</p></td>
+</tr>
+<tr class="even" style="height: 51px;">
+<td style="width: 88.328125px; height: 51px"><p>milan</p></td>
+<td style="width: 95.34375px; height: 51px"><p>7 days</p></td>
+<td style="width: 54.203125px; height: 51px"><p>56<br />
+ 8</p></td>
+<td style="width: 96.34375px; height: 51px"><p>256<br />
+256</p></td>
+<td style="width: 138.484375px; height: 51px"><p> </p></td>
+<td style="width: 83.3125px; height: 51px"><p>1850 MB</p>
+<p>3800 MB</p></td>
+<td style="width: 114.40625px; height: 51px"><p>460 GB<br />
+960 GB</p></td>
+<td style="width: 190.640625px; height: 51px"><p><a
+href="https://support.nesi.org.nz/hc/en-gb/articles/6367209795471">Jobs
+using Milan Nodes</a></p></td>
+</tr>
+<tr class="odd" style="height: 51px;">
+<td style="width: 88.328125px; height: 51px"><p>bigmem /</p>
+<p>infill</p></td>
+<td style="width: 95.34375px; height: 51px"><p>7 days</p></td>
+<td style="width: 54.203125px; height: 51px"><p>6</p>
+<p>6</p></td>
+<td style="width: 96.34375px; height: 51px"><p>72</p>
+<p>54</p></td>
+<td style="width: 138.484375px; height: 51px"><p> </p></td>
+<td style="width: 83.3125px; height: 51px"><p>6300 MB</p>
+<p>5500 MB</p></td>
+<td style="width: 114.40625px; height: 51px"><p>460 GB</p>
+<p>300 GB</p></td>
+<td style="width: 190.640625px; height: 51px"><p>Jobs requiring large
+amounts of memory.</p></td>
+</tr>
+<tr class="even" style="height: 66px;">
+<td style="width: 88.328125px; height: 66px"><p>hugemem</p></td>
+<td style="width: 95.34375px; height: 66px"><p>7 days</p></td>
+<td style="width: 54.203125px; height: 66px"><p>4</p></td>
+<td style="width: 96.34375px; height: 66px"><p>80<br />
+128<br />
+176</p></td>
+<td style="width: 138.484375px; height: 66px"><p> </p></td>
+<td style="width: 83.3125px; height: 66px"><p>18 GB<br />
+30 GB<br />
+35 GB</p></td>
+<td style="width: 114.40625px; height: 66px"><p>1,500 GB<br />
+4,000 GB<br />
+6,000 GB</p></td>
+<td style="width: 190.640625px; height: 66px"><p>Jobs requiring very
+large amounts of memory.</p></td>
+</tr>
+<tr class="odd" style="height: 138px;">
+<td style="width: 88.328125px; height: 138px"><p>gpu</p></td>
+<td style="width: 95.34375px; height: 138px"><p>7 days</p></td>
+<td style="width: 54.203125px; height: 138px"><p>1</p>
+<p>4</p>
+<p>2</p>
+<p>2</p>
+<p>1</p></td>
+<td style="width: 96.34375px; height: 138px"><p>18, plus 54 shared with
+<em>infill</em></p></td>
+<td style="width: 138.484375px; height: 138px"><p>1 P100*</p>
+<p>2 P100*</p>
+<p>1 A100**</p>
+<p>2 A100**</p>
+<p>7 A100-1g.5gb***</p></td>
+<td style="width: 83.3125px; height: 138px"><p>6300 MB</p></td>
+<td style="width: 114.40625px; height: 138px"><p>160 GB, plus 300 GB
+shared with <em>infill</em></p></td>
+<td style="width: 190.640625px; height: 138px"><p>Nodes with GPUs. See
+below for more info.</p></td>
+</tr>
+<tr class="even" style="height: 22px;">
+<td style="width: 88.328125px; height: 22px"><p>hgx</p></td>
+<td style="width: 95.34375px; height: 22px"><p>7 days</p></td>
+<td style="width: 54.203125px; height: 22px"><p>4</p></td>
+<td style="width: 96.34375px; height: 22px"><p>128</p></td>
+<td style="width: 138.484375px; height: 22px"><p>4 A100****</p></td>
+<td style="width: 83.3125px; height: 22px"><p>6300 MB</p></td>
+<td style="width: 114.40625px; height: 22px"><p>460 GB</p></td>
+<td style="width: 190.640625px; height: 22px"><p>Part of <a
+href="https://support.nesi.org.nz/hc/en-gb/articles/6367209795471">Milan
+Nodes</a>. See below for more info.</p></td>
+</tr>
+</tbody>
+</table>
+
+<p>* NVIDIA Tesla P100 PCIe 12GB cards</p>
+<p>** NVIDIA Tesla A100 PCIe 40GB cards</p>
+<p>*** 1 NVIDIA Tesla A100 PCIe 40GB card divided into <a href="https://www.nvidia.com/en-us/technologies/multi-instance-gpu/">7 MIG GPU
+slices</a>
+(5GB each). </p>
+<p>**** NVIDIA Tesla A100 80GB, on a HGX baseboard with NVLink
+GPU-to-GPU interconnect between the 4 GPUs  </p>
+<h2 id="quality-of-service">Quality of Service<a class="headerlink" href="#quality-of-service" title="Permanent link">&para;</a></h2>
+<p>Orthogonal to the partitions, each job has a "Quality of Service", with
+the default QoS for a job being determined by the allocation class of
+its project.  There are other QoSs which you can select with the
+<code>--qos</code>option:</p>
+<h3 id="debug">Debug<a class="headerlink" href="#debug" title="Permanent link">&para;</a></h3>
+<p>Specifying <code>--qos=debug</code> will give the job very high priority, but is
+subject to strict limits: 15 minutes per job, and only 1 job at a time
+per user. Debug jobs may not span more than two nodes.</p>
+<h3 id="interactive">Interactive<a class="headerlink" href="#interactive" title="Permanent link">&para;</a></h3>
+<p>Specifying <code>--qos=interactive</code> will give the job very high priority, but
+is subject to some limits: up to 4 jobs, 16 hours duration, 4 CPUs, 128
+GB, and 1 GPU.</p>
+<h2 id="requesting-gpus">Requesting GPUs<a class="headerlink" href="#requesting-gpus" title="Permanent link">&para;</a></h2>
+<p>The default GPU type is P100, of which you can request 1 or 2 per node:</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --gpus-per-node=1     # or equivalently, P100:1
+</code></pre></div>
+<p>To request A100 GPUs, use instead:</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --gpus-per-node=A100:1
+</code></pre></div>
+<p>See <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001471955">GPU use on
+NeSI</a> for
+more details about Slurm and CUDA settings.</p>
+<h3 id="limits-on-gpu-jobs">Limits on GPU Jobs<a class="headerlink" href="#limits-on-gpu-jobs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>There is a per-project limit of 6 GPUs being used at a time.</li>
+<li>There is also a per-project limit of 360 GPU-hours being allocated
+    to running jobs. This reduces the number of GPUs available for
+    longer jobs, so for example you can use 8 GPUs at a time if your
+    jobs run for a day, but only two GPUs if your jobs run for a week.
+    The intention is to guarantee that all users can get short debugging
+    jobs on to a GPU in a reasonably timely manner.  </li>
+<li>Each GPU job can use no more than 64 CPUs.  This is to ensure that
+    GPUs are not left idle just because their node has no remaining free
+    CPUs.</li>
+<li>There is a limit of one A100-1g.5gb GPU job per user.</li>
+</ul>
+<h3 id="accessing-a100-gpus-in-the-hgx-partition">Accessing A100 GPUs in the <code>hgx</code> partition<a class="headerlink" href="#accessing-a100-gpus-in-the-hgx-partition" title="Permanent link">&para;</a></h3>
+<p>The A100 GPUs in the <code>hgx</code> partition are designated for workloads
+requiring large memory (up to 80GB) or multi-GPU computing (up to 4 GPUs
+connected via
+<a href="https://www.nvidia.com/en-us/data-center/nvlink/">NVLink</a>):</p>
+<ul>
+<li>Explicitly specify the partition to access them, with
+    <code>--partition=hgx</code>.</li>
+<li>Hosting nodes are Milan nodes. Check the <a href="https://support.nesi.org.nz/hc/en-gb/articles/6367209795471">dedicated support
+    page</a>
+    for more information about the Milan nodes' differences from
+    Mahuika's Broadwell nodes.</li>
+</ul>
+<h2 id="mahuika-infiniband-islands">Mahuika Infiniband Islands<a class="headerlink" href="#mahuika-infiniband-islands" title="Permanent link">&para;</a></h2>
+<p>Mahuika is divided into “islands” of 26 nodes (or 1,872 CPUs).
+Communication between two nodes on the same island is faster than
+between two nodes on different islands. MPI jobs placed entirely within
+one island will often perform better than those split among multiple
+islands.</p>
+<p>You can request that a job runs within a single InfiniBand island by
+adding:</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --switches=1
+</code></pre></div>
+<p>Slurm will then run the job within one island provided that this does
+not delay starting the job by more than the maximum switch waiting time,
+currently configured to be 5 minutes. That waiting time limit can be
+reduced by adding <code>@&lt;time&gt;</code> after the number of switches e.g:</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --switches=1@00:30:00
+</code></pre></div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2021</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+
+
+<div class="md-source-date">
+    <small>
+        Authors: <span class='git-page-authors git-authors'><a href='mailto:callum.walley@auckland.ac.nz'>Callum Walley</a>, <a href='mailto:callum.walley@nesi.org.nz'>cal</a></span>
+    </small>
+</div>
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div id="new-footer">
+        <div id="partners">
+          <div id="logos">
+            <a href="https://nesi.org.nz" class="nesi-footer-logo" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/LogoNeSI-footer.png"></a>
+            <a href="http://www.mbie.govt.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoMBIE.png"></a>
+            <a href="https://www.auckland.ac.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoUoA.png"></a>
+            <a href="https://www.niwa.co.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoNIWA.png"></a>
+            <a href="https://www.otago.ac.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoUoO.png"></a>
+            <a href="http://www.landcareresearch.co.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/LogoManaakiWhenuaLandcareResearch.png"></a>
+          </div>
+        </div>
+        <div id="inner">
+          <span id="links"><a href="https://www.nesi.org.nz/copyright" target="_blank">Copyright © <span id="year">2023</span> · New Zealand eScience Infrastructure</a> | <a href="https://www.nesi.org.nz//disclaimer" target="_blank">Disclaimer</a> | <a href="https://www.nesi.org.nz//privacy" target="_blank">Privacy</a>
+          </span>
+        </div>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.top", "navigation.prune", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      
+    
+  </body>
+</html>
