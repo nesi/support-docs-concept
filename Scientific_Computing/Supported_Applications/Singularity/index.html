@@ -1,0 +1,2567 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="NeSI Support Documentation">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/Singularity/">
+      
+      
+        <link rel="prev" href="../Relion/">
+      
+      
+        <link rel="next" href="../Software%20Installation%20Request/">
+      
+      
+      <link rel="icon" href="../../../assets/icons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Singularity - NeSI Support Center</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/neoteroi-mkdocs.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/footer.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/custom_admonations.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/theme.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#building-a-new-container" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<style>
+#banner{
+    font-size: larger;
+    text-align: center;
+    background:  var(--md-warning-bg-color);
+}
+#banner a:link {
+    color: blue;
+}
+#banner a:visited {
+    color: purple;
+}
+#banner a:focus,
+#banner a:hover {
+    border-bottom: 1px solid;
+}
+#banner p{
+    color: black;
+}
+</style>
+
+<div id="banner">
+    <p>This site is in Beta. All content is a duplication of  
+    <a href="https://support.nesi.org.nz/hc/en-gb">offical NeSI support documentation.</a>
+    </p>
+</div>
+
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeSI Support Center" class="md-header__button md-logo" aria-label="NeSI Support Center" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeSI Support Center
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Singularity
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nesi/support-docs-concept" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeSI Support Center" class="md-nav__button md-logo" aria-label="NeSI Support Center" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo.svg" alt="logo">
+
+    </a>
+    NeSI Support Center
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nesi/support-docs-concept" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../General/Announcements/Accessing_NeSI_Support_during_the_holiday_break/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scientific Computing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Scientific Computing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    HPC Software Environment
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Interactive_computing_using_Jupyter/Jupyter_kernels_Manual_management/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Interactive computing using Jupyter
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Manuals_and_User_Guides/Manuals/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Manuals and User Guides
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Profiling_and_Debugging/Debugging/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Profiling and Debugging
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_02-02-2023/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Release Notes jupyter nesi org nz
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Running_Jobs_on_Maui_and_Mahuika/Checking_your_projects_usage_using_nn_corehour_usage/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Running Jobs on Maui and Mahuika
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Supported Applications
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Supported Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ABAQUS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABAQUS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ANSYS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ANSYS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AlphaFold/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AlphaFold
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BLAST/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BLAST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BRAKER/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BRAKER
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CESM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CESM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COMSOL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    COMSOL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Clair3%20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clair3 
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cylc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cylc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Delft3D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Delft3D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dorado/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dorado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FDS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GATK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GATK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GROMACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GROMACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Gaussian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gaussian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Julia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Julia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JupyterLab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JupyterLab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Keras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Keras
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lambda%20Stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lambda Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MAKER/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MAKER
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MATLAB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MATLAB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Miniconda3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Miniconda3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ORCA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ORCA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenFOAM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenFOAM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenSees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenSees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ParaView/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ParaView
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../R/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    R
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAxML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RAxML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Relion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Relion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Singularity
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Singularity
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#remote-build-service" class="md-nav__link">
+    Remote Build Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-environment-variables" class="md-nav__link">
+    Build Environment Variables
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Installation%20Request/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Installation Request
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Supernova/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Supernova
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Synda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Synda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TensorFlow%20on%20CPUs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TensorFlow on CPUs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TensorFlow%20on%20GPUs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TensorFlow on GPUs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Trinity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trinity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TurboVNC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TurboVNC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VASP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VASP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VirSorter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VirSorter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WRF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WRF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ipyrad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ipyrad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ont-guppy-gpu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ont-guppy-gpu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snpEff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    snpEff
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Terminal_Setup/Git_Bash_Windows/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Terminal Setup
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    The NeSI High Performance Computers
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Training/Introduction_to_computing_on_the_NeSI_HPC/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Training
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Storage/Data_Recovery/File_Recovery/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../NeSI_Service_Subscriptions/Contracts_and_billing_processes/Billing_process/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NeSI Service Subscriptions
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#remote-build-service" class="md-nav__link">
+    Remote Build Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-environment-variables" class="md-nav__link">
+    Build Environment Variables
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">containers</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">singularity</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">docker</span>
+    
+  
+</nav>
+
+
+  
+    <a href="https://github.com/nesi/support-docs-concept/edit/main/docs/Scientific_Computing/Supported_Applications/Singularity.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page has been automatically migrated and may contain formatting errors.</p>
+</div>
+<p><a href="https://sylabs.io/singularity/">Singularity</a> is a science-focused
+application containerisation solution that is specifically tailored for
+integration with HPC systems and suitable for deployment across a broad
+range of science infrastructure environments. Singularity enables a high
+level of portability for research applications across various Linux
+distributions (and derivatives), from laptops to supercomputers.</p>
+<p>Containerisation allows users to package a complete runtime environment
+into a single <em>container image</em> (typically a single file), including
+system libraries of various Linux flavours, custom user software,
+configuration files, and most other dependencies. The container image
+file can be easily copied and run on any Linux-based computing platform,
+enabling simple portability and supporting reproducibility of scientific
+results.</p>
+<p>Unlike a virtual machine, a running <em>container instance</em> shares the host
+operating system's kernel, relying heavily on <a href="https://en.wikipedia.org/wiki/Linux_namespaces">Linux
+namespaces</a> (kernel
+partitioning and isolation features for previously global Linux system
+resources). Resources and data outside of the container can be mapped
+into the container to achieve integration, for example, Singularity
+makes it simple to expose GPUs to the container and to access
+input/output files &amp; directories mounted on the host (such as those on
+<a href="https://support.nesi.org.nz/hc/en-gb/articles/360000177256">shared
+filesystems</a>).</p>
+<p>Contrary to other containerisation tools such as Docker, Singularity
+removes the need for elevated privileges ("root access", e.g., via the
+"sudo" command) at container runtime. This feature is essential for
+enabling containers to run on shared platforms like an HPC, where users
+cannot be allowed to elevate privileges for security reasons.
+Singularity container images are also read-only by default at runtime,
+to help reproducibility of results, and they integrate easily with
+scheduling systems like Slurm and with MPI parallelisation.</p>
+<p>Containerisation technologies, both the fundamental underlying Linux
+kernel features, the various runtime support tools, and associated
+cloud-services (such as container libraries, remote builders, and image
+signing services), are a broad and fast moving landscape. The
+information here is provided as an overview and may not necessarily be
+completely up-to-date with the latest available features, however we
+will endeavour to ensure it accurately reflects NeSI's currently
+supported Singularity version.</p>
+<h1 id="building-a-new-container">Building a new container<a class="headerlink" href="#building-a-new-container" title="Permanent link">&para;</a></h1>
+<p>For more general information on building containers please see the
+<a href="https://sylabs.io/guides/3.0/user-guide/build_a_container.html">Singularity
+Documentation</a>. </p>
+<p>As building a container requires root privileges in general, this cannot
+be done directly on any NeSI nodes. You will need to copy a <a href="https://github.com/sylabs/sif">Singularity
+Image Format (SIF)</a> to the cluster from
+on a local Linux machine or the cloud. Alternatively you can make use of
+a remote build service (currently only the
+<a href="https://cloud.sylabs.io/builder">syslabs</a> builder is available).</p>
+<p>However, it is possible to build <em>some</em> containers directly on NeSI,
+using the Milan compute nodes and <a href="https://apptainer.org/">Apptainer</a>.
+Specific instructions are provided in a dedicated support page <a href="https://support.nesi.org.nz/hc/en-gb/articles/6008779241999">Build an
+Apptainer container on a Milan compute
+node</a>.
+Please note <strong>this may fail</strong> to build some containers and encourage you
+to contact us at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;</a> if you encounter an issue.</p>
+<h2 id="remote-build-service">Remote Build Service<a class="headerlink" href="#remote-build-service" title="Permanent link">&para;</a></h2>
+<p>Running the command <code>singularity remote login</code> will provide you with a
+link to <a href="https://cloud.sylabs.io/">syslabs.io</a>, once you have logged in
+you will be prompted to create a key. Copying the string from your newly
+created key into your terminal will authorise remote builds from your
+current host.</p>
+<p>Specify you want to use the remote builder by adding the <code>--remote</code> flag
+to the build command.</p>
+<div class="highlight"><pre><span></span><code>singularity build --remote myContainer.sif myContainer.def
+</code></pre></div>
+<h2 id="build-environment-variables">Build Environment Variables<a class="headerlink" href="#build-environment-variables" title="Permanent link">&para;</a></h2>
+<p>The environment variables <code>SINGULARITY_TMPDIR</code> and
+<code>SINGULARITY_CACHEDIR</code> environment can be used to overwrite the default
+location of these directories. By default both of these values are set
+to <code>/tmp</code> which has limited space, large builds may exceed this
+limitation causing the builder to crash.</p>
+<p>You may wish to change these values to somewhere in your project or
+nobackup directory.</p>
+<div class="highlight"><pre><span></span><code>export SINGULARITY_TMPDIR=/nesi/nobackup/nesi99999/.s_tmpdir
+setfacl -b &quot;$SINGULARITY_TMPDIR&quot;  # avoid Singularity issues due to ACLs set on this folder
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>export SINGULARITY_CACHEDIR=/nesi/nobackup/nesi99999/.s_cachedir
+</code></pre></div>
+<p>Please Sir, may I have a build node?</p>
+<h1 id="moving-a-container-to-nesi">Moving a container to NeSI<a class="headerlink" href="#moving-a-container-to-nesi" title="Permanent link">&para;</a></h1>
+<p>A container in Singularity's SIF format can be easily moved to the HPC
+filesystem by:</p>
+<ul>
+<li>Copying the image file from your local computer with basic file
+    transfer tools - please refer to our documentation on <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000578455">Moving files
+    to/from the
+    cluster</a>
+    and <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000576776">Data Transfer using
+    Globus</a>
+    (if you have a very large container) for details</li>
+<li>Downloading the container from an online repository</li>
+</ul>
+<p>To download a container, use commands such as</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Singularity
+singularity<span class="w"> </span>pull<span class="w"> </span>library://sylabsed/linux/alpine
+</code></pre></div>
+<p>Please refer to the <a href="https://sylabs.io/docs/">Singularity documentation</a>
+for further details.</p>
+<h1 id="using-a-docker-container">Using a Docker container<a class="headerlink" href="#using-a-docker-container" title="Permanent link">&para;</a></h1>
+<p>Singularity can transparently use Docker containers, without the need to
+be root or to have Docker installed.</p>
+<p>To download and convert a Docker container as a Singularity image, use
+the <code>pull</code> command with a <code>docker://</code> prefix. The following example
+downloads the latest version of the Ubuntu docker container and save it
+in the <code>ubuntu.sif</code> Singularity image file:</p>
+<div class="highlight"><pre><span></span><code>singularity pull ubuntu.sif docker://ubuntu
+</code></pre></div>
+<p>Access to private containers that needs registration is also supported,
+as detailed in the <a href="https://sylabs.io/guides/master/user-guide/singularity_and_docker.html">Singularity
+documentation</a>.</p>
+<p>If you are building your own containers, you can also use Docker
+containers as basis for a Singularity image, by specifying it in the
+definition file as follows:</p>
+<div class="highlight"><pre><span></span><code>Bootstrap: docker
+From: ubuntu:latest
+
+%post
+    # intallation instructions go here
+</code></pre></div>
+<h1 id="running-a-container-on-mahuika-or-maui-ancil">Running a container on Mahuika or Māui Ancil<a class="headerlink" href="#running-a-container-on-mahuika-or-maui-ancil" title="Permanent link">&para;</a></h1>
+<p>Singularity is not currently available on the Māui XC50 supercomputer.</p>
+<p>Singularity containers can easily be run on Mahuika or Māui Ancil once
+they are uploaded to a NeSI filesystem. Load the Singularity module
+first by running the command</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Singularity
+</code></pre></div>
+<p>You can now execute a command inside the container using</p>
+<div class="highlight"><pre><span></span><code>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>my_container.sif<span class="w"> </span>&lt;command&gt;
+</code></pre></div>
+<p>If your container has a "%runscript" section, you can execute it using</p>
+<div class="highlight"><pre><span></span><code>singularity<span class="w"> </span>run<span class="w"> </span>my_container.sif
+</code></pre></div>
+<p>To have a look at the contents of your container, you can "shell" into
+it using</p>
+<div class="highlight"><pre><span></span><code>singularity<span class="w"> </span>shell<span class="w"> </span>my_container.sif
+</code></pre></div>
+<p>Note the prompt is now prefixed with "Singularity",</p>
+<div class="highlight"><pre><span></span><code>Singularity&gt;
+</code></pre></div>
+<p>Exit the container by running the command</p>
+<div class="highlight"><pre><span></span><code>Singularity&gt;<span class="w"> </span><span class="nb">exit</span>
+</code></pre></div>
+<p>which will bring you back to the host system.</p>
+<h2 id="accessing-directories-outside-the-container">Accessing directories outside the container<a class="headerlink" href="#accessing-directories-outside-the-container" title="Permanent link">&para;</a></h2>
+<p>Singularity containers are immutable by default to support
+reproducibility of science results. Singularity will automatically bind
+your home directory if possible, giving you access to all files in your
+home directory tree.</p>
+<p>If the work directory from which you spin up the container is outside
+your home directory (e.g., in the "nobackup" or "project" file spaces)
+and you need to access its contents, you will need to bind this
+directory using, e.g., the command</p>
+<div class="highlight"><pre><span></span><code>singularity run --bind $PWD my_container.sif
+</code></pre></div>
+<p>Note that older releases of Singularity bind the work directory
+automatically.</p>
+<p>You can easily bind extra directories and optionally change their
+locations to a new path inside the container using, e.g.,</p>
+<div class="highlight"><pre><span></span><code>singularity run --bind &quot;/nesi/project/&lt;your project ID&gt;/inputdata:/var/inputdata,\
+/nesi/nobackup/&lt;your project ID&gt;/outputdata:/var/outputdata&quot; my_container.sif
+</code></pre></div>
+<p>Directories <code>inputdata</code> and <code>outputdata</code> can now be accessed inside your
+container under <code>/var/inputdata</code> and <code>/var/outputdata</code>. Alternatively,
+you can set environment variable <code>SINGULARITY_BIND</code> before running your
+container,</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SINGULARITY_BIND</span><span class="o">=</span><span class="s2">&quot;/nesi/project/&lt;your project ID&gt;/inputdata:/var/inputdata,\</span>
+<span class="s2">/nesi/nobackup/&lt;your project ID&gt;/outputdata:/var/outputdata&quot;</span>
+</code></pre></div>
+<h2 id="accessing-a-gpu">Accessing a GPU<a class="headerlink" href="#accessing-a-gpu" title="Permanent link">&para;</a></h2>
+<p>If your Slurm job has requested access to an NVIDIA GPU (see <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001471955">GPU use on
+NeSI</a> to
+learn how to request a GPU), a singularity container can transparently
+access it using the <code>--nv</code> flag:</p>
+<div class="highlight"><pre><span></span><code>singularity<span class="w"> </span>run<span class="w"> </span>--nv<span class="w"> </span>my_container.sif
+</code></pre></div>
+<div class="admonition prerequisite note">
+<p class="admonition-title">Prerequisite</p>
+<p>Make sure that your container contains the CUDA toolkit and additional
+ libraries needed by your application (e.g. cuDNN). The <code>--nv</code> option
+ only ensures that the basic CUDA libraries from the host are bound
+ into the container and that the GPU device is accessible in the
+ container.</p>
+</div>
+<h2 id="network-isolation">Network isolation<a class="headerlink" href="#network-isolation" title="Permanent link">&para;</a></h2>
+<p>Singularity bridges the host network into the container by default. If
+you want to isolate the network, add flags <code>--net --network=none</code> when
+you run the container, e.g.,</p>
+<div class="highlight"><pre><span></span><code>singularity<span class="w"> </span>run<span class="w"> </span>--net<span class="w"> </span>--network<span class="o">=</span>none<span class="w"> </span>my_container.sif
+</code></pre></div>
+<h2 id="slurm-example">Slurm example<a class="headerlink" href="#slurm-example" title="Permanent link">&para;</a></h2>
+<p>It is easy to run Singularity containers inside Slurm jobs. Here is an
+example setup to run a container that uses 4 CPUs:</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
+#SBATCH --job-name=singularity
+#SBATCH --time=01:00:00
+#SBATCH --mem=1024MB
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+
+module load Singularity
+
+# Bind directories and append SLURM job ID to output directory
+export SINGULARITY_BIND=&quot;/nesi/project/&lt;your project ID&gt;/inputdata:/var/inputdata,\
+/nesi/nobackup/&lt;your project ID&gt;/outputdata_${SLURM_JOB_ID:-0}:/var/outputdata&quot;
+
+# Run container %runscript
+srun singularity run my_container.sif
+</code></pre></div>
+<p>Note that the output directory "outputdata" in the HPC file system is
+automatically suffixed with the Slurm job ID in the above example, but
+it is always available under the same path "/var/outputdata" from within
+the container. This makes it easy to run multiple containers in separate
+Slurm jobs. Please refer to our <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000691716">SLURM: Reference
+Sheet</a> for
+further details on using Slurm.</p>
+<h1 id="tips-tricks">Tips &amp; Tricks<a class="headerlink" href="#tips-tricks" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Make sure that your container runs before uploading it - you will
+    not be able to rebuild it from a new definition file directly on the
+    HPC</li>
+<li>Try to configure all software to run in user space without requiring
+    privilege escalation via "sudo" or other privileged capabilities
+    such as reserved network ports - although Singularity supports some
+    of these features inside a container on some systems, they may not
+    always be available on the HPC or other platforms, therefore relying
+    on features such as Linux user namespaces could limit the
+    portability of your container</li>
+<li>If your container runs an MPI application, make sure that the MPI
+    distribution that is installed inside the container is compatible
+    with Intel MPI</li>
+<li>Write output data and log files to the HPC file system using a
+    directory that is bound into the container - this helps
+    reproducibility of results by keeping the container image immutable,
+    it makes sure that you have all logs available for debugging if a
+    job crashes, and it avoids inflating the container image file</li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2023</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2021</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+
+
+<div class="md-source-date">
+    <small>
+        Authors: <span class='git-page-authors git-authors'><a href='mailto:callum.walley@auckland.ac.nz'>Callum Walley</a></span>
+    </small>
+</div>
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div id="new-footer">
+        <div id="partners">
+          <div id="logos">
+            <a href="https://nesi.org.nz" class="nesi-footer-logo" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/LogoNeSI-footer.png"></a>
+            <a href="http://www.mbie.govt.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoMBIE.png"></a>
+            <a href="https://www.auckland.ac.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoUoA.png"></a>
+            <a href="https://www.niwa.co.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoNIWA.png"></a>
+            <a href="https://www.otago.ac.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoUoO.png"></a>
+            <a href="http://www.landcareresearch.co.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/LogoManaakiWhenuaLandcareResearch.png"></a>
+          </div>
+        </div>
+        <div id="inner">
+          <span id="links"><a href="https://www.nesi.org.nz/copyright" target="_blank">Copyright © <span id="year">2023</span> · New Zealand eScience Infrastructure</a> | <a href="https://www.nesi.org.nz//disclaimer" target="_blank">Disclaimer</a> | <a href="https://www.nesi.org.nz//privacy" target="_blank">Privacy</a>
+          </span>
+        </div>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.top", "navigation.prune", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      
+    
+  </body>
+</html>

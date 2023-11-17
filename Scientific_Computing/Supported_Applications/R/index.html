@@ -1,0 +1,2563 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="NeSI Support Documentation">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/R/">
+      
+      
+        <link rel="prev" href="../Python/">
+      
+      
+        <link rel="next" href="../RAxML/">
+      
+      
+      <link rel="icon" href="../../../assets/icons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>R - NeSI Support Center</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/neoteroi-mkdocs.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/footer.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/custom_admonations.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/theme.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#description" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<style>
+#banner{
+    font-size: larger;
+    text-align: center;
+    background:  var(--md-warning-bg-color);
+}
+#banner a:link {
+    color: blue;
+}
+#banner a:visited {
+    color: purple;
+}
+#banner a:focus,
+#banner a:hover {
+    border-bottom: 1px solid;
+}
+#banner p{
+    color: black;
+}
+</style>
+
+<div id="banner">
+    <p>This site is in Beta. All content is a duplication of  
+    <a href="https://support.nesi.org.nz/hc/en-gb">offical NeSI support documentation.</a>
+    </p>
+</div>
+
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeSI Support Center" class="md-header__button md-logo" aria-label="NeSI Support Center" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeSI Support Center
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              R
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nesi/support-docs-concept" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeSI Support Center" class="md-nav__button md-logo" aria-label="NeSI Support Center" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo.svg" alt="logo">
+
+    </a>
+    NeSI Support Center
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nesi/support-docs-concept" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../General/Announcements/Accessing_NeSI_Support_during_the_holiday_break/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scientific Computing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Scientific Computing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    HPC Software Environment
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Interactive_computing_using_Jupyter/Jupyter_kernels_Manual_management/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Interactive computing using Jupyter
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Manuals_and_User_Guides/Manuals/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Manuals and User Guides
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Profiling_and_Debugging/Debugging/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Profiling and Debugging
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_02-02-2023/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Release Notes jupyter nesi org nz
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Running_Jobs_on_Maui_and_Mahuika/Checking_your_projects_usage_using_nn_corehour_usage/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Running Jobs on Maui and Mahuika
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Supported Applications
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Supported Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ABAQUS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABAQUS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ANSYS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ANSYS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AlphaFold/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AlphaFold
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BLAST/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BLAST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BRAKER/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BRAKER
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CESM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CESM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COMSOL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    COMSOL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Clair3%20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clair3 
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cylc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cylc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Delft3D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Delft3D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dorado/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dorado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FDS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GATK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GATK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GROMACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GROMACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Gaussian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gaussian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Julia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Julia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JupyterLab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JupyterLab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Keras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Keras
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lambda%20Stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lambda Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MAKER/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MAKER
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MATLAB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MATLAB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Miniconda3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Miniconda3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ORCA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ORCA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenFOAM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenFOAM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenSees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenSees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ParaView/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ParaView
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    R
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAxML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RAxML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Relion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Relion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Singularity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Singularity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Installation%20Request/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Installation Request
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Supernova/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Supernova
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Synda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Synda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TensorFlow%20on%20CPUs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TensorFlow on CPUs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TensorFlow%20on%20GPUs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TensorFlow on GPUs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Trinity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trinity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TurboVNC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TurboVNC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VASP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VASP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VirSorter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VirSorter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WRF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WRF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ipyrad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ipyrad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ont-guppy-gpu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ont-guppy-gpu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snpEff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    snpEff
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Terminal_Setup/Git_Bash_Windows/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Terminal Setup
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    The NeSI High Performance Computers
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Training/Introduction_to_computing_on_the_NeSI_HPC/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Training
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Storage/Data_Recovery/File_Recovery/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../NeSI_Service_Subscriptions/Contracts_and_billing_processes/Billing_process/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NeSI Service Subscriptions
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">mahuika</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">general</span>
+    
+  
+</nav>
+
+
+  
+    <a href="https://github.com/nesi/support-docs-concept/edit/main/docs/Scientific_Computing/Supported_Applications/R.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page has been automatically migrated and may contain formatting errors.</p>
+</div>
+<!-- The above lines, specifying the category, section and title, must be
+present and always comprising the first three lines of the article. -->
+
+<h1 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h1>
+<p>R is a language and environment for statistical computing and graphics.
+It is a GNU project which is similar to the S language and environment,
+itself developed at Bell Laboratories (formerly AT&amp;T, now Lucent
+Technologies) by John Chambers and colleagues. R can be considered as a
+different implementation of S. There are some important differences, but
+much code written for S runs unaltered under R.</p>
+<p>R provides a wide variety of statistical (linear and nonlinear
+modelling, classical statistical tests, time-series analysis,
+classification, clustering, and so forth) and graphical techniques, and
+is highly extensible. The S language is often the vehicle of choice for
+research in statistical methodology, and R provides an Open Source route
+to participation in that activity.</p>
+<p>The R home page is at <a href="http://www.r-project.org">http://www.r-project.org</a>.</p>
+<h1 id="licence">Licence<a class="headerlink" href="#licence" title="Permanent link">&para;</a></h1>
+<p>R is made available at no cost under the terms of version 2 of the GNU
+General Public Licence. The full text of the R licence is available at
+<a href="https://www.r-project.org/COPYING">https://www.r-project.org/COPYING</a>.</p>
+<h1 id="nesi-customisations">NeSI Customisations<a class="headerlink" href="#nesi-customisations" title="Permanent link">&para;</a></h1>
+<ul>
+<li>We patch the <em>snow</em> package so that there is no need to use RMPISNOW
+    when using it over MPI.</li>
+<li>Our most recent R environment modules set R_LIBS_USER to a path
+    which includes the compiler toolchain, so for
+    example <em>~/R/gimkl-2022a/4.2</em> rather than the usual default
+    of <em>~/R/x86_64-pc-linux-gnu-library/4.2</em>.</li>
+</ul>
+<h1 id="related-environment-modules">Related environment modules<a class="headerlink" href="#related-environment-modules" title="Permanent link">&para;</a></h1>
+<p>We also have some environment modules which extend the base R ones with
+extra packages:</p>
+<ul>
+<li><em>R-Geo</em> with rgeos, rgdal and other geometric and geospatial
+    packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.<ul>
+<li><code>sl
+    $ module load R-Geo/4.2.1-gimkl-2022a</code></li>
+</ul>
+</li>
+<li><em>R-bundle-Bioconductor</em> with many of the BioConductor suite of
+    packages.<ul>
+<li><code>sl
+    $ module load R-bundle-Bioconductor/3.15-gimkl-2022a-R-4.2.1</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
+<h2 id="r-scripts">R scripts<a class="headerlink" href="#r-scripts" title="Permanent link">&para;</a></h2>
+<h3 id="serial-r-script">Serial R script<a class="headerlink" href="#serial-r-script" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>png(filename=&quot;plot.png&quot;)  # This line redirects plots from screen to plot.png file.
+
+# Define the cars vector with 5 values
+cars &lt;- c(1, 3, 6, 4, 9)
+
+# Graph the cars vector with all defaults
+plot(cars)
+</code></pre></div>
+<h3 id="array-r-script">Array R script<a class="headerlink" href="#array-r-script" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>jobid &lt;- as.numeric(Sys.getenv(&quot;SLURM_ARRAY_TASK_ID&quot;))
+jobid
+</code></pre></div>
+<h3 id="parallel-script-using-doparallel">Parallel script using <em>doParallel</em><a class="headerlink" href="#parallel-script-using-doparallel" title="Permanent link">&para;</a></h3>
+<p>The following example sums 50 normally distributed random value vectors
+of sizes 1 million to 1000050. Set the number of workers in your
+submission script with --cpus-per-task=... Note that all workers run on
+the same node. Hence, the number of workers is limited to the number of
+cores (physical if --hint=nomultithread or logical if using
+--hint=multithread). </p>
+<div class="highlight"><pre><span></span><code>library(doParallel)
+registerDoParallel(strtoi(Sys.getenv(&quot;SLURM_CPUS_PER_TASK&quot;)))
+
+# 50 calculations, store the result in &#39;x&#39;
+x &lt;- foreach(z = 1000000:1000050, .combine = &#39;c&#39;) %dopar% {
+  sum(rnorm(z))
+}
+
+print(x)
+</code></pre></div>
+<h3 id="parallel-script-using-dompi">Parallel script using <em>doMPI</em><a class="headerlink" href="#parallel-script-using-dompi" title="Permanent link">&para;</a></h3>
+<p>This example is similar to the above except that workers can run across
+multiple nodes. Note that we don't need to specify the number of workers
+when starting the cluster -- it will be derived by the mpiexec command,
+which slurm will invoke. You will need to load the gimkl module to
+expose the MPI library. </p>
+<div class="highlight"><pre><span></span><code>library(doMPI, quiet=TRUE)
+cl &lt;- startMPIcluster()
+registerDoMPI(cl)
+
+# 50 calculations, store the result in &#39;x&#39;
+x &lt;- foreach(z = 1000000:1000050, .combine = &#39;c&#39;) %dopar% {
+  sum(rnorm(z))
+}
+
+closeCluster(cl)
+print(x)
+mpi.quit()
+</code></pre></div>
+<h3 id="parallel-script-using-snow">Parallel script using <em>snow</em><a class="headerlink" href="#parallel-script-using-snow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>library(snow)
+# If there are multiple tasks only one reaches here, others become slaves.
+
+# Select MPI-based or fork-based parallelism depending on ntasks
+if(strtoi(Sys.getenv(&quot;SLURM_NTASKS&quot;)) &gt; 1) {
+    cl &lt;- makeMPIcluster()
+} else {
+    cl &lt;- makeSOCKcluster(max(strtoi(Sys.getenv(&#39;SLURM_CPUS_PER_TASK&#39;)), 1))
+}
+
+# 50 calculations to be done:
+x &lt;- clusterApply(cl, 1000000:1000050, function(z) sum(rnorm(z)))
+
+stopCluster(cl)
+</code></pre></div>
+<h2 id="job-submission-scripts">Job submission scripts<a class="headerlink" href="#job-submission-scripts" title="Permanent link">&para;</a></h2>
+<h3 id="submission-script-for-a-serial-r-job">Submission script for a serial R job<a class="headerlink" href="#submission-script-for-a-serial-r-job" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -e</span>
+
+<span class="c1">#SBATCH --job-name    MySerialRJob</span>
+<span class="c1">#SBATCH --time        01:00:00</span>
+<span class="c1">#SBATCH --mem         512MB</span>
+<span class="c1">#SBATCH --output      MySerialRJob.%j.out # Include the job ID in the names of</span>
+<span class="c1">#SBATCH --error       MySerialRJob.%j.err # the output and error files</span>
+
+module<span class="w"> </span>load<span class="w"> </span><span class="m">4</span>.2.1-gimkl-2022a
+
+<span class="c1"># Help R to flush errors and show overall job progress by printing</span>
+<span class="c1"># &quot;executing&quot; and &quot;finished&quot; statements.</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Executing R ...&quot;</span>
+srun<span class="w"> </span>Rscript<span class="w"> </span>MySerialRJob.R
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;R finished.&quot;</span>
+</code></pre></div>
+<h3 id="submission-script-for-an-array-r-job">Submission script for an array R job<a class="headerlink" href="#submission-script-for-an-array-r-job" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -e</span>
+
+<span class="c1">#SBATCH --job-name    MyArrayRJob</span>
+<span class="c1">#SBATCH --time        01:00:00</span>
+<span class="c1">#SBATCH --array       1-10</span>
+<span class="c1">#SBATCH --mem         512MB</span>
+<span class="c1">#SBATCH --output      MyArrayRJob.%j.out # Include the job ID in the names of</span>
+<span class="c1">#SBATCH --error       MyArrayRJob.%j.err # the output and error files</span>
+
+module<span class="w"> </span>load<span class="w"> </span>R/4.2.1-gimkl-2022a
+
+<span class="c1"># Help R to flush errors and show overall job progress by printing</span>
+<span class="c1"># &quot;executing&quot; and &quot;finished&quot; statements.</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Executing R ...&quot;</span>
+srun<span class="w"> </span>Rscript<span class="w"> </span>MyArrayRJob.R
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;R finished.&quot;</span>
+</code></pre></div>
+<h3 id="submission-script-for-an-mpi-r-job">Submission script for an MPI R job<a class="headerlink" href="#submission-script-for-an-mpi-r-job" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -e</span>
+
+<span class="c1">#SBATCH --job-name      MyMPIRJob</span>
+<span class="c1">#SBATCH --time          01:00:00</span>
+<span class="c1">#SBATCH --ntasks        12</span>
+<span class="c1">#SBATCH --cpus-per-task 1</span>
+<span class="c1">#SBATCH --mem-per-cpu   512MB</span>
+<span class="c1">#SBATCH --output        MyMPIRJob.%j.out # Include the job ID in the names of</span>
+<span class="c1">#SBATCH --error         MyMPIRJob.%j.err # the output and error files</span>
+
+module<span class="w"> </span>load<span class="w"> </span>R/4.2.1-gimkl-2022a
+<span class="c1"># need MPI</span>
+module<span class="w"> </span>load<span class="w"> </span>gimkl/2022a
+
+<span class="c1"># Help R to flush errors and show overall job progress by printing</span>
+<span class="c1"># &quot;executing&quot; and &quot;finished&quot; statements.</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Executing R ...&quot;</span>
+<span class="c1"># Our R has a patched copy of the snow library so that there is no need to use</span>
+<span class="c1"># RMPISNOW.</span>
+srun<span class="w"> </span>Rscript<span class="w"> </span>doMPI
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;R finished.&quot;</span>
+</code></pre></div>
+<h1 id="further-notes">Further notes<a class="headerlink" href="#further-notes" title="Permanent link">&para;</a></h1>
+<h2 id="generating-images-and-plots">Generating images and plots<a class="headerlink" href="#generating-images-and-plots" title="Permanent link">&para;</a></h2>
+<p>Normally when plotting or generating other sorts of images, R expects a
+graphical user interface to be available so it can render and display
+the image on the fly. However, it is possible to instruct R to export
+the image directly to a file instead of displaying it on the screen,
+using code like the following:</p>
+<div class="highlight"><pre><span></span><code>png(filename=&quot;plot.png&quot;)
+</code></pre></div>
+<p>This statement instructs R to export all future graphical output to a
+PNG file named <code>plot.png</code>, until a different device driver is selected.</p>
+<p>For more information about graphical device drivers, please see <a href="https://cran.r-project.org/doc/manuals/R-intro.html#Device-drivers">the R
+documentation</a>.</p>
+<h2 id="dealing-with-packages">Dealing with packages<a class="headerlink" href="#dealing-with-packages" title="Permanent link">&para;</a></h2>
+<p>Much R functionality is not supplied with the base installation, but is
+instead added by means of packages written by the R developers or by
+third parties.  We include a large number of such R packages in our R
+environment modules</p>
+<h3 id="getting-a-list-of-installed-packages">Getting a list of installed packages<a class="headerlink" href="#getting-a-list-of-installed-packages" title="Permanent link">&para;</a></h3>
+<p>It is best to view the list of available R packages interactively. To do
+so, call up the package library:</p>
+<div class="highlight"><pre><span></span><code>$ module R/4.2.1-gimkl-2022a
+$ R
+...
+     library()
+</code></pre></div>
+<p>or just use the module command:</p>
+<div class="highlight"><pre><span></span><code>$ module show R/4.2.1-gimkl-2022a
+</code></pre></div>
+<p>Please note that different installations of R, even on the same NeSI
+cluster, may contain different collections of packages. Furthermore, if
+you have your own packages in a directory that R can automatically
+detect, these will also be shown in a separate section.</p>
+<h3 id="getting-a-list-of-available-libraries">Getting a list of available libraries<a class="headerlink" href="#getting-a-list-of-available-libraries" title="Permanent link">&para;</a></h3>
+<p>You can print a list of the library directories in which R will look for
+packages by running the following command in an R session:</p>
+<div class="highlight"><pre><span></span><code>     .libPaths()
+</code></pre></div>
+<p>For R/4.2.1 the command <code>.libPaths()</code> will return the following:</p>
+<div class="highlight"><pre><span></span><code>     .libPaths()
+[1] &quot;/home/YOUR_USER_NAME/R/gimkl-2022a/4.2&quot;                            
+[2] &quot;/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library&quot;
+</code></pre></div>
+<p>When using the <code>library()</code> function R will first look to your
+Home/Personal library for the package and then to the Systems Library
+provided by NeSI. This can be used in conjuction with
+<code>installed.packages()</code> to see what is available in a specific library.
+eg:</p>
+<div class="highlight"><pre><span></span><code>     installed.packages(&quot;/home/YOUR_USER_NAME/R/gimkl-2022a/4.2&quot;)
+...
+ggplot2 NA NA NA &quot;no&quot; &quot;4.2.1&quot;
+ggrepel NA NA NA &quot;yes&quot; &quot;4.2.1&quot;
+etc...
+</code></pre></div>
+<h3 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="specifying-custom-library-directories">Specifying custom library directories<a class="headerlink" href="#specifying-custom-library-directories" title="Permanent link">&para;</a></h3>
+<p>You can add your own custom library directories by putting a list of
+extra directories in the <code>.Renviron</code> file in your home directory. This
+list should look like the following:</p>
+<div class="highlight"><pre><span></span><code>export R_LIBS=/home/jblo123/R/foo:/home/jblo123/R/bar
+</code></pre></div>
+<p>Note that, of the contents of the <code>R_LIBS</code> variable, only those
+directories that actually exist will show up in the output of
+<code>.libPaths()</code>.</p>
+<p>Alternatively, you can specify in your R script:</p>
+<div class="highlight"><pre><span></span><code>dir.create(&quot;/nesi/project/&lt;projectID&gt;/Rpackages&quot;, showWarnings = FALSE, recursive = TRUE)
+.libPaths(new=&quot;/nesi/project/&lt;projectID&gt;/Rpackages&quot;)
+</code></pre></div>
+<h3 id="downloading-and-installing-a-new-package">Downloading and installing a new package<a class="headerlink" href="#downloading-and-installing-a-new-package" title="Permanent link">&para;</a></h3>
+<p>To install a package into R, use the install.packages command.</p>
+<p>For example, to install the sampling package:</p>
+<div class="highlight"><pre><span></span><code>$ module load R/4.2.1-gimkl-2022a
+$ R
+...
+     install.packages(&quot;sampling&quot;)
+</code></pre></div>
+<p>You will most likely be asked if you want to use a personal library and,
+if you have not previously done so, whether you wish to create a new
+personal library. Answer "y" to both questions.</p>
+<p>Enter the number for one of the Australian sites from the list of
+download mirrors that will appear, as the lone New Zealand mirror site
+is more often out of date.</p>
+<p>R will then download, compile and install the new package for you.</p>
+<p>You can confirm the package has been installed by using the library()
+command:</p>
+<div class="highlight"><pre><span></span><code>     library(&quot;foo&quot;)
+</code></pre></div>
+<p>If the package has been correctly installed, you will get no response.
+On the other hand, if the package is missing or was not installed
+correctly, an error message will typically be returned:</p>
+<div class="highlight"><pre><span></span><code>     library(&quot;foo&quot;)
+Error in library(&quot;foo&quot;) : there is no package called ‘foo’
+</code></pre></div>
+<h3 id="compiling-a-c-library-for-use-with-r">Compiling a C library for use with R<a class="headerlink" href="#compiling-a-c-library-for-use-with-r" title="Permanent link">&para;</a></h3>
+<p>You can compile custom C libraries for use with R using the R shared
+library compiler:</p>
+<div class="highlight"><pre><span></span><code>$ module load R/4.2.1-gimkl-2022a
+$ R CMD SHLIB mylib.c
+</code></pre></div>
+<p>This will create the shared object mylib.so. You can then reference the
+library in your R script:</p>
+<div class="highlight"><pre><span></span><code>$ R
+...
+     dyn.load(&quot;~/R/lib64/mylib.so&quot;)
+</code></pre></div>
+<h2 id="quitting-an-interactive-r-session">Quitting an interactive R session<a class="headerlink" href="#quitting-an-interactive-r-session" title="Permanent link">&para;</a></h2>
+<p>At the R command prompt, when you want to quit R, type the following:</p>
+<div class="highlight"><pre><span></span><code>     quit()
+</code></pre></div>
+<p>You will be asked "Save workspace image? [y/n/c]". Type n.</p>
+<h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h1>
+<h2 id="missing-devtools">Missing <em>devtools</em><a class="headerlink" href="#missing-devtools" title="Permanent link">&para;</a></h2>
+<p>Package installation will occasionally fail due to missing system
+libraries (eg <em>HarfBuzz, FriBidi or devtools)</em>, this is resolved by
+loading the <em>devtools</em> module prior to the version of R you require.</p>
+<div class="highlight"><pre><span></span><code>$ module load devtools
+$ module load R/4.2.1-gimkl-2022a
+</code></pre></div>
+<h2 id="cant-install-sf-rgdal-etc">Can't install <em>sf, rgdal</em> etc<a class="headerlink" href="#cant-install-sf-rgdal-etc" title="Permanent link">&para;</a></h2>
+<p>Use the R-Geo module</p>
+<div class="highlight"><pre><span></span><code>$ module load R-Geo/4.2.1-gimkl-2022a
+</code></pre></div>
+<h2 id="clusterparallel-environment-variable-not-accessed">Cluster/Parallel environment variable not accessed<a class="headerlink" href="#clusterparallel-environment-variable-not-accessed" title="Permanent link">&para;</a></h2>
+<p>Depending on the working environment, registering of a cluster and
+accessing the <code>SLURM_CPUS_PER_TASK</code> environment variable may not return
+an integer, in particular the function <code>strtoi</code> (string to integer)
+doesn't work correctly. Instead use <code>as.numeric</code></p>
+<p>Options:</p>
+<ul>
+<li><code>strtoi(Sys.getenv("SLURM_CPUS_PER_TASK"))</code></li>
+<li><code>as.numeric(Sys.getenv("SLURM_CPUS_PER_TASK"))</code></li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2023</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2021</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+
+
+<div class="md-source-date">
+    <small>
+        Authors: <span class='git-page-authors git-authors'><a href='mailto:callum.walley@auckland.ac.nz'>Callum Walley</a></span>
+    </small>
+</div>
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div id="new-footer">
+        <div id="partners">
+          <div id="logos">
+            <a href="https://nesi.org.nz" class="nesi-footer-logo" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/LogoNeSI-footer.png"></a>
+            <a href="http://www.mbie.govt.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoMBIE.png"></a>
+            <a href="https://www.auckland.ac.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoUoA.png"></a>
+            <a href="https://www.niwa.co.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoNIWA.png"></a>
+            <a href="https://www.otago.ac.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/media/LogoUoO.png"></a>
+            <a href="http://www.landcareresearch.co.nz/" target="_blank"><img alt="" src="https://www.nesi.org.nz/sites/default/files/LogoManaakiWhenuaLandcareResearch.png"></a>
+          </div>
+        </div>
+        <div id="inner">
+          <span id="links"><a href="https://www.nesi.org.nz/copyright" target="_blank">Copyright © <span id="year">2023</span> · New Zealand eScience Infrastructure</a> | <a href="https://www.nesi.org.nz//disclaimer" target="_blank">Disclaimer</a> | <a href="https://www.nesi.org.nz//privacy" target="_blank">Privacy</a>
+          </span>
+        </div>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.top", "navigation.prune", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -206,6 +206,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/Why_cant_I_log_in_using_MobaXTerm/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/Why_does_my_program_crash/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/Why_is_my_job_taking_a_long_time_to_start/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/General/NeSI_Policies/Acceptable_Use_Policy/</loc>
          <lastmod>2023-11-17</lastmod>
          <changefreq>daily</changefreq>
@@ -996,7 +1011,112 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/ORCA/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/OpenFOAM/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/OpenSees/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/ParaView/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/Python/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/R/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/RAxML/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/Relion/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/Singularity/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/Software%20Installation%20Request/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/Supernova/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/Synda/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/TensorFlow%20on%20CPUs/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/TensorFlow%20on%20GPUs/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/Trinity/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/TurboVNC/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/VASP/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/VirSorter/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/WRF/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/ipyrad/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/ont-guppy-gpu/</loc>
+         <lastmod>2023-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/snpEff/</loc>
          <lastmod>2023-11-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
