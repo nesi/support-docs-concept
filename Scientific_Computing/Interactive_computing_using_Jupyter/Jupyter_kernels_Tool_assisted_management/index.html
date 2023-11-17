@@ -609,17 +609,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Jupyter kernels - Tool-assisted management
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -630,58 +621,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting started
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conda-environment" class="md-nav__link">
-    Conda environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#virtual-environment" class="md-nav__link">
-    Virtual environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#singularity-container" class="md-nav__link">
-    Singularity container
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1370,49 +1309,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting started
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conda-environment" class="md-nav__link">
-    Conda environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#virtual-environment" class="md-nav__link">
-    Virtual environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#singularity-container" class="md-nav__link">
-    Singularity container
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1436,13 +1334,11 @@
   
 
 
-  <h1>Jupyter kernels - Tool-assisted management</h1>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
 </div>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
 <p>Jupyter can execute code in different computing environments using
 <em>kernels</em>. Some kernels are provided by default (Python, R, etc.) but
 you may want to register your computing environment to use it in
@@ -1453,7 +1349,7 @@ the <a href="https://support.nesi.org.nz/hc/en-gb/articles/4414951820559">Jupyte
 management</a>
 or use the <code>nesi-add-kernel</code> tool provided on Jupyter on NeSI service.
 This page details the latter option, which we recommend.</p>
-<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h1 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
 <p>First you need to open a terminal. It can be from a session on Jupyter
 on NeSI or from a regular ssh connection on Mahuika login node. If you
 use the ssh option, make sure to load the JupyterLab module to have
@@ -1478,7 +1374,7 @@ follows:</p>
 <div class="highlight"><pre><span></span><code>jupyter-kernelspec remove &lt;kernel_name&gt;
 </code></pre></div>
 <p>where <code>&lt;kernel_name&gt;</code> stands for the name of the kernel to delete.</p>
-<h2 id="conda-environment">Conda environment<a class="headerlink" href="#conda-environment" title="Permanent link">&para;</a></h2>
+<h1 id="conda-environment">Conda environment<a class="headerlink" href="#conda-environment" title="Permanent link">&para;</a></h1>
 <p>First, make sure the <code>JupyterLab</code> module is loaded:</p>
 <div class="highlight"><pre><span></span><code>module purge
 module load JupyterLab
@@ -1490,7 +1386,7 @@ module load JupyterLab
 <p>otherwise if created using <code>conda create -n &lt;conda_env_name&gt;</code>, use:</p>
 <div class="highlight"><pre><span></span><code>nesi-add-kernel my_conda_env -n &lt;conda_env_name&gt;
 </code></pre></div>
-<h2 id="virtual-environment">Virtual environment<a class="headerlink" href="#virtual-environment" title="Permanent link">&para;</a></h2>
+<h1 id="virtual-environment">Virtual environment<a class="headerlink" href="#virtual-environment" title="Permanent link">&para;</a></h1>
 <p>If you want to use a Python virtual environment, don’t forget to specify
 which Python module you used to create it.</p>
 <p>For example, if we create a virtual environment named <code>my_test_venv</code>
@@ -1505,7 +1401,7 @@ command:</p>
 module load JupyterLab
 nesi-add-kernel my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
 </code></pre></div>
-<h2 id="singularity-container">Singularity container<a class="headerlink" href="#singularity-container" title="Permanent link">&para;</a></h2>
+<h1 id="singularity-container">Singularity container<a class="headerlink" href="#singularity-container" title="Permanent link">&para;</a></h1>
 <p>To use a Singularity container, use the <code>-c</code> or <code>--container</code> options as
 follows:</p>
 <div class="highlight"><pre><span></span><code>module purge

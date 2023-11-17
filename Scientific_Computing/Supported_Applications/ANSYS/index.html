@@ -2802,7 +2802,7 @@ module<span class="w"> </span>load<span class="w"> </span>ANSYS/2023R1
 
 <span class="nb">cd</span><span class="w"> </span>Coupling
 
-<span class="c1">## Run the system coupler in the background.</span>
+<span class="c1"># Run the system coupler in the background.</span>
 srun<span class="w"> </span>-N1<span class="w"> </span>-n1<span class="w"> </span><span class="nv">$WORKBENCH_CMD</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>ansys.services.systemcoupling.exe<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-inputFile<span class="w"> </span>coupling.sci<span class="w"> </span><span class="o">||</span><span class="w"> </span>scancel<span class="w"> </span><span class="nv">$SLURM_JOBID</span><span class="w"> </span><span class="p">&amp;</span>
@@ -2841,7 +2841,7 @@ sleep<span class="w"> </span><span class="m">1</span>
 
 <span class="nb">cd</span><span class="w"> </span>Structural
 
-<span class="c1">## Run ANSYS in the background, alongside the system coupler and Fluent.</span>
+<span class="c1"># Run ANSYS in the background, alongside the system coupler and Fluent.</span>
 mapdl<span class="w"> </span>-b<span class="w"> </span>-dis<span class="w"> </span>-mpi<span class="w"> </span>intel<span class="w"> </span>-np<span class="w"> </span><span class="nv">$MECHANICAL_CPUS</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-scport<span class="w"> </span><span class="nv">$port</span><span class="w"> </span>-schost<span class="w"> </span><span class="nv">$node</span><span class="w"> </span>-scname<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$mechsolname</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-i<span class="w"> </span><span class="s2">&quot;structural.dat&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>struct.out<span class="w"> </span><span class="o">||</span><span class="w"> </span>scancel<span class="w"> </span><span class="nv">$SLURM_JOBID</span><span class="w"> </span><span class="p">&amp;</span>
@@ -2852,14 +2852,14 @@ sleep<span class="w"> </span><span class="m">2</span>
 
 <span class="nb">cd</span><span class="w"> </span>FluidFlow
 
-<span class="c1">## Run Fluent in the background, alongside the system coupler and ANSYS.</span>
+<span class="c1"># Run Fluent in the background, alongside the system coupler and ANSYS.</span>
 fluent<span class="w"> </span>3ddp<span class="w"> </span>-g<span class="w"> </span>-t<span class="nv">$FLUID_CPUS</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-scport<span class="o">=</span><span class="nv">$port</span><span class="w"> </span>-schost<span class="o">=</span><span class="nv">$node</span><span class="w"> </span>-scname<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$fluentsolname</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-i<span class="w"> </span><span class="s2">&quot;fluidFlow.jou&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>fluent.out<span class="w"> </span><span class="o">||</span><span class="w"> </span>scancel<span class="w"> </span><span class="nv">$SLURM_JOBID</span><span class="w"> </span><span class="p">&amp;</span>
 <span class="nb">cd</span><span class="w"> </span>..
 
-<span class="c1">## Before exiting, wait for all background tasks (the system coupler, ANSYS and</span>
-<span class="c1">## Fluent) to complete.</span>
+<span class="c1"># Before exiting, wait for all background tasks (the system coupler, ANSYS and</span>
+<span class="c1"># Fluent) to complete.</span>
 <span class="nb">wait</span>
 </code></pre></div>
 <h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
@@ -2950,7 +2950,7 @@ the use of variables in what might otherwise be a fixed input.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2023</span>
       
         <br>
         Created:

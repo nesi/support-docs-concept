@@ -1165,6 +1165,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1193,19 +1195,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#job-submission" class="md-nav__link">
-    Job submission
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#checkpointing-and-restarting" class="md-nav__link">
@@ -1217,20 +1214,6 @@
         <li class="md-nav__item">
   <a href="#warnings-regarding-cpu-affinity" class="md-nav__link">
     Warnings regarding CPU affinity
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nvidia-gpu-container" class="md-nav__link">
-    NVIDIA GPU Container
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#further-documentation" class="md-nav__link">
-    Further Documentation
   </a>
   
 </li>
@@ -1730,19 +1713,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#job-submission" class="md-nav__link">
-    Job submission
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#checkpointing-and-restarting" class="md-nav__link">
@@ -1754,20 +1732,6 @@
         <li class="md-nav__item">
   <a href="#warnings-regarding-cpu-affinity" class="md-nav__link">
     Warnings regarding CPU affinity
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nvidia-gpu-container" class="md-nav__link">
-    NVIDIA GPU Container
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#further-documentation" class="md-nav__link">
-    Further Documentation
   </a>
   
 </li>
@@ -1796,8 +1760,6 @@
   
 
 
-  <h1>GROMACS</h1>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -1816,7 +1778,7 @@ Licence</a>. Gromacs is a joint
 effort, with contributions from developers around the world: users agree
 to acknowledge use of GROMACS in any reports or publications of results
 obtained with the Software (see</p>
-<h2 id="job-submission">Job submission<a class="headerlink" href="#job-submission" title="Permanent link">&para;</a></h2>
+<h1 id="job-submission">Job submission<a class="headerlink" href="#job-submission" title="Permanent link">&para;</a></h1>
 <p>GROMACS performance depends on several factors, such as usage (or lack
 thereof) of GPUs, the number of MPI tasks and OpenMP threads, the load
 balancing algorithm, the ratio between the number of Particle-Particle
@@ -1842,12 +1804,12 @@ node at the same time.</p>
 
 module load GROMACS/5.1.4-intel-2017a
 
-## Prepare the binary input from precursor files 
+# Prepare the binary input from precursor files 
 srun -n 1 gmx grompp -v -f minim.mdp -c protein.gro -p protein.top -o protein-EM-vacuum.tpr
 
-## Run the simulation
-## Note that the -deffnm option is an alternative to specifying several input files individually
-## Note also that the -ntomp option should be used when using hybrid parallelisation
+# Run the simulation
+# Note that the -deffnm option is an alternative to specifying several input files individually
+# Note also that the -ntomp option should be used when using hybrid parallelisation
 srun gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm protein-EM-vacuum -c input/protein.gr -cpt 30
 </code></pre></div>
 <p><strong>Note:</strong> To prevent performance issues we moved the serial "gmx" to
@@ -1921,7 +1883,7 @@ nodes.  However, we have seen issues with slow performance and will
 recommend using the `--exclusive` flag when running GROMACS. It may
 also be advisable to request tasks or CPUs in multiples of 80, since
 that is the number of vCPUs per node.</p>
-<h2 id="nvidia-gpu-container">NVIDIA GPU Container<a class="headerlink" href="#nvidia-gpu-container" title="Permanent link">&para;</a></h2>
+<h1 id="nvidia-gpu-container">NVIDIA GPU Container<a class="headerlink" href="#nvidia-gpu-container" title="Permanent link">&para;</a></h1>
 <p>NVIDIA has a GPU accelerated version of GROMACS in its NGC container
 registry (more details about NGC
 <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001500156-NVIDIA-GPU-Containers">here</a>).
@@ -1930,7 +1892,7 @@ location (you can also pull your own version if you wish):
 <em>/opt/nesi/containers/nvidia/gromacs-2020_2.sif</em>. We have also provided
 an example submission script that calls the Singularity image here:
 <em>/opt/nesi/containers/nvidia/gromacs-example.sl</em>.</p>
-<h2 id="further-documentation">Further Documentation<a class="headerlink" href="#further-documentation" title="Permanent link">&para;</a></h2>
+<h1 id="further-documentation">Further Documentation<a class="headerlink" href="#further-documentation" title="Permanent link">&para;</a></h1>
 <p><a href="http://www.gromacs.org/">GROMACS Homepage</a></p>
 <p><a href="http://www.gromacs.org/Documentation/Manual">GROMACS Manual</a></p>
 

@@ -877,17 +877,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    GPU use on NeSI
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -898,58 +889,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#request-gpu-resources-using-slurm" class="md-nav__link">
-    Request GPU resources using Slurm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#load-cuda-and-cudnn-modules" class="md-nav__link">
-    Load CUDA and cuDNN modules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-slurm-script" class="md-nav__link">
-    Example Slurm script
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nvidia-nsight-systems-and-compute-profilers" class="md-nav__link">
-    NVIDIA Nsight Systems and Compute profilers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#application-and-toolbox-specific-support-pages" class="md-nav__link">
-    Application and toolbox specific support pages
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1510,49 +1449,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#request-gpu-resources-using-slurm" class="md-nav__link">
-    Request GPU resources using Slurm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#load-cuda-and-cudnn-modules" class="md-nav__link">
-    Load CUDA and cuDNN modules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-slurm-script" class="md-nav__link">
-    Example Slurm script
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nvidia-nsight-systems-and-compute-profilers" class="md-nav__link">
-    NVIDIA Nsight Systems and Compute profilers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#application-and-toolbox-specific-support-pages" class="md-nav__link">
-    Application and toolbox specific support pages
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1587,8 +1485,6 @@
   
 
 
-  <h1>GPU use on NeSI</h1>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -1614,7 +1510,7 @@ page.</p>
  allocation?</a>
  page.</p>
 </div>
-<h2 id="request-gpu-resources-using-slurm">Request GPU resources using Slurm<a class="headerlink" href="#request-gpu-resources-using-slurm" title="Permanent link">&para;</a></h2>
+<h1 id="request-gpu-resources-using-slurm">Request GPU resources using Slurm<a class="headerlink" href="#request-gpu-resources-using-slurm" title="Permanent link">&para;</a></h1>
 <p>To request a GPU for your <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000684396-Submitting-your-first-job">Slurm
 job</a>,
 add the following option at the beginning of your submission script:</p>
@@ -1715,7 +1611,7 @@ $ echo $CUDA_VISIBLE_DEVICES
 0,1
 </code></pre></div></p>
 </div>
-<h2 id="load-cuda-and-cudnn-modules">Load CUDA and cuDNN modules<a class="headerlink" href="#load-cuda-and-cudnn-modules" title="Permanent link">&para;</a></h2>
+<h1 id="load-cuda-and-cudnn-modules">Load CUDA and cuDNN modules<a class="headerlink" href="#load-cuda-and-cudnn-modules" title="Permanent link">&para;</a></h1>
 <p>To use an Nvidia GPU card with your application, you need to load the
 driver and the CUDA toolkit via the <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001113076-The-HPC-environment-">environment
 modules</a>
@@ -1758,7 +1654,7 @@ dedicated module:</p>
 versions can be listed using:</p>
 <div class="highlight"><pre><span></span><code>module spider cuDNN
 </code></pre></div>
-<h2 id="example-slurm-script">Example Slurm script<a class="headerlink" href="#example-slurm-script" title="Permanent link">&para;</a></h2>
+<h1 id="example-slurm-script">Example Slurm script<a class="headerlink" href="#example-slurm-script" title="Permanent link">&para;</a></h1>
 <p>The following Slurm script illustrates a minimal example to request a
 GPU card, load the CUDA toolkit and query some information about the
 GPU:</p>
@@ -1769,14 +1665,14 @@ GPU:</p>
 #SBATCH --cpus-per-task=2   # number of CPUs per task (1 by default)
 #SBATCH --mem=512MB         # amount of memory per node (1 by default)
 
-## load CUDA module
+# load CUDA module
 module purge
 module load CUDA/11.0.2
 
-## display information about the available GPUs
+# display information about the available GPUs
 nvidia-smi
 
-## check the value of the CUDA_VISIBLE_DEVICES variable
+# check the value of the CUDA_VISIBLE_DEVICES variable
 echo &quot;CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES}&quot;
 </code></pre></div>
 <p>Save this in a <code>test_gpu.sl</code> file and submit it using:</p>
@@ -1816,7 +1712,7 @@ CUDA_VISIBLE_DEVICES=0
 <p>CUDA_VISIBLE_DEVICES=0 indicates that this job was allocated to CUDA
  GPU index 0 on this node. It is not a count of allocated GPUs.</p>
 </div>
-<h2 id="nvidia-nsight-systems-and-compute-profilers">NVIDIA Nsight Systems and Compute profilers<a class="headerlink" href="#nvidia-nsight-systems-and-compute-profilers" title="Permanent link">&para;</a></h2>
+<h1 id="nvidia-nsight-systems-and-compute-profilers">NVIDIA Nsight Systems and Compute profilers<a class="headerlink" href="#nvidia-nsight-systems-and-compute-profilers" title="Permanent link">&para;</a></h1>
 <p><a href="https://developer.nvidia.com/nsight-systems">Nsight Systems</a> is a
 system-wide analysis tool, particularly good for profiling CPU-GPU
 interactions. It is provided on Mahuika via the <code>Nsight-Systems</code> module:</p>
@@ -1858,7 +1754,7 @@ module load Nsight-Systems/2020.5.1
 nsys-ui  # this will work only if you have a graphical session
 </code></pre></div></p>
 </div>
-<h2 id="application-and-toolbox-specific-support-pages">Application and toolbox specific support pages<a class="headerlink" href="#application-and-toolbox-specific-support-pages" title="Permanent link">&para;</a></h2>
+<h1 id="application-and-toolbox-specific-support-pages">Application and toolbox specific support pages<a class="headerlink" href="#application-and-toolbox-specific-support-pages" title="Permanent link">&para;</a></h1>
 <p>The following pages provide additional information for supported
 applications:</p>
 <ul>

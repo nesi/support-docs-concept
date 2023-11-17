@@ -1345,17 +1345,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Miniconda3
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1366,44 +1357,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#module-loading-and-conda-environments-isolation" class="md-nav__link">
-    Module loading and conda environments isolation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prevent-conda-from-using-home-storage" class="md-nav__link">
-    Prevent conda from using /home storage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faster-solver-mamba-experimental-feature" class="md-nav__link">
-    Faster solver mamba (experimental feature)
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1716,35 +1669,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#module-loading-and-conda-environments-isolation" class="md-nav__link">
-    Module loading and conda environments isolation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prevent-conda-from-using-home-storage" class="md-nav__link">
-    Prevent conda from using /home storage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faster-solver-mamba-experimental-feature" class="md-nav__link">
-    Faster solver mamba (experimental feature)
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1767,8 +1693,6 @@
   
   
 
-
-  <h1>Miniconda3</h1>
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1798,7 +1722,7 @@ packages and no curation by the NeSI team.</p>
  which provides a default environment pre-installed with a set of
  numerical libraries (numpy, scipy, matplotlib, etc.).</p>
 </div>
-<h2 id="module-loading-and-conda-environments-isolation">Module loading and conda environments isolation<a class="headerlink" href="#module-loading-and-conda-environments-isolation" title="Permanent link">&para;</a></h2>
+<h1 id="module-loading-and-conda-environments-isolation">Module loading and conda environments isolation<a class="headerlink" href="#module-loading-and-conda-environments-isolation" title="Permanent link">&para;</a></h1>
 <p>When using the Miniconda3 module, we recommend using the following
 snippet to ensure that your conda environments can be activated and are
 isolated as possible from the rest of the system:</p>
@@ -1834,7 +1758,7 @@ source $(conda info --base)/etc/profile.d/conda.sh
 export PYTHONNOUSERSITE=1
 </code></pre></div></p>
 </div>
-<h2 id="prevent-conda-from-using-home-storage">Prevent conda from using /home storage<a class="headerlink" href="#prevent-conda-from-using-home-storage" title="Permanent link">&para;</a></h2>
+<h1 id="prevent-conda-from-using-home-storage">Prevent conda from using /home storage<a class="headerlink" href="#prevent-conda-from-using-home-storage" title="Permanent link">&para;</a></h1>
 <p>Conda environments and the conda packages cache can take a lot of
 storage space. By default, Conda use <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000177256-NeSI-File-Systems-and-Quotas">/home
 storage</a>,
@@ -1876,7 +1800,7 @@ environment from an <code>environment.yml</code> file:</p>
  <div class="highlight"><pre><span></span><code>conda config --set env_prompt &#39;({name})&#39;
 </code></pre></div></p>
 </div>
-<h2 id="faster-solver-mamba-experimental-feature">Faster solver <code>mamba</code> (experimental feature)<a class="headerlink" href="#faster-solver-mamba-experimental-feature" title="Permanent link">&para;</a></h2>
+<h1 id="faster-solver-mamba-experimental-feature">Faster solver <code>mamba</code> (experimental feature)<a class="headerlink" href="#faster-solver-mamba-experimental-feature" title="Permanent link">&para;</a></h1>
 <p>If you are using the module <code>Miniconda3/</code><em><code>22.11.1-1</code></em>, you can
 accelerate conda environments creation and package installation using
 the new <code>libmamba</code> solver. To use it, append the option

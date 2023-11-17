@@ -905,17 +905,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    ABAQUS
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -926,44 +917,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#solver-compatibility" class="md-nav__link">
-    Solver Compatibility
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-defined-functions" class="md-nav__link">
-    User Defined Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#environment-file" class="md-nav__link">
-    Environment file
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1716,35 +1669,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#solver-compatibility" class="md-nav__link">
-    Solver Compatibility
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-defined-functions" class="md-nav__link">
-    User Defined Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#environment-file" class="md-nav__link">
-    Environment file
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1803,8 +1729,6 @@
   
 
 
-  <h1>ABAQUS</h1>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -1829,7 +1753,7 @@ licence tokens are your main limiting factor.</p>
 <p>You can force ABAQUS to use a specific licence type by setting the
 parameter <code>academic=TEACHING</code> or <code>academic=RESEARCH</code> in a relevant
 <a href="#env_file">environment file</a>.</p>
-<h2 id="solver-compatibility">Solver Compatibility<a class="headerlink" href="#solver-compatibility" title="Permanent link">&para;</a></h2>
+<h1 id="solver-compatibility">Solver Compatibility<a class="headerlink" href="#solver-compatibility" title="Permanent link">&para;</a></h1>
 <p>Not all solvers are compatible with all types of parallelisation.</p>
 <table>
 <thead>
@@ -2000,7 +1924,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="
 </tbody>
 </table>
 
-<h2 id="user-defined-functions">User Defined Functions<a class="headerlink" href="#user-defined-functions" title="Permanent link">&para;</a></h2>
+<h1 id="user-defined-functions">User Defined Functions<a class="headerlink" href="#user-defined-functions" title="Permanent link">&para;</a></h1>
 <p>User defined functions (UDFs) can be included on the command line with
 the argument <code>user=&lt;filename&gt;</code> where <code>&lt;filename&gt;</code> is the C or fortran
 source code.</p>
@@ -2009,7 +1933,7 @@ source code.</p>
 loaded with <code>module load</code>, you may have to change the <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000329015">compile
 commands</a> in
 your local <code>.env</code> file.</p>
-<h2 id="environment-file">Environment file<a class="headerlink" href="#environment-file" title="Permanent link">&para;</a></h2>
+<h1 id="environment-file">Environment file<a class="headerlink" href="#environment-file" title="Permanent link">&para;</a></h1>
 <p>The <a href="http://media.3ds.com/support/simulia/public/v613/installation-and-licensing-guides/books/sgb/default.htm?startat=ch04s01.html">ABAQUS environment
 file</a> contains
 a number of parameters that define how the your job will run, some of
@@ -2022,12 +1946,12 @@ jobs submitted by you.</p>
 only.</p>
 <p>You may want to include this short snippet when making changes specific
 to a job.</p>
-<div class="highlight"><pre><span></span><code>## Before starting abaqus
+<div class="highlight"><pre><span></span><code># Before starting abaqus
 echo &quot;parameter=value
 parameter=value
 parameter=value&quot; &gt; &quot;abaqus_v6.env&quot;
 
-## After job is finished.
+# After job is finished.
 rm &quot;abaqus_v6.env&quot;
 </code></pre></div>
 <div class="admonition prerequisite useful links">

@@ -717,17 +717,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Offloading to GPU with OpenMP 
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -738,44 +729,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compile" class="md-nav__link">
-    Compile
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1556,35 +1509,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compile" class="md-nav__link">
-    Compile
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1608,8 +1534,6 @@
   
 
 
-  <h1>Offloading to GPU with OpenMP </h1>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -1617,7 +1541,7 @@
 <p>With OpenMP 4.5, it has become possible to offload computations from the
 CPU to a GPU,
 see <a href="https://www.openmp.org/wp-content/uploads/SC18-BoothTalks-Jost.pdf">https://www.openmp.org/wp-content/uploads/SC18-BoothTalks-Jost.pdf</a></p>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<h1 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h1>
 <p>In the following we show how to achieve this in the case of a reduction
 operation involving a large loop:</p>
 <div class="highlight"><pre><span></span><code>#include &lt;iostream&gt;
@@ -1640,7 +1564,7 @@ map(to: n) reduction(+:total)
 </code></pre></div>
 <p>which moves variables <code>total</code> and <code>n</code> to the GPU and creates teams of
 threads to perform the sum operation in parallel. </p>
-<h2 id="compile">Compile<a class="headerlink" href="#compile" title="Permanent link">&para;</a></h2>
+<h1 id="compile">Compile<a class="headerlink" href="#compile" title="Permanent link">&para;</a></h1>
 <p>We'll use the Cray C++ compiler to build the executable but first we
 need to load a few modules:</p>
 <div class="highlight"><pre><span></span><code>module load cray-libsci_acc/18.06.1 craype-accel-nvidia60 \
@@ -1654,7 +1578,7 @@ CC -o totalOmpGpu total.cxx
 </code></pre></div>
 <p>with executable <code>total</code> compiled with <code>-h noomp</code>, i.e. OpenMP turned
 off.</p>
-<h2 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h2>
+<h1 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h1>
 <p>The following commands will submit the runs to the Mahuika queue (note
 <code>--partition=gpu --gres=gpu:1</code> in the case of the executable that
 offloads to the GPU):</p>

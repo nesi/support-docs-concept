@@ -1145,6 +1145,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1173,6 +1175,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1181,36 +1185,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#running-gatk" class="md-nav__link">
-    Running GATK
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gatk-picard" class="md-nav__link">
     GATK-Picard
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-issues" class="md-nav__link">
-    Common Issues
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#out-of-memory-or-insufficient-space-for-shared-memory-file" class="md-nav__link">
-    Out of Memory or Insufficient Space for Shared Memory File
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-is-not-a-supported-reference-file-type" class="md-nav__link">
-    File is not a supported reference file type
   </a>
   
 </li>
@@ -1730,6 +1706,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1738,36 +1716,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#running-gatk" class="md-nav__link">
-    Running GATK
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gatk-picard" class="md-nav__link">
     GATK-Picard
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-issues" class="md-nav__link">
-    Common Issues
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#out-of-memory-or-insufficient-space-for-shared-memory-file" class="md-nav__link">
-    Out of Memory or Insufficient Space for Shared Memory File
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-is-not-a-supported-reference-file-type" class="md-nav__link">
-    File is not a supported reference file type
   </a>
   
 </li>
@@ -1796,8 +1746,6 @@
   
 
 
-  <h1>GATK</h1>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -1809,7 +1757,7 @@ regarded as the industry standard for identifying SNPS and indels in
 germline DNA and RNAseq data.</p>
 <p>General documentation for running GATK can be found at their website
 <a href="https://gatk.broadinstitute.org/hc/en-us">here.</a></p>
-<h2 id="running-gatk">Running GATK<a class="headerlink" href="#running-gatk" title="Permanent link">&para;</a></h2>
+<h1 id="running-gatk">Running GATK<a class="headerlink" href="#running-gatk" title="Permanent link">&para;</a></h1>
 <p>GATK uses requires the Java Runtime Environment. The appropriate version
 of Java is already included as part of the GATK module, you will not
 need to load a Java module separately.</p>
@@ -1827,19 +1775,19 @@ need to load a Java module separately.</p>
 #SBATCH --time=2:00:00         # maximum run time hh:mm:ss
 #SBATCH --mem=30G              # maximum memory available to GATK
 
-## create temporary directory for Java so it does not fill up /tmp
+# create temporary directory for Java so it does not fill up /tmp
 TMPDIR=/nesi/nobackup/&lt;project_ID&gt;/GATK_tmp/
 mkdir -p ${TMPDIR}
 
-## remove other modules that may be loaded
-## load specific GATK version
+# remove other modules that may be loaded
+# load specific GATK version
 module purge
 module load GATK/4.3.0.0-gimkl-2022a
 
-## tell Java to use ${TMPDIR} as the temporary directory
+# tell Java to use ${TMPDIR} as the temporary directory
 export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR} 
 
-## run GATK command
+# run GATK command
 gatk MarkDuplicates I=input.bam O=marked_duplicates.bam M=marked_dup_metrics.txt
 </code></pre></div>
 <h2 id="gatk-picard">GATK-Picard<a class="headerlink" href="#gatk-picard" title="Permanent link">&para;</a></h2>
@@ -1854,7 +1802,7 @@ documentation, you do not need to call "java -jar picard.jar
 the function of interest.</p>
 <p>Please also note that there are some inconsistencies between Picard and
 GATK flag naming conventions, so it is best to double check them.</p>
-<h2 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h2>
+<h1 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h1>
 <h2 id="out-of-memory-or-insufficient-space-for-shared-memory-file">Out of Memory or Insufficient Space for Shared Memory File<a class="headerlink" href="#out-of-memory-or-insufficient-space-for-shared-memory-file" title="Permanent link">&para;</a></h2>
 <p>This is related to temporary files being created by Java in <code>/tmp</code>, and
 then running out of space. If you see the error message
@@ -1864,11 +1812,11 @@ Java applications pointing to the small temporary filesystem available
 in a compute node.</p>
 <p>To work around this, create another directory to use for temporrary
 files.</p>
-<div class="highlight"><pre><span></span><code>## create a new temporary directory
+<div class="highlight"><pre><span></span><code># create a new temporary directory
 TMPDIR=&quot;/nesi/nobackup/&lt;project_directory&gt;/GATK_tmp/&quot;
 mkdir -p ${TMPDIR}
 
-## put this line in AFTER you load GATK but BEFORE running GATK
+# put this line in AFTER you load GATK but BEFORE running GATK
 export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR} 
 </code></pre></div>
 <h2 id="file-is-not-a-supported-reference-file-type">File is not a supported reference file type<a class="headerlink" href="#file-is-not-a-supported-reference-file-type" title="Permanent link">&para;</a></h2>

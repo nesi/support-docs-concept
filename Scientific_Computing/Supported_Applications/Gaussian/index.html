@@ -1964,14 +1964,14 @@ cat<span class="w"> </span><span class="nv">$0</span>
 
 module<span class="w"> </span>load<span class="w"> </span>Gaussian/09-D.01
 
-<span class="c1">## System name</span>
+<span class="c1"># System name</span>
 <span class="nv">system</span><span class="o">=</span><span class="s2">&quot;H2O&quot;</span>
 
-<span class="c1">## Get the current directory</span>
+<span class="c1"># Get the current directory</span>
 <span class="nv">start_dir</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
 <span class="nv">gjf_template</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">system</span><span class="si">}</span><span class="s2">.gjf.template&quot;</span>
 
-<span class="c1">## Prepare a job-specific nobackup directory and set GAUSS_SCRDIR accordingly</span>
+<span class="c1"># Prepare a job-specific nobackup directory and set GAUSS_SCRDIR accordingly</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_COUNT</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_COUNT</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]]</span>
 <span class="k">then</span>
 <span class="w">        </span><span class="nv">job_code</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SLURM_ARRAY_JOB_ID</span><span class="si">}</span><span class="s2">_</span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -1981,7 +1981,7 @@ module<span class="w"> </span>load<span class="w"> </span>Gaussian/09-D.01
 <span class="nb">export</span><span class="w"> </span><span class="nv">GAUSS_SCRDIR</span><span class="o">=</span><span class="s2">&quot;/nesi/nobackup/</span><span class="si">${</span><span class="nv">SLURM_JOB_ACCOUNT</span><span class="si">}</span><span class="s2">/mahuika_job_</span><span class="si">${</span><span class="nv">job_code</span><span class="si">}</span><span class="s2">&quot;</span>
 /usr/bin/mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">GAUSS_SCRDIR</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="c1">## Calculate the number of CPUs to use within Gaussian</span>
+<span class="c1"># Calculate the number of CPUs to use within Gaussian</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span>
 <span class="k">then</span>
 <span class="w">        </span><span class="nv">gaussian_ncpus</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -1989,8 +1989,8 @@ module<span class="w"> </span>load<span class="w"> </span>Gaussian/09-D.01
 <span class="w">        </span><span class="nv">gaussian_ncpus</span><span class="o">=</span><span class="m">1</span>
 <span class="k">fi</span>
 
-<span class="c1">## Calculate the amount of memory to use within Gaussian</span>
-<span class="c1">## That is, amount of memory requested of Slurm minus 2 GB</span>
+<span class="c1"># Calculate the amount of memory to use within Gaussian</span>
+<span class="c1"># That is, amount of memory requested of Slurm minus 2 GB</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SLURM_MEM_PER_NODE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SLURM_MEM_PER_NODE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-ge<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="o">]]</span>
 <span class="k">then</span>
 <span class="w">        </span><span class="nv">gaussian_memory</span><span class="o">=</span><span class="k">$((</span><span class="si">${</span><span class="nv">SLURM_MEM_PER_NODE</span><span class="si">}</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2048</span><span class="k">))</span>

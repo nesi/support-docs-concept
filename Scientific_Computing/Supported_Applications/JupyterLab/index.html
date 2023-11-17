@@ -1245,6 +1245,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1273,19 +1275,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#launch-jupyterlab" class="md-nav__link">
-    Launch JupyterLab
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#setup-ssh-port-forwarding" class="md-nav__link">
@@ -1344,34 +1341,6 @@
         <li class="md-nav__item">
   <a href="#jupyterlab-in-your-local-browser" class="md-nav__link">
     JupyterLab in your local browser
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kernels" class="md-nav__link">
-    Kernels
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#r" class="md-nav__link">
-    R
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#spark" class="md-nav__link">
-    Spark
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#packages" class="md-nav__link">
-    Packages
   </a>
   
 </li>
@@ -1791,19 +1760,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#launch-jupyterlab" class="md-nav__link">
-    Launch JupyterLab
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#setup-ssh-port-forwarding" class="md-nav__link">
@@ -1866,34 +1830,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#kernels" class="md-nav__link">
-    Kernels
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#r" class="md-nav__link">
-    R
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#spark" class="md-nav__link">
-    Spark
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#packages" class="md-nav__link">
-    Packages
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1917,8 +1853,6 @@
   
   
 
-
-  <h1>JupyterLab</h1>
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1966,7 +1900,7 @@ steps, which are then described in more details:</p>
 <li><a href="#h_e7f80560-91c0-420a-bccb-17bbf8c2e916">Kernels</a></li>
 <li><a href="#h_04f2f4e2-8e7a-486d-aea5-e020eb9df66e">Packages</a></li>
 </ul>
-<h2 id="launch-jupyterlab">Launch JupyterLab<a class="headerlink" href="#launch-jupyterlab" title="Permanent link">&para;</a></h2>
+<h1 id="launch-jupyterlab">Launch JupyterLab<a class="headerlink" href="#launch-jupyterlab" title="Permanent link">&para;</a></h1>
 <p>Since JupyterLab is a web based application, and at NeSI launched behind
 the firewall, a <strong>port</strong> needs to be forwarded to your local machine,
 where your browser should connected. This ports are numbers between 2000
@@ -2113,7 +2047,7 @@ will be affected).</p>
 URL specified by the JupyterLab server into the address bar. After
 initializing Jupyter Lab you should see a page similar to:</p>
 <p><img alt="Jupyter.PNG" src="../../../assets/images/JupyterLab_0.PNG" /></p>
-<h2 id="kernels">Kernels<a class="headerlink" href="#kernels" title="Permanent link">&para;</a></h2>
+<h1 id="kernels">Kernels<a class="headerlink" href="#kernels" title="Permanent link">&para;</a></h1>
 <p>The following JupyterLab kernel are installed:</p>
 <ul>
 <li>Python3</li>
@@ -2124,13 +2058,13 @@ initializing Jupyter Lab you should see a page similar to:</p>
 <p>verify that the module IRkernel is loaded</p>
 <div class="highlight"><pre><span></span><code>module load IRkernel
 </code></pre></div>
-<h2 id="spark">Spark<a class="headerlink" href="#spark" title="Permanent link">&para;</a></h2>
+<h1 id="spark">Spark<a class="headerlink" href="#spark" title="Permanent link">&para;</a></h1>
 <p>pySpark and SparkR is supported in NeSI Jupyter notebooks. Therefore,
 the module Spark needs to be loaded before starting Jupyter. Please run
 Spark workflows on compute nodes.</p>
 <div class="highlight"><pre><span></span><code>module load Spark
 </code></pre></div>
-<h2 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h2>
+<h1 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h1>
 <p>There are a long list of default packages provided by the JupyterLab
 environment module (list all using <code>!pip list</code>) and R (list using
 <code>installed.packages(.Library)</code>, note the list is shortened). </p>

@@ -1485,7 +1485,7 @@ to configure SSH first.</p>
 <p>Use the following commands to mount your home directory from Mahuika on
 your local machine (the same command will work for Māui, just replace
 the names):</p>
-<div class="highlight"><pre><span></span><code>## create a mount point and connect
+<div class="highlight"><pre><span></span><code># create a mount point and connect
 mkdir -p ~/mahuika-home
 sshfs -oauto_cache,follow_symlinks mahuika: ~/mahuika-home
 </code></pre></div>
@@ -1495,7 +1495,7 @@ directory run:</p>
 <div class="highlight"><pre><span></span><code>fusermount -u ~/mahuika-home
 </code></pre></div>
 <p>To mount a project directory, you could run:</p>
-<div class="highlight"><pre><span></span><code>## create a mount point and connect
+<div class="highlight"><pre><span></span><code># create a mount point and connect
 mkdir -p ~/mahuika-project
 sshfs -oauto_cache,follow_symlinks mahuika:/nesi/project/nesiXXXXX ~/mahuika-project
 </code></pre></div>
@@ -1503,7 +1503,7 @@ sshfs -oauto_cache,follow_symlinks mahuika:/nesi/project/nesiXXXXX ~/mahuika-pro
 <p>We recommend using some extra options with MacOS. The following commands
 will mount your home directory, make it show up under devices in Finder
 and give the volume a sensible name:</p>
-<div class="highlight"><pre><span></span><code>## create a mount point and connect
+<div class="highlight"><pre><span></span><code># create a mount point and connect
 mkdir -p ~/mahuika-home
 sshfs mahuika: ~/mahuika-home \
     -oauto_cache,follow_symlinks \

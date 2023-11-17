@@ -537,17 +537,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Build an Apptainer container on a Milan compute node
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -558,37 +549,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#building-container-via-slurm" class="md-nav__link">
-    Building container via Slurm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-limitations" class="md-nav__link">
-    Known limitations
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1549,28 +1509,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#building-container-via-slurm" class="md-nav__link">
-    Building container via Slurm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-limitations" class="md-nav__link">
-    Known limitations
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1594,15 +1534,13 @@
   
 
 
-  <h1>Build an Apptainer container on a Milan compute node</h1>
-
 <p>This article describes a technique to build
 <a href="https://apptainer.org/">Apptainer</a> containers using <a href="https://support.nesi.org.nz/hc/en-gb/articles/6367209795471">Milan compute
 nodes</a>, via
 a Slurm job. You can also build
 <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001107916">Singularity</a>
 container using this technique.</p>
-<h2 id="building-container-via-slurm">Building container via Slurm<a class="headerlink" href="#building-container-via-slurm" title="Permanent link">&para;</a></h2>
+<h1 id="building-container-via-slurm">Building container via Slurm<a class="headerlink" href="#building-container-via-slurm" title="Permanent link">&para;</a></h1>
 <p>The new Milan compute nodes can be used to build Apptainer containers
 using the <a href="https://apptainer.org/docs/user/main/fakeroot.html">fakeroot
 feature</a>. This
@@ -1627,21 +1565,21 @@ container:</p>
 #SBATCH --mem=4GB
 #SBATCH --cpus-per-task=2
 
-## load environment module
+# load environment module
 module purge
 module load Apptainer/1.2.2
 
-## recent Apptainer modules set APPTAINER_BIND, which typically breaks
-## container builds, so unset it here
+# recent Apptainer modules set APPTAINER_BIND, which typically breaks
+# container builds, so unset it here
 unset APPTAINER_BIND
 
-## create a build and cache directory on nobackup storage
+# create a build and cache directory on nobackup storage
 export APPTAINER_CACHEDIR=&quot;/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_cache&quot;
 export APPTAINER_TMPDIR=&quot;/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_tmpdir&quot;
 mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
 setfacl -b $APPTAINER_TMPDIR
 
-## build the container
+# build the container
 apptainer build --force --fakeroot my_container.sif my_container.def
 </code></pre></div>
 <p>Note this script will start an Slurm job for 30 minutes using 2 cores
@@ -1667,7 +1605,7 @@ page.</p>
  In this example, the Slurm job submission script creates these folders
  using your project <code>nobackup</code> folder.</p>
 </div>
-<h2 id="known-limitations">Known limitations<a class="headerlink" href="#known-limitations" title="Permanent link">&para;</a></h2>
+<h1 id="known-limitations">Known limitations<a class="headerlink" href="#known-limitations" title="Permanent link">&para;</a></h1>
 <p>If your container uses RPM to install packages, i.e. is based on CentOS
 or Rocky Linux, you need to disable the <code>APPTAINER_TMPDIR</code> environment
 variable (use <code>unset APPTAINER_TMPDIR</code>) and request more memory for your
@@ -1691,7 +1629,7 @@ this case, try an older image version or a different base image.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2023</span>
       
         <br>
         Created:

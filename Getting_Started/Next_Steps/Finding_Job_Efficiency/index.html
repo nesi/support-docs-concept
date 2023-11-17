@@ -607,6 +607,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -635,19 +637,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#on-job-completion" class="md-nav__link">
-    On Job Completion
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#walltime" class="md-nav__link">
@@ -666,41 +663,6 @@
         <li class="md-nav__item">
   <a href="#cpus" class="md-nav__link">
     CPU's
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#during-runtime" class="md-nav__link">
-    During Runtime
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finding-job-node" class="md-nav__link">
-    Finding Job Node
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#htop" class="md-nav__link">
-    htop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations-of-using-cpu-efficiency" class="md-nav__link">
-    Limitations of using CPU Efficiency
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
   </a>
   
 </li>
@@ -1238,19 +1200,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#on-job-completion" class="md-nav__link">
-    On Job Completion
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#walltime" class="md-nav__link">
@@ -1269,41 +1226,6 @@
         <li class="md-nav__item">
   <a href="#cpus" class="md-nav__link">
     CPU's
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#during-runtime" class="md-nav__link">
-    During Runtime
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finding-job-node" class="md-nav__link">
-    Finding Job Node
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#htop" class="md-nav__link">
-    htop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations-of-using-cpu-efficiency" class="md-nav__link">
-    Limitations of using CPU Efficiency
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
   </a>
   
 </li>
@@ -1343,13 +1265,11 @@
   
 
 
-  <h1>Finding Job Efficiency</h1>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
 </div>
-<h2 id="on-job-completion">On Job Completion<a class="headerlink" href="#on-job-completion" title="Permanent link">&para;</a></h2>
+<h1 id="on-job-completion">On Job Completion<a class="headerlink" href="#on-job-completion" title="Permanent link">&para;</a></h1>
 <p>It is good practice to have a look at the resources your job used on
 completion, this way you can improve your job specifications in the
 future.</p>
@@ -1434,7 +1354,7 @@ consumed by shared libraries)<br />
 <strong>USS-Unique Set Size</strong> - Process consumed physical memory alone (does
 not contain the memory occupied by the shared library)<br />
 <code>PSS = USS + (RSS/# shared processes)</code></p>
-<h2 id="during-runtime">During Runtime<a class="headerlink" href="#during-runtime" title="Permanent link">&para;</a></h2>
+<h1 id="during-runtime">During Runtime<a class="headerlink" href="#during-runtime" title="Permanent link">&para;</a></h1>
 <p>In order to check in on a job that is running, you will need to ssh to
 the compute node where it it running.</p>
 <h2 id="finding-job-node">Finding Job Node<a class="headerlink" href="#finding-job-node" title="Permanent link">&para;</a></h2>
@@ -1477,7 +1397,7 @@ height="252" alt="how_to_read_htop.png" /></p>
 <p>If the job finishes, or is killed you will be kicked off the node. If
  htop freezes, type <code>reset</code> to clear your terminal.</p>
 </div>
-<h2 id="limitations-of-using-cpu-efficiency">Limitations of using CPU Efficiency<a class="headerlink" href="#limitations-of-using-cpu-efficiency" title="Permanent link">&para;</a></h2>
+<h1 id="limitations-of-using-cpu-efficiency">Limitations of using CPU Efficiency<a class="headerlink" href="#limitations-of-using-cpu-efficiency" title="Permanent link">&para;</a></h1>
 <p>CPU efficiency, as described here, only represents the <em>percentage of
 time</em> the CPUs are in use. This is not enough to get a picture of
 overall job efficiency, as required CPU time <em>may vary by number of

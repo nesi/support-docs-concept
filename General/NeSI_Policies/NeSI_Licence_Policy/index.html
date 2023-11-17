@@ -805,6 +805,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -833,19 +835,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#licence-servers" class="md-nav__link">
-    Licence Servers
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#institutional-licences" class="md-nav__link">
@@ -857,27 +854,6 @@
         <li class="md-nav__item">
   <a href="#personal-or-research-group-licences" class="md-nav__link">
     Personal or Research Group Licences
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#licence-files" class="md-nav__link">
-    Licence Files
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#software-without-built-in-licence-management" class="md-nav__link">
-    Software without built-in licence management
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slurm-tokens" class="md-nav__link">
-    Slurm Tokens
   </a>
   
 </li>
@@ -1233,19 +1209,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#licence-servers" class="md-nav__link">
-    Licence Servers
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#institutional-licences" class="md-nav__link">
@@ -1257,27 +1228,6 @@
         <li class="md-nav__item">
   <a href="#personal-or-research-group-licences" class="md-nav__link">
     Personal or Research Group Licences
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#licence-files" class="md-nav__link">
-    Licence Files
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#software-without-built-in-licence-management" class="md-nav__link">
-    Software without built-in licence management
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slurm-tokens" class="md-nav__link">
-    Slurm Tokens
   </a>
   
 </li>
@@ -1306,8 +1256,6 @@
   
 
 
-  <h1>NeSI Licence Policy</h1>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -1321,7 +1269,7 @@ need to have an appropriate licence.</p>
 <p>Slurm and many other applications use the American spelling of the
  noun, "<em>license</em>".</p>
 </div>
-<h2 id="licence-servers">Licence Servers<a class="headerlink" href="#licence-servers" title="Permanent link">&para;</a></h2>
+<h1 id="licence-servers">Licence Servers<a class="headerlink" href="#licence-servers" title="Permanent link">&para;</a></h1>
 <p>The most common method of licence control is using 'floating' network
 licences hosted on an external server. In order for a user on a NeSI
 cluster to check out a licence, the address of that server must be
@@ -1350,7 +1298,7 @@ on a computer that has a static IP address and is visible on the public
 internet. Setting up your computer in this way and securing it is beyond
 the scope of this article, but will involve talking to your
 institution's IT department or to your internet service provider (ISP).</p>
-<h2 id="licence-files">Licence Files<a class="headerlink" href="#licence-files" title="Permanent link">&para;</a></h2>
+<h1 id="licence-files">Licence Files<a class="headerlink" href="#licence-files" title="Permanent link">&para;</a></h1>
 <p>An alternative to licence servers, used by some programs, is a licence
 file that contains a code issued to that user or group during the
 registration process.</p>
@@ -1361,7 +1309,7 @@ will be done during installation of the software.</p>
 <p>It is important for us to know who is eligible to use any particular
 licence file, so that we don't accidentally allow unauthorised persons
 to use a given piece of software.</p>
-<h2 id="software-without-built-in-licence-management">Software without built-in licence management<a class="headerlink" href="#software-without-built-in-licence-management" title="Permanent link">&para;</a></h2>
+<h1 id="software-without-built-in-licence-management">Software without built-in licence management<a class="headerlink" href="#software-without-built-in-licence-management" title="Permanent link">&para;</a></h1>
 <p>Some software packages do not provide their own licence management
 systems (servers, files, etc.). The owners of these packages rely on us
 as the system administrators to prevent unauthorised use.</p>
@@ -1393,7 +1341,7 @@ using the software on NeSI.</p>
  complies with the terms of your licence or is otherwise permitted by
  law.</strong></p>
 </div>
-<h2 id="slurm-tokens">Slurm Tokens<a class="headerlink" href="#slurm-tokens" title="Permanent link">&para;</a></h2>
+<h1 id="slurm-tokens">Slurm Tokens<a class="headerlink" href="#slurm-tokens" title="Permanent link">&para;</a></h1>
 <p>We encourage the use of Slurm licence tokens in your batch scripts, for
 example:</p>
 <div class="highlight"><pre><span></span><code>#SBATCH --licenses ansys_hpc@uoa_foe:60,ansys_r@uoa_foe

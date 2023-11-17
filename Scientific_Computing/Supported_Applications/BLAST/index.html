@@ -965,17 +965,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    BLAST
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -986,51 +977,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#blast-databases" class="md-nav__link">
-    BLAST Databases
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-scripts" class="md-nav__link">
-    Example scripts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#single-thread" class="md-nav__link">
-    Single Thread
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multiple-threads-and-local-database-copy" class="md-nav__link">
-    Multiple threads and local database copy
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1723,42 +1669,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#blast-databases" class="md-nav__link">
-    BLAST Databases
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-scripts" class="md-nav__link">
-    Example scripts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#single-thread" class="md-nav__link">
-    Single Thread
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multiple-threads-and-local-database-copy" class="md-nav__link">
-    Multiple threads and local database copy
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1799,8 +1711,6 @@
   
 
 
-  <h1>BLAST</h1>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -1808,7 +1718,7 @@
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 
-<h2 id="blast-databases">BLAST Databases<a class="headerlink" href="#blast-databases" title="Permanent link">&para;</a></h2>
+<h1 id="blast-databases">BLAST Databases<a class="headerlink" href="#blast-databases" title="Permanent link">&para;</a></h1>
 <p>We download the standard NCBI databases quarterly, and create a
 corresponding environment module named like <code>BLASTDB/&lt;yyyy-mm&gt;</code> which
 sets the BLASTDB environment variable accordingly. If you want to use
@@ -1821,7 +1731,7 @@ ls $BLASTDB
 <p>Because we only keep a few recent versions of the databases, you may be
 required from time to time to change the BLASTDB module version if you
 use old job submission scripts as templates for new ones.</p>
-<h2 id="example-scripts">Example scripts<a class="headerlink" href="#example-scripts" title="Permanent link">&para;</a></h2>
+<h1 id="example-scripts">Example scripts<a class="headerlink" href="#example-scripts" title="Permanent link">&para;</a></h1>
 <p>When given a large amount of query sequence to get through the BLAST
 search programs will take batches of it, running through the database
 with each batch and then starting over with the next batch.  This can
@@ -1846,7 +1756,7 @@ settings.  </p>
 module<span class="w"> </span>load<span class="w"> </span>BLAST/2.13.0-GCC-11.3.0
 module<span class="w"> </span>load<span class="w"> </span>BLASTDB/2023-01
 
-<span class="c1">## This script takes one argument, the FASTA file of query sequences.</span>
+<span class="c1"># This script takes one argument, the FASTA file of query sequences.</span>
 <span class="nv">QUERIES</span><span class="o">=</span><span class="nv">$1</span>
 <span class="nv">FORMAT</span><span class="o">=</span><span class="s2">&quot;6 qseqid qstart qend qseq sseqid sgi sacc sstart send staxids sscinames stitle length evalue bitscore&quot;</span>
 <span class="nv">BLASTOPTS</span><span class="o">=</span><span class="s2">&quot;-evalue 0.05 -max_target_seqs 10&quot;</span>
@@ -1878,7 +1788,7 @@ allowed for in the memory requested by the job.  As of mid 2023 that is
 module<span class="w"> </span>load<span class="w"> </span>BLAST/2.13.0-GCC-11.3.0
 module<span class="w"> </span>load<span class="w"> </span>BLASTDB/2023-01
 
-<span class="c1">## This script takes one argument, the FASTA file of query sequences.</span>
+<span class="c1"># This script takes one argument, the FASTA file of query sequences.</span>
 <span class="nv">QUERIES</span><span class="o">=</span><span class="nv">$1</span>
 <span class="nv">FORMAT</span><span class="o">=</span><span class="s2">&quot;6 qseqid qstart qend qseq sseqid sgi sacc sstart send staxids sscinames stitle length evalue bitscore&quot;</span>
 <span class="nv">BLASTOPTS</span><span class="o">=</span><span class="s2">&quot;-task blastn&quot;</span>
@@ -1887,7 +1797,7 @@ module<span class="w"> </span>load<span class="w"> </span>BLASTDB/2023-01
 <span class="c1">#BLASTAPP=blastx</span>
 <span class="c1">#DB=nr</span>
 
-<span class="c1">## Keep the database in RAM</span>
+<span class="c1"># Keep the database in RAM</span>
 cp<span class="w"> </span><span class="nv">$BLASTDB</span>/<span class="o">{</span><span class="nv">$DB</span>,taxdb<span class="o">}</span>.*<span class="w"> </span><span class="nv">$TMPDIR</span>/<span class="w"> </span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">BLASTDB</span><span class="o">=</span><span class="nv">$TMPDIR</span>
 

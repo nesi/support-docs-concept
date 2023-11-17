@@ -917,17 +917,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Job Checkpointing
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -938,44 +929,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#queueing" class="md-nav__link">
-    Queueing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matlab" class="md-nav__link">
-    Matlab
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1496,35 +1449,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#queueing" class="md-nav__link">
-    Queueing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matlab" class="md-nav__link">
-    Matlab
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1548,8 +1474,6 @@
   
 
 
-  <h1>Job Checkpointing</h1>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -1562,35 +1486,35 @@ running jobs.</p>
 <p>How checkpointing can be implemented depends on the application/code
 being used, some will have inbuilt methods whereas others might require
 some scripting.</p>
-<h2 id="queueing">Queueing<a class="headerlink" href="#queueing" title="Permanent link">&para;</a></h2>
+<h1 id="queueing">Queueing<a class="headerlink" href="#queueing" title="Permanent link">&para;</a></h1>
 <p>Checkpointing code has the added advantage that it allows you to split
 your work into smaller jobs, allowing them to move through the queue
 faster. </p>
 <p>Below is an example of submitting the same job again, if previous has
 run successfully.</p>
-<div class="highlight"><pre><span></span><code>## Slurm header &#39;#SBATCH etc etc
+<div class="highlight"><pre><span></span><code># Slurm header &#39;#SBATCH etc etc
 
 sbatch --dependency=afterok:${SLURM_JOB_ID} &quot;$0&quot; 
-## &quot;$0&quot; is equal to the name of this script.
+# &quot;$0&quot; is equal to the name of this script.
 
-## Code that implements checkpointing
+# Code that implements checkpointing
 </code></pre></div>
 <p>This job will resubmit itself forever until stopped.</p>
 <p>Another example for a job requiring explicit step inputs.</p>
-<div class="highlight"><pre><span></span><code>## Slurm header &#39;#SBATCH etc etc
+<div class="highlight"><pre><span></span><code># Slurm header &#39;#SBATCH etc etc
 
 n_steps=1000
 starting_step=${1:-0} # Will be equal to first argument, or &#39;0&#39; if unset.
 ending_step=$(( starting_step + n_steps )) 
 
-## Submit next step with starting step equal to ending step of this job.
+# Submit next step with starting step equal to ending step of this job.
 sbatch --dependency=afterok:${SLURM_JOB_ID} &quot;$0&quot; ${ending_step}
 
 my-program --nfirst ${starting_step} --nlast ${ending_step}
 </code></pre></div>
 <p>The use of <code>--dependency</code> has the advantage of adding the next job to
 the queue <em>before</em> starting, saving queue time in between jobs.</p>
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
 <h2 id="matlab">Matlab<a class="headerlink" href="#matlab" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>% If checkpoint file, load from there.
 checkpoint=&#39;checkpoint_2020-03-09T0916.mat&#39;;

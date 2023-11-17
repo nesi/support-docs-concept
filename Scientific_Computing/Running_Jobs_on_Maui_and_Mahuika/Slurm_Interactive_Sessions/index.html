@@ -1853,12 +1853,14 @@ the earlier suggestion to something specific to interactive jobs in the
 job name.</p>
 <p>For example, if all your interactive job names start with the text "IJ",
 you could do this:</p>
-<div class="highlight"><pre><span></span><code>## -u $(whoami) restricts the search to my jobs only.
-## The --states=PD option restricts the search to pending jobs only.
-## ## Each &lt;tab&gt; string should be replaced with a literal tab character. If you
-## can&#39;t insert one by pressing the tab key on your keyboard, you should be
-## able to insert one by pressing Ctrl-V followed immediately by Ctrl-I.
-## squeue -u $(whoami) --states=PD -o &quot;%A&lt;tab&gt;%j&quot; | grep &quot;&lt;tab&gt;IJ&quot;
+<div class="highlight"><pre><span></span><code># -u $(whoami) restricts the search to my jobs only.
+# The --states=PD option restricts the search to pending jobs only.
+#
+# Each &lt;tab&gt; string should be replaced with a literal tab character. If you
+# can&#39;t insert one by pressing the tab key on your keyboard, you should be
+# able to insert one by pressing Ctrl-V followed immediately by Ctrl-I.
+#
+squeue -u $(whoami) --states=PD -o &quot;%A&lt;tab&gt;%j&quot; | grep &quot;&lt;tab&gt;IJ&quot;
 </code></pre></div>
 <p>The above command will return a list of your jobs whose names <em>start</em>
 with the text "IJ". In this respect, it's more flexible than the <code>-n</code>

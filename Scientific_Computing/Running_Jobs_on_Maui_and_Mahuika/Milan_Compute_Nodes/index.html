@@ -997,17 +997,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Milan Compute Nodes
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1018,93 +1009,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-access" class="md-nav__link">
-    How to access
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
-    Hardware
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
-    Software
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operating-system" class="md-nav__link">
-    Operating System
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#older-intel-and-cray-software" class="md-nav__link">
-    Older Intel and Cray software
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#intel-mkl-performance" class="md-nav__link">
-    Intel MKL performance
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#do-i-need-to-recompile-my-code" class="md-nav__link">
-    Do I need to recompile my code?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aocc-compiler-suite" class="md-nav__link">
-    AOCC compiler suite
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#network" class="md-nav__link">
-    Network
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#any-questions" class="md-nav__link">
-    Any questions?
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1545,84 +1449,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-access" class="md-nav__link">
-    How to access
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
-    Hardware
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
-    Software
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operating-system" class="md-nav__link">
-    Operating System
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#older-intel-and-cray-software" class="md-nav__link">
-    Older Intel and Cray software
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#intel-mkl-performance" class="md-nav__link">
-    Intel MKL performance
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#do-i-need-to-recompile-my-code" class="md-nav__link">
-    Do I need to recompile my code?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aocc-compiler-suite" class="md-nav__link">
-    AOCC compiler suite
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#network" class="md-nav__link">
-    Network
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#any-questions" class="md-nav__link">
-    Any questions?
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1646,13 +1474,11 @@
   
 
 
-  <h1>Milan Compute Nodes</h1>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
 </div>
-<h2 id="how-to-access">How to access<a class="headerlink" href="#how-to-access" title="Permanent link">&para;</a></h2>
+<h1 id="how-to-access">How to access<a class="headerlink" href="#how-to-access" title="Permanent link">&para;</a></h1>
 <p>To use Mahuika's Milan nodes, you will need to explicitly specify the
 <code>milan</code> partition in your <code>sbatch</code> command line. Jobs are submitted from
 the same Mahuika login node that you currently use, and share the same
@@ -1663,7 +1489,7 @@ file system as other cluster nodes. </p>
 the job description file:</p>
 <div class="highlight"><pre><span></span><code>#SBATCH --partition=milan
 </code></pre></div>
-<h2 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h2>
+<h1 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h1>
 <p>Each node has two AMD Milan CPUs, each with 8 "chiplets" of 8 cores and
 one level 3 cache, so each node has a total of <strong>128 cores</strong> or 256
 hyperthreaded CPUs. This represents a significant increase of the number
@@ -1671,7 +1497,7 @@ CPUs per node compared to the Broadwell nodes (36 cores). </p>
 <p>The memory available to Slurm jobs is 512GB per node, so approximately
 2GB per CPU. There are 64 nodes available, 8 of which will have double
 the memory (1T).</p>
-<h2 id="software">Software<a class="headerlink" href="#software" title="Permanent link">&para;</a></h2>
+<h1 id="software">Software<a class="headerlink" href="#software" title="Permanent link">&para;</a></h1>
 <h2 id="operating-system">Operating System<a class="headerlink" href="#operating-system" title="Permanent link">&para;</a></h2>
 <p>The existing Mahuika compute nodes use Linux Centos 7.4 while the new
 ones use Rocky 8.5.  These are closely related Linux distributions. The
@@ -1734,7 +1560,7 @@ to try it:</p>
 <p>For more information on AOCC compiler suite please, visit <a href="https://developer.amd.com/amd-aocc/">AMD
 Optimizing C/C++ and Fortran Compilers
 (AOCC)</a></p>
-<h2 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h2>
+<h1 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h1>
 <p>Access to Mahuika's Milan nodes is currently only possible via the Slurm
 <code>sbatch</code> and <code>srun</code> commands. There is no ssh access, not even to the
 nodes where you have a job running. Programs that launch their remote
@@ -1744,7 +1570,7 @@ HTTP based progress monitoring, and non-MPI distributed programs such as
 Dask or PEST, will generally only work if you use the Infiniband address
 of the compute node, eg: <em>wmc012.ib.hpcf.nesi.org.nz</em>. This networking
 configuration is expected to be addressed in the future.</p>
-<h2 id="any-questions">Any questions?<a class="headerlink" href="#any-questions" title="Permanent link">&para;</a></h2>
+<h1 id="any-questions">Any questions?<a class="headerlink" href="#any-questions" title="Permanent link">&para;</a></h1>
 <p>Don't hesitate to contact us at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;</a>. No question is
 too big or small. We are available for Zoom sessions or <a href="https://support.nesi.org.nz/hc/en-gb/articles/4830713922063">Weekly Online
 Office

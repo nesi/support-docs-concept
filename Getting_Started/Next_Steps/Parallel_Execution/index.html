@@ -707,17 +707,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Parallel Execution
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -728,71 +719,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#multi-threading" class="md-nav__link">
-    Multi-threading
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mpi" class="md-nav__link">
-    MPI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#job-arrays" class="md-nav__link">
-    Job Arrays
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-slurm_array_task_id" class="md-nav__link">
-    Using SLURM_ARRAY_TASK_ID
-  </a>
-  
-    <nav class="md-nav" aria-label="Using SLURM_ARRAY_TASK_ID">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#multidimensional-array-example" class="md-nav__link">
-    Multidimensional array example
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#avoiding-conflicts" class="md-nav__link">
-    Avoiding Conflicts
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1223,62 +1149,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#multi-threading" class="md-nav__link">
-    Multi-threading
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mpi" class="md-nav__link">
-    MPI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#job-arrays" class="md-nav__link">
-    Job Arrays
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-slurm_array_task_id" class="md-nav__link">
-    Using SLURM_ARRAY_TASK_ID
-  </a>
-  
-    <nav class="md-nav" aria-label="Using SLURM_ARRAY_TASK_ID">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#multidimensional-array-example" class="md-nav__link">
-    Multidimensional array example
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#avoiding-conflicts" class="md-nav__link">
-    Avoiding Conflicts
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1301,8 +1173,6 @@
   
   
 
-
-  <h1>Parallel Execution</h1>
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1328,7 +1198,7 @@ are <a href="#t_multi">Multi-Threading(oMP)</a>,
 <p>See <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000568236">our article on
 hyperthreading</a>
 for more information.</p>
-<h2 id="multi-threading">Multi-threading<a class="headerlink" href="#multi-threading" title="Permanent link">&para;</a></h2>
+<h1 id="multi-threading">Multi-threading<a class="headerlink" href="#multi-threading" title="Permanent link">&para;</a></h1>
 <p>Multi-threading is a method of parallelisation whereby the initial
 single thread of a process forks into a number of parallel threads,
 generally <em>via</em> a library such as OpenMP (Open MultiProcessing), TBB
@@ -1354,7 +1224,7 @@ taskset -c -p $$                         #Prints which CPUs it can use
 <p>The expected output being</p>
 <div class="highlight"><pre><span></span><code>pid 13538&#39;s current affinity list: 7,9,43,45
 </code></pre></div>
-<h2 id="mpi">MPI<a class="headerlink" href="#mpi" title="Permanent link">&para;</a></h2>
+<h1 id="mpi">MPI<a class="headerlink" href="#mpi" title="Permanent link">&para;</a></h1>
 <p>MPI stands for <em>Message Passing Interface</em>, and is a communication
 protocol used to achieve distributed parallel computation.</p>
 <p>Similar in some ways to multi-threading, MPI does not have the
@@ -1387,7 +1257,7 @@ srun pwd                        # Prints  working directory
  all. Using <code>srun</code> in conjunction with <code>--cpus-per-task=1</code> will
  cause <code>--ntasks</code> to default to 2.</p>
 </div>
-<h2 id="job-arrays">Job Arrays<a class="headerlink" href="#job-arrays" title="Permanent link">&para;</a></h2>
+<h1 id="job-arrays">Job Arrays<a class="headerlink" href="#job-arrays" title="Permanent link">&para;</a></h1>
 <p>Job arrays are best used for tasks that are completely independent, such
 as parameter sweeps, permutation analysis or simulation, that could be
 executed in any order and don't have to run at the same time. This kind
@@ -1499,8 +1369,10 @@ export TMPDIR=.tmp/run_${SLURM_ARRAY_TASK_ID}  #Set TMPDIR to point there
 program, this can be resolved in a similar manner.</p>
 <div class="highlight"><pre><span></span><code>mkdir run_${SLURM_ARRAY_TASK_ID}                             #Create new directory
 cd run_${SLURM_ARRAY_TASK_ID}                                #CD to new directory
-## bash job.sh
-## mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
+#
+bash job.sh
+#
+mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
 rm -r ../run_${SLURM_ARRAY_TASK_ID}                          #Clear directory
 </code></pre></div>
 <p>The Slurm documentation on job arrays can be
@@ -1511,7 +1383,7 @@ found <a href="https://slurm.schedmd.com/job_array.html">here</a>.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2023</span>
       
         <br>
         Created:

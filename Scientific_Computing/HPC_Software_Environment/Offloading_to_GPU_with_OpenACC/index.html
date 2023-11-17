@@ -697,17 +697,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Offloading to GPU with OpenACC
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -718,44 +709,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compile" class="md-nav__link">
-    Compile
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1556,35 +1509,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compile" class="md-nav__link">
-    Compile
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1608,8 +1534,6 @@
   
 
 
-  <h1>Offloading to GPU with OpenACC</h1>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -1628,7 +1552,7 @@ i.e. it will run on both CPU and GPU. The main disadvantage of OpenACC
 is that only a few compilers support it. </p>
 <p>More information about OpenACC can be found
 <a href="http://www.icl.utk.edu/~luszczek/teaching/courses/fall2016/cosc462/pdf/OpenACC_Fundamentals.pdf">here</a>.</p>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<h1 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h1>
 <p>In the following we show how to achieve this in the case of a reduction
 operation involving a large loop in C++ (a similar example can be
 written in Fortran):</p>
@@ -1655,7 +1579,7 @@ initialised on the CPU (above the pragma) and should be copied to the
 GPU and back to the CPU after completing the loop. (It is also possible
 to initialise this variable on the GPU.) Likewise the number of
 iterations <code>n</code> should be copied from the CPU  to the GPU. </p>
-<h2 id="compile">Compile<a class="headerlink" href="#compile" title="Permanent link">&para;</a></h2>
+<h1 id="compile">Compile<a class="headerlink" href="#compile" title="Permanent link">&para;</a></h1>
 <p>We can use the NVIDIA compiler</p>
 <p><code>module load NVHPC</code></p>
 <p>and type</p>
@@ -1677,7 +1601,7 @@ CC -o totalAccGpu total.cxx
 </code></pre></div>
 <p>with executable <code>total</code> compiled with <code>-h noacc</code>, i.e. OpenACC turned
 off.</p>
-<h2 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h2>
+<h1 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h1>
 <p>The following commands will submit the runs to the Mahuika queue (note
 <code>--gpus-per-node=P100:1</code> in the case of the executable that offloads to
 the GPU):</p>

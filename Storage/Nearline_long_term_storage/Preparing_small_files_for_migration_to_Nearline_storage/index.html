@@ -1059,7 +1059,7 @@ following:</p>
 archive_file=&quot;archive.squash&quot; &amp;&amp; \
 cd /nesi/project/nesi12345/my_directory &amp;&amp; \
 find . -type f -and -size -100M -print0 | xargs -0 -I {} nn_archive_files -p nesi12345 -t &lt;time-limit&gt; -n &lt;num-processors&gt; --verify --append --delete-files -- {} &quot;${archive_file}&quot;
-## Return to where you started
+# Return to where you started
 cd &quot;${startdir}&quot;
 </code></pre></div>
 <p>Some notes on the above script:</p>

@@ -1079,17 +1079,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    X11 on NeSI
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1100,86 +1091,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#x-servers" class="md-nav__link">
-    X-Servers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#x-forwarding" class="md-nav__link">
-    X-Forwarding
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#openssh-terminal" class="md-nav__link">
-    OpenSSH (terminal)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mobaxterm" class="md-nav__link">
-    MobaXterm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#x-forwarding-with-tmux" class="md-nav__link">
-    X-Forwarding with tmux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interactive-slurm-jobs" class="md-nav__link">
-    Interactive Slurm jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#srun" class="md-nav__link">
-    srun
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#salloc" class="md-nav__link">
-    salloc
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#xvfb" class="md-nav__link">
-    XVFB
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1418,77 +1329,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#x-servers" class="md-nav__link">
-    X-Servers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#x-forwarding" class="md-nav__link">
-    X-Forwarding
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#openssh-terminal" class="md-nav__link">
-    OpenSSH (terminal)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mobaxterm" class="md-nav__link">
-    MobaXterm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#x-forwarding-with-tmux" class="md-nav__link">
-    X-Forwarding with tmux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interactive-slurm-jobs" class="md-nav__link">
-    Interactive Slurm jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#srun" class="md-nav__link">
-    srun
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#salloc" class="md-nav__link">
-    salloc
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#xvfb" class="md-nav__link">
-    XVFB
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1512,8 +1354,6 @@
   
 
 
-  <h1>X11 on NeSI</h1>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -1529,7 +1369,7 @@
 <p>X-11 is a protocol for rendering graphical user interfaces (GUIs) that
 can be sent along an SSH tunnel. If you plan on using a GUI on a NeSI
 cluster you will need to have an X-Server and X-Forwarding set up.</p>
-<h2 id="x-servers">X-Servers<a class="headerlink" href="#x-servers" title="Permanent link">&para;</a></h2>
+<h1 id="x-servers">X-Servers<a class="headerlink" href="#x-servers" title="Permanent link">&para;</a></h1>
 <p>You must have a X-server running on your local machine in order for a
 GUI to be rendered.</p>
 <p>Download links for X-servers can be found below.</p>
@@ -1566,7 +1406,7 @@ taskbar </p>
  the top left hand corner
  (<img alt="xon.png" src="../../../assets/images/X11_on_NeSI_0.png" />=on, <img alt="off.png" src="../../../assets/images/X11_on_NeSI_1.png" />=off). </p>
 </div>
-<h2 id="x-forwarding">X-Forwarding<a class="headerlink" href="#x-forwarding" title="Permanent link">&para;</a></h2>
+<h1 id="x-forwarding">X-Forwarding<a class="headerlink" href="#x-forwarding" title="Permanent link">&para;</a></h1>
 <p>Finally your ssh tunnel must be set up to 'forward' along X-11
 connections. </p>
 <h2 id="openssh-terminal">OpenSSH (terminal)<a class="headerlink" href="#openssh-terminal" title="Permanent link">&para;</a></h2>
@@ -1583,12 +1423,12 @@ height="303" alt="x11moba.png" /></p>
 <p>If the <img alt="mceclip0.png" src="../../../assets/images/X11_on_NeSI_3.png" /> button in
 the top right corner of your window is coloured, the X-server should be
 running.</p>
-<h2 id="x-forwarding-with-tmux">X-Forwarding with <em>tmux</em><a class="headerlink" href="#x-forwarding-with-tmux" title="Permanent link">&para;</a></h2>
+<h1 id="x-forwarding-with-tmux">X-Forwarding with <em>tmux</em><a class="headerlink" href="#x-forwarding-with-tmux" title="Permanent link">&para;</a></h1>
 <p>In order to connect X11 into a tmux session you make the following
 change to your config file.</p>
 <div class="highlight"><pre><span></span><code>tmux show -g | sed &#39;s/DISPLAY //&#39; &gt; ~/.tmux.conf
 </code></pre></div>
-<h2 id="interactive-slurm-jobs">Interactive Slurm jobs<a class="headerlink" href="#interactive-slurm-jobs" title="Permanent link">&para;</a></h2>
+<h1 id="interactive-slurm-jobs">Interactive Slurm jobs<a class="headerlink" href="#interactive-slurm-jobs" title="Permanent link">&para;</a></h1>
 <p>In order to make use of X11 in an interactive Slurm job:</p>
 <h2 id="srun">srun<a class="headerlink" href="#srun" title="Permanent link">&para;</a></h2>
 <p>Add the flag <code>--x11</code></p>
@@ -1598,7 +1438,7 @@ change to your config file.</p>
 <p>add the flag -Y when sshing to the node.</p>
 <div class="highlight"><pre><span></span><code>ssh -Y wbn001
 </code></pre></div>
-<h2 id="xvfb">XVFB<a class="headerlink" href="#xvfb" title="Permanent link">&para;</a></h2>
+<h1 id="xvfb">XVFB<a class="headerlink" href="#xvfb" title="Permanent link">&para;</a></h1>
 <p>If your application requires X11 in order to run, but does not need to
 be interactive you can use X11 Virtual Frame Buffer. This may be
 required to in order to run visual applications on the compute nodes.
