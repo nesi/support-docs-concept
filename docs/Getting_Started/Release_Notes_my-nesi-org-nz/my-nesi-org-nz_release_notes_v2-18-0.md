@@ -1,7 +1,7 @@
 ---
 created_at: '2023-10-16T03:51:17Z'
 hidden: false
-weight: 0
+position: 0
 tags:
 - releasenote
 title: my.nesi.org.nz release notes v2.18.0

@@ -1,15 +1,15 @@
 ---
 created_at: '2020-05-07T02:51:35Z'
 hidden: false
-weight: 2
+position: 2
 tags:
 - git
 - github
 - version control
 - repository
 title: 'Git: Reference Sheet'
-vote_count: 11
-vote_sum: 11
+vote_count: 12
+vote_sum: 12
 zendesk_article_id: 360001508515
 zendesk_section_id: 360000278975
 ---

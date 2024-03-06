@@ -21,7 +21,7 @@ zendesk_section_id: 360000040076
 
 TensorFlow is a popular software library for machine learning
 applications, see our
-[TensorFlow](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
+[TensorFlow](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs.md)
 article for further information. It is often used with GPUs, as runtimes
 of the computationally demanding training and inference steps are often
 shorter compared to multicore CPUs. However, running TensorFlow on CPUs

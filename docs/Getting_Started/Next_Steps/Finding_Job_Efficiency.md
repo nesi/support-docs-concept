@@ -1,7 +1,7 @@
 ---
 created_at: '2019-04-07T23:56:57Z'
 hidden: false
-weight: 5
+position: 5
 tags:
 - slurm
 title: Finding Job Efficiency

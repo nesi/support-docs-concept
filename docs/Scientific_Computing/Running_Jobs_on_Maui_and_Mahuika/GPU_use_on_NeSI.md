@@ -1,7 +1,7 @@
 ---
 created_at: '2020-04-19T22:59:58Z'
 hidden: false
-weight: 3
+position: 3
 tags:
 - gpu
 title: GPU use on NeSI
@@ -342,7 +342,7 @@ applications:
     Stack](../../Scientific_Computing/Supported_Applications/Lambda Stack.md)
 -   [Matlab](../../Scientific_Computing/Supported_Applications/MATLAB.md#GPU)
 -   [TensorFlow on
-    GPUs](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
+    GPUs](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs.md)
 
 And programming toolkits:
 

@@ -35,7 +35,7 @@ running TensorFlow with GPU support.
          documentation page.
      -   To run TensorFlow on CPUs instead, have a look at our article
          [TensorFlow on
-         CPUs](../../Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md)
+         CPUs](../../Scientific_Computing/Supported_Applications/TensorFlow on CPUs.md)
          for tips on how to configure TensorFlow and Slurm for optimal
          performance.
 

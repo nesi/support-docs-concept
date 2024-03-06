@@ -1,7 +1,7 @@
 ---
 created_at: '2018-11-30T00:32:25Z'
 hidden: false
-weight: 2
+position: 2
 tags: []
 title: MobaXterm Setup (Windows)
 vote_count: 5
@@ -34,6 +34,8 @@ transfer GUI.
 
 1.  Download MobaXTerm
     [here](https://mobaxterm.mobatek.net/download-home-edition.html)
+    -   Some users have reported having issues downloading files using
+        MobaXterm 23.6. We suggest using version 23.5 instead.
     -   Use the Portable Edition if you don't have administrator rights
         on your machine. This is the recommended way for NIWA
         researchers.
@@ -47,10 +49,7 @@ transfer GUI.
 4.  In the "Advanced SSH settings"
     -   Set SSH-browser type to '**SCP (enhanced speed)**'.
     -   Optionally, tick the 'Follow SSH path' button.
-
-<!-- -->
-
-1.  In the “Network settings” tab:
+5.  In the “Network settings” tab:
     -   Select "SSH gateway (jump host)" to open a popup window
     -   In this window enter `lander.nesi.org.nz` in the “Gateway host”
         field, as well as your NeSI username in the Username field for

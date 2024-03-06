@@ -1,11 +1,11 @@
 ---
 created_at: '2018-05-22T01:49:31Z'
 hidden: false
-weight: 0
+position: 0
 tags: []
 title: File Recovery
-vote_count: 8
-vote_sum: 6
+vote_count: 9
+vote_sum: 7
 zendesk_article_id: 360000207315
 zendesk_section_id: 360000042215
 ---

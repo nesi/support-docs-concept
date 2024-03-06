@@ -1,7 +1,7 @@
 ---
 created_at: '2019-06-25T22:40:46Z'
 hidden: false
-weight: 2
+position: 2
 tags:
 - terminal
 - mobaxterm

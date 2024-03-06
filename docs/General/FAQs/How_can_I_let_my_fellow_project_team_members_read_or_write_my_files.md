@@ -1,7 +1,7 @@
 ---
 created_at: '2019-11-07T04:11:03Z'
 hidden: false
-weight: 0
+position: 0
 tags: []
 title: How can I let my fellow project team members read or write my files?
 vote_count: 0
@@ -10,7 +10,16 @@ zendesk_article_id: 360001237915
 zendesk_section_id: 360000039036
 ---
 
-!!! tip "See also"
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
+!!! prerequisite See also
      [File permissions and
      groups](../../Storage/File_Systems_and_Quotas/File_permissions_and_groups.md)
 
@@ -24,7 +33,7 @@ So, supposing Joe Bloggs moves a file from his home directory to the
 project directory `/nesi/project/nesi99999`, his fellow team members
 won't be able to write to it:
 
-```sh
+``` sl
 $ ls -l README
 -rw-r--r-- 1 bloggsj bloggsj 235 Mar 14  2014 README
 $ mv README /nesi/project/nesi99999/bloggsj/README
@@ -40,8 +49,7 @@ There is, however, a solution involving the `rsync` command, a more
 advanced version of `scp`. `rsync` is typically used to copy files
 between two or more machines, but can also be used within the same
 machine.
-
-!!! warning
+!!! prerequisite Warning
      In both these commands, the `--no-perms` and `--no-group` options must
      both come after `-a`. `-a` implicitly asserts `--perms` and `--group`,
      and will therefore override whichever
@@ -49,17 +57,16 @@ machine.
 
 ## To copy a file (or directory and its contents), updating its group and setting its permissions
 
-```sh
+``` sl
 rsync -a --no-perms --no-group --chmod=ugo=rwX,Dg+s /path/to/source /path/to/destination
 ```
 
 ## To move a file (or directory and its contents), updating its group and setting its permissions
-
-!!! warning
+!!! prerequisite Warning
      The `--remove-source-files` option is safe only if every source file
      is otherwise left intact during the moving process.
 
-```sh
+``` sl
 rsync --remove-source-files -a --no-perms --no-group --chmod=ugo=rwX,Dg+s /path/to/source /path/to/destination
 ```
 
@@ -76,7 +83,7 @@ Change to the parent directory, which could be a project or nobackup
 directory, that you want to fix, and find and fix your files. You can do
 this by means of the following commands.
 
-```sh
+``` sl
 # Replace nesi12345 with your desired project code
 group=nesi12345
 startdir=$(pwd)

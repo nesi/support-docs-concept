@@ -1,10 +1,8 @@
 ---
 created_at: '2019-08-15T05:48:41Z'
 hidden: false
-weight: 42
-tags:
-- geo
-- earthquake
+position: 42
+tags: []
 title: OpenSees
 vote_count: 0
 vote_sum: 0
@@ -13,17 +11,21 @@ zendesk_section_id: 360000040076
 ---
 
 
-[//]: <> (APPS PAGE BOILERPLATE START)
-{% set app_name = page.title | trim %}
-{% set app = applications[app_name] %}
-{% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 There are three commands with which a OpenSees job can be launched.
 
 -   OpenSees - For running a job in serial (single CPU).
 -   OpenSeesSP - Intended for the single analysis of very large models.
 -   OpenSeesMP - For advanced parametric studies.
+
+ 
 
 More info can be found about running OpenSees in parallel
 [here](http://opensees.berkeley.edu/OpenSees/parallel/TNParallelProcessing.pdf).

@@ -1,7 +1,7 @@
 ---
 created_at: '2019-05-03T04:15:24Z'
 hidden: false
-weight: 6
+position: 6
 tags: []
 title: Git Bash (Windows)
 vote_count: 0

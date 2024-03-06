@@ -1,7 +1,7 @@
 ---
 created_at: '2023-03-06T19:04:56Z'
 hidden: false
-weight: 0
+position: 0
 tags: []
 title: BRAKER
 vote_count: 0
@@ -11,11 +11,13 @@ zendesk_section_id: 360000040076
 ---
 
 
-[//]: <> (APPS PAGE BOILERPLATE START)
-{% set app_name = page.title | trim %}
-{% set app = applications[app_name] %}
-{% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## Description
 
@@ -52,6 +54,8 @@ result of the pipeline is the combined gene set of both gene prediction
 tools, which only contains genes with very high support from extrinsic
 evidence.
 
+ 
+
 Home page : <https://github.com/Gaius-Augustus/BRAKER>
 
 ## License and Disclaimer
@@ -62,18 +66,25 @@ Artistic License
 
 ## Prerequisites
 
-!!! prerequisite "Obtain GeneMark-ES/ET Academic License"
 
-    GeneMark-ES/ET which is one of the dependencies for BRAKER requires an individual academic license  (this is free). This can be obtained as below
-     -   Download URL <http://topaz.gatech.edu/genemark/license_download.cgi>
+!!! prerequisite Obtain GeneMark-ES/ET Academic License 
+     GeneMark-ES/ET which is one of the dependencies for BRAKER requires an
+     individual academic license  (this is free). This can be obtained as
+     below
+     -   Download URL
+         <http://topaz.gatech.edu/genemark/license_download.cgi>
+      
+      
      -   ![genemark\_es\_license.png](../../assets/images/BRAKER.png)
      -   Downloaded filename will be in the format of **gm\_key\_64.gz. **
      -   Decompress this file with `gunzip gm_key_64.gz`  and move it to
-         home directory as  a **hidden** file under the filename `.gm_key` .i.e. `~/.gm_key`
-
-!!! info "Copy AUGUSTUS config to a path with read/write permissions"
-
-    Make a copy of AUGUSTUS config from ***/opt/nesi/CS400\_centos7\_bdw/AUGUSTUS/3.4.0-gimkl-2022a/config*** to path with read/write permissions .i.e. project, nobackup,home 
+         home directory as  a **hidden** file under the filename `.gm_key`
+          .i.e. `~/.gm_key`
+    
+!!! prerequisite Copy AUGUSTUS config to a path with read/write permissions
+     Make a copy of AUGUSTUS config from
+     ***/opt/nesi/CS400\_centos7\_bdw/AUGUSTUS/3.4.0-gimkl-2022a/config***
+      to path with read/write permissions .i.e. project, nobackup,home 
 
 ### Example Slurm scripts
 

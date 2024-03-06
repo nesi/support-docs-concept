@@ -1,7 +1,7 @@
 ---
 created_at: '2019-07-22T03:46:24Z'
 hidden: false
-weight: 2
+position: 2
 tags: []
 title: OpenMP settings
 vote_count: 0
@@ -48,7 +48,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 in your SLURM script - although this can sometimes be more complicated,
 e.g., with [TensorFlow on
-CPUs](../../Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md).
+CPUs](../../Scientific_Computing/Supported_Applications/TensorFlow on CPUs.md).
 
 On Mahuika, you will be charged for the number of physical cores that
 you requested - the second logical core on a physical core is free,

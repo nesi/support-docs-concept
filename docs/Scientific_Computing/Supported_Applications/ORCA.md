@@ -1,23 +1,28 @@
 ---
 created_at: '2015-11-09T21:20:24Z'
 hidden: false
-weight: 41
+position: 41
 tags:
 - mahuika
 - chemistry
 title: ORCA
-vote_count: 3
-vote_sum: 3
+vote_count: 5
+vote_sum: 5
 zendesk_article_id: 213718027
 zendesk_section_id: 360000040076
 ---
 
 
-[//]: <> (APPS PAGE BOILERPLATE START)
-{% set app_name = page.title | trim %}
-{% set app = applications[app_name] %}
-{% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
+<!-- The above lines, specifying the category, section and title, must be
+present and always comprising the first three lines of the article. -->
 
 ORCA is a flexible, efficient and easy-to-use general purpose tool for
 quantum chemistry with specific emphasis on spectroscopic properties of
@@ -42,7 +47,7 @@ desk](mailto:support@nesi.org.nz).
 
 ## Example script
 
-``` sl
+``` bash
 #!/bin/bash -e
 #SBATCH --job-name      ORCA_job
 #SBATCH --time          01:00:00
@@ -66,7 +71,7 @@ ORCA requires a parallel run to be requested in its input as well as
 from the batch scheduler. To request a parallel run, you need to add a
 line to the input file like the following:
 
-``` sh
+``` sl
 %pal nprocs <np> end
 ```
 
@@ -84,20 +89,20 @@ directory from which the ORCA executable is invoked.
 
 To restart from an existing GBW file, you should do the following:
 
-1. Ensure that the GBW file you want to start from is renamed so that
+1.  Ensure that the GBW file you want to start from is renamed so that
     it does not have the same base name as your intended input file.
     Otherwise, it will be overwritten and destroyed as soon as ORCA
     starts running.
-2. In your input file, specify the following lines, replacing
+2.  In your input file, specify the following lines, replacing
     "checkpoint.gbw" with the name of the GBW file you intend to read
     from:
 
-    ``` sh
-    ! moread
-    % moinp "checkpoint.gbw"
-    ```
+``` sl
+! moread
+% moinp "checkpoint.gbw"
+```
 
-3. Run the calculation.
+1.  Run the calculation.
 
 For more information about restarting from an older GBW file, including
 how to restart from GBW files produced using earlier versions of ORCA,

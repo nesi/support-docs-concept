@@ -1,7 +1,7 @@
 ---
 created_at: '2021-05-25T02:15:36Z'
 hidden: false
-weight: 0
+position: 0
 tags: []
 title: What software environments on NeSI are optimised for Machine Learning and data
   science?
@@ -29,7 +29,7 @@ use. 
 Examples of software environments on NeSI optimised for data science
 include:
 
--   [R](../../Scientific_Computing/Supported_Applications/R.md) and [Python](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md) users
+-   [R](../../Scientific_Computing/Supported_Applications/R.md) and [Python](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs.md) users
     can get right into using and exploring the several built-in packages
     or create custom code.
 
@@ -43,7 +43,7 @@ include:
 -   Commonly used data science environments and libraries such as
     [Keras](../../Scientific_Computing/Supported_Applications/Keras.md),
     [LambdaStack](../../Scientific_Computing/Supported_Applications/Lambda Stack.md),
-    [Tensorflow](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
+    [Tensorflow](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs.md)
     and [Conda](https://docs.conda.io/en/latest/) are available to
     create comprehensive workflows.
 

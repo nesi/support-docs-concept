@@ -1,14 +1,14 @@
 ---
 created_at: '2018-05-01T03:39:22Z'
 hidden: false
-weight: 1
+position: 1
 tags:
 - info
 - project
 - mynesi
 title: Applying for a new NeSI project
-vote_count: 5
-vote_sum: 3
+vote_count: 6
+vote_sum: 4
 zendesk_article_id: 360000174976
 zendesk_section_id: 360000196195
 ---

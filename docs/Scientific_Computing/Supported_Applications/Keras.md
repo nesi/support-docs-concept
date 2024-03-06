@@ -1,7 +1,7 @@
 ---
 created_at: '2019-07-24T04:30:33Z'
 hidden: false
-weight: 34
+position: 34
 tags: []
 title: Keras
 vote_count: 0
@@ -21,7 +21,7 @@ zendesk_section_id: 360000040076
 
 Keras is a modular and extensible API for building neural networks in
 Python. Keras is included with TensorFlow. Note that there are [CPU
-and](../../Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md) [GPU
+and](../../Scientific_Computing/Supported_Applications/TensorFlow on CPUs.md) [GPU
 versions](https://support.nesi.org.nz/hc/en-gb/articles/360000990436-TensorFlow) of
 TensorFlow, here we'll use TensorFlow 1.10 for GPUs, which is available
 as an environment module. 

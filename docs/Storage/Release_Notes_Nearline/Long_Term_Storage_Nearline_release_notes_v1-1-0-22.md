@@ -1,7 +1,7 @@
 ---
 created_at: '2021-08-30T03:19:42Z'
 hidden: false
-weight: 0
+position: 0
 tags:
 - releasenote
 - nearline

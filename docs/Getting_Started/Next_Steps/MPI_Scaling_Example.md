@@ -1,7 +1,7 @@
 ---
 created_at: '2019-09-22T21:07:28Z'
 hidden: false
-weight: 8
+position: 8
 tags: []
 title: MPI Scaling Example
 vote_count: 2

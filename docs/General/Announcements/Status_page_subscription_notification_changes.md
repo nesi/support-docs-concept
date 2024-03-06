@@ -1,9 +1,8 @@
 ---
 created_at: '2023-10-24T05:15:29Z'
 hidden: false
-weight: 0
-tags:
-- announcement
+position: 2
+tags: []
 title: "Status page subscription notification changes\uFEFF"
 vote_count: 0
 vote_sum: 0

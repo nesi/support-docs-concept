@@ -1,7 +1,7 @@
 ---
 created_at: '2018-11-20T22:41:32Z'
 hidden: false
-weight: 2
+position: 2
 tags:
 - scp
 - transfer
@@ -13,7 +13,7 @@ tags:
 - move
 - moving
 title: Moving files to and from the cluster
-vote_count: 11
+vote_count: 13
 vote_sum: 3
 zendesk_article_id: 360000578455
 zendesk_section_id: 360000189716

@@ -1,7 +1,7 @@
 ---
 created_at: '2021-08-27T03:41:37Z'
 hidden: false
-weight: 2
+position: 2
 tags: []
 title: 'Globus V5 endpoint activation '
 vote_count: 2

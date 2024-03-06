@@ -1,7 +1,7 @@
 ---
 created_at: '2023-10-30T22:11:19Z'
 hidden: false
-weight: 0
+position: 0
 tags: []
 title: NeSI wide area network connectivity
 vote_count: 0

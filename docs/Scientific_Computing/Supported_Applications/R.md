@@ -1,7 +1,7 @@
 ---
 created_at: '2015-09-07T00:34:30Z'
 hidden: false
-weight: 45
+position: 45
 tags:
 - mahuika
 - general
@@ -57,12 +57,7 @@ General Public Licence. The full text of the R licence is available at
     example *~/R/gimkl-2022a/4.2* rather than the usual default
     of *~/R/x86\_64-pc-linux-gnu-library/4.2*.
 
-## Available Modules
-
-### R Base
-
-{% set app_name = "R" -%}
-{% include "partials/app/app_version.html" -%}
+## Related environment modules
 
 We also have some environment modules which extend the base R ones with
 extra packages:
@@ -80,16 +75,15 @@ extra packages:
 
 ## Examples
 
-{% set app_name = "R-Geo" -%}
-{% include "partials/app/app_version.html" -%}
+### R scripts
 
 #### Serial R script
 
 ``` sl
 png(filename="plot.png")  # This line redirects plots from screen to plot.png file.
 
-{% set app_name = "R-bundle-Bioconductor" -%}
-{% include "partials/app/app_version.html" -%}
+# Define the cars vector with 5 values
+cars <- c(1, 3, 6, 4, 9)
 
 # Graph the cars vector with all defaults
 plot(cars)

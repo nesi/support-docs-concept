@@ -1,7 +1,7 @@
 ---
 created_at: '2019-12-05T22:46:53Z'
 hidden: false
-weight: 8
+position: 8
 tags: []
 title: Download and share CMIP6 data (for NIWA researchers)
 vote_count: 2

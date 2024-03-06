@@ -1,7 +1,7 @@
 ---
 created_at: '2018-05-23T03:17:56Z'
 hidden: false
-weight: 4
+position: 4
 tags: []
 title: XC50 Aries Network Architecture
 vote_count: 0
