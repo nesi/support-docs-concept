@@ -139,7 +139,7 @@ Two steps to try:
         MobaXterm before the next login attempt
 
 Then setup a new session [according to the support doc
-instructions](../../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md)
+instructions](https://support.nesi.org.nz/hc/en-gb/articles/360000624696-MobaXterm-Setup-Windows-)
 as before.
 !!! prerequisite What Next?
      -   [Moving files to/from a

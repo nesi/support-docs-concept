@@ -38,7 +38,7 @@ loading one of the toolchains:
 -   `module load foss/2023a` - our latest default toolchain, providing
     GNU compilers (version 12.3.0), OpenMPI and OpenBLAS, with the
     run-time option of switching to BLIS or MKL via
-    [FlexiBLAS](https://support.nesi.org.nz/hc/en-gb/articles/9027967596303).
+    [FlexiBLAS](../../Scientific_Computing/Supported_Applications/FlexiBLAS.md).
 -   `module load gimkl/2022a` - our old default toolchain, providing GNU
     compilers (version 11.3.0), Intel MPI and Intel MKL
 -   `module load intel/2022a` - Intel compilers (version 2022.0.2),

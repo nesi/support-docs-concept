@@ -128,5 +128,5 @@ time srun --ntasks=1 --cpus-per-task=1 --gpus-per-node=P100:1 ./totalAccGpu
  
 
 Check out [this
-page](../../Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenMP.md)
+page](https://support.nesi.org.nz/hc/en-gb/articles/360001127856-Offloading-to-GPU-with-OpenMP-)
 to find out how you can offload computations to a GPU using OpenMP.

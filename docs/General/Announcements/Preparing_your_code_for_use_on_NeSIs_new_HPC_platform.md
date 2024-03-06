@@ -158,7 +158,7 @@ or FFTW then you will be best off loading one of our EasyBuild
 "toolchain" environment modules such as:
 
 -   *foss/2023a*  - GCC, FFTW,
-    [FlexiBLAS](https://support.nesi.org.nz/hc/en-gb/articles/9027967596303),
+    [FlexiBLAS](../../Scientific_Computing/Supported_Applications/FlexiBLAS.md),
     OpenBLAS, OpenMPI
 -   *intel/2022a*  - Intel compilers, Intel MKL with its FFTW wrappers,
     Intel MPI.
