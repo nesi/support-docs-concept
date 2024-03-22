@@ -34,6 +34,7 @@ plugins:
   - tags
   - git-revision-date-localized:
       enable_creation_date: true
+  - glightbox:
   - macros:
       on_error_fail: !ENV [TEST_ENV, false]
       verbose: !ENV [TEST_ENV, false]
