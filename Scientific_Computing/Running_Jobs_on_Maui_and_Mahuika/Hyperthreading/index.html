@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="NeSI Support Documentation">
+        <meta name="description" content="How to use simultaneous multithreading (hyper-threading) on NeSI.">
       
       
       
-        <link rel="canonical" href="https://github.com/nesi/support-docs-concept/Scientific_Computing/HPC_Software_Environment/NICE_DCV_Setup/">
+        <link rel="canonical" href="https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading/">
       
       
-        <link rel="prev" href="../Thread_Placement_and_Thread_Affinity/">
+        <link rel="prev" href="../Checksums/">
       
       
-        <link rel="next" href="../Visualisation_software/">
+        <link rel="next" href="../../Profiling_and_Debugging/Debugging/">
       
       
       <link rel="icon" href="../../../assets/icons/favicon.ico">
@@ -24,7 +24,7 @@
     
     
       
-        <title>NICE DCV Setup - NeSI Support Documentation</title>
+        <title>Hyperthreading - NeSI Support Documentation</title>
       
     
     
@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#internet-connection" class="md-skip">
+        <a href="#hyperthreading-with-slurm" class="md-skip">
           Skip to content
         </a>
       
@@ -156,7 +156,7 @@
           <div class="md-header__topic" data-md-component="header-topic">
             <span class="md-ellipsis">
               
-                NICE DCV Setup
+                Hyperthreading
               
             </span>
           </div>
@@ -761,64 +761,436 @@ Need help?
                 
   
   
+    
   
   
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
   
-  
-    <a href="../../Running_Jobs_on_Maui_and_Mahuika/Checking_your_projects_usage_using_nn_corehour_usage/" class="md-nav__link">
+    
+    
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Running Jobs on Māui and Mahuika
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Running Jobs on Māui and Mahuika
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Checking_your_projects_usage_using_nn_corehour_usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checking your project's usage using nn_corehour_usage
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPU_use_on_NeSI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GPU use on NeSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Job_Checkpointing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Job Checkpointing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Slurm_Interactive_Sessions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Interactive Sessions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fair_Share/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fair Share
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Job_prioritisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Job prioritisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mahuika_Slurm_Partitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mahuika Slurm Partitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Milan_Compute_Nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Milan Compute Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Maui_Slurm_Partitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Māui Slurm Partitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLURM-Best_Practice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SLURM: Best Practice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NetCDF-HDF5_file_locking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NetCDF / HDF5 file locking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Checksums/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checksums
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Hyperthreading
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Hyperthreading
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hyperthreading-with-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperthreading with Slurm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-hyperthreading" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use Hyperthreading
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-hyperthreading" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use Hyperthreading
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to use Hyperthreading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-many-logical-cpus-will-my-job-use-or-be-charged-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      How many logical CPUs will my job use or be charged for?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -879,661 +1251,72 @@ Need help?
                 
   
   
-    
   
   
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
   
-    
-    
+  
+    <a href="../../HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node/" class="md-nav__link">
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     HPC Software Environment
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_7">
-            <span class="md-nav__icon md-icon"></span>
-            HPC Software Environment
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Build_an_Apptainer_container_on_a_Milan_compute_node/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Build an Apptainer container on a Milan compute node
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../OpenMP_settings/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    OpenMP settings
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Offloading_to_GPU_with_OpenMP/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Offloading to GPU with OpenMP 
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Offloading_to_GPU_with_OpenACC/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Offloading to GPU with OpenACC
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../NVIDIA_GPU_Containers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    NVIDIA GPU Containers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Configuring_Dask_MPI_jobs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Configuring Dask-MPI jobs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Software_Version_Management/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Software Version Management
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Thread_Placement_and_Thread_Affinity/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Thread Placement and Thread Affinity
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    NICE DCV Setup
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--deprecated"></span>
+    </a>
   
 
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    NICE DCV Setup
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--deprecated"></span>
-  
-
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#internet-connection" class="md-nav__link">
-    <span class="md-ellipsis">
-      Internet Connection
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creating-a-new-nice-dcv-server-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creating a new NICE DCV server session
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Creating a new NICE DCV server session">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#logging-in" class="md-nav__link">
-    <span class="md-ellipsis">
-      Logging in
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-new-nice-dcv-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create a new NICE DCV session
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#establishing-an-ssh-tunnel" class="md-nav__link">
-    <span class="md-ellipsis">
-      Establishing an SSH tunnel
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Establishing an SSH tunnel">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linux-mac-or-windows-subsystem-for-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linux, Mac, or Windows Subsystem for Linux
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to-connect-to-maui" class="md-nav__link">
-    <span class="md-ellipsis">
-      To connect to Māui
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to-connect-to-mahuika" class="md-nav__link">
-    <span class="md-ellipsis">
-      To connect to Mahuika
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mobaxterm-on-windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      MobaXTerm on Windows
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connecting-to-a-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connecting to a session
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Connecting to a session">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#connecting-with-a-client" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connecting with a Client
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connecting-with-a-browser" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connecting with a Browser
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-desktop-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using the Desktop Environment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#disconnecting-and-stopping-a-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Disconnecting and Stopping a Session
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Disconnecting and Stopping a Session">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#disconnecting-from-a-session-without-stopping-it" class="md-nav__link">
-    <span class="md-ellipsis">
-      Disconnecting from a session without stopping it
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disconnecting-and-stopping-a-session_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Disconnecting and stopping a session
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Visualisation_software/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Visualisation software
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--deprecated"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Finding_Software/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Finding Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Installing_Third_Party_applications/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Installing (Third Party) applications
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Compiling_software_on_Mahuika/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Compiling software: Mahuika
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Compiling_software_on_Maui/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Compiling software: Māui
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Programming_environment_differences_between_Maui_and_Mahuika/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programming environment differences between Maui and Mahuika
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Per_job_temporary_directories/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Per job temporary directories
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Run_an_executable_under_Apptainer_in_parallel/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Run an executable under Apptainer in parallel
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1730,163 +1513,37 @@ Need help?
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#internet-connection" class="md-nav__link">
+  <a href="#hyperthreading-with-slurm" class="md-nav__link">
     <span class="md-ellipsis">
-      Internet Connection
+      Hyperthreading with Slurm
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-a-new-nice-dcv-server-session" class="md-nav__link">
+  <a href="#when-to-use-hyperthreading" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating a new NICE DCV server session
+      When to use Hyperthreading
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Creating a new NICE DCV server session">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-hyperthreading" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use Hyperthreading
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to use Hyperthreading">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#logging-in" class="md-nav__link">
+  <a href="#how-many-logical-cpus-will-my-job-use-or-be-charged-for" class="md-nav__link">
     <span class="md-ellipsis">
-      Logging in
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-new-nice-dcv-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create a new NICE DCV session
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#establishing-an-ssh-tunnel" class="md-nav__link">
-    <span class="md-ellipsis">
-      Establishing an SSH tunnel
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Establishing an SSH tunnel">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linux-mac-or-windows-subsystem-for-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linux, Mac, or Windows Subsystem for Linux
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to-connect-to-maui" class="md-nav__link">
-    <span class="md-ellipsis">
-      To connect to Māui
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to-connect-to-mahuika" class="md-nav__link">
-    <span class="md-ellipsis">
-      To connect to Mahuika
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mobaxterm-on-windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      MobaXTerm on Windows
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connecting-to-a-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connecting to a session
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Connecting to a session">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#connecting-with-a-client" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connecting with a Client
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connecting-with-a-browser" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connecting with a Browser
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-desktop-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using the Desktop Environment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#disconnecting-and-stopping-a-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Disconnecting and Stopping a Session
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Disconnecting and Stopping a Session">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#disconnecting-from-a-session-without-stopping-it" class="md-nav__link">
-    <span class="md-ellipsis">
-      Disconnecting from a session without stopping it
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disconnecting-and-stopping-a-session_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Disconnecting and stopping a session
+      How many logical CPUs will my job use or be charged for?
     </span>
   </a>
   
@@ -1911,32 +1568,9 @@ Need help?
                 
 
                   
-  
-<nav class="md-tags" >
-  
-    
-    
-    
-      <span class="md-tag">support</span>
-    
-  
-    
-    
-    
-      <span class="md-tag">application</span>
-    
-  
-    
-    
-    
-      <span class="md-tag">visualisation</span>
-    
-  
-</nav>
-
 
   
-    <a href="https://github.com/nesi/support-docs-concept/edit/main/docs/Scientific_Computing/HPC_Software_Environment/NICE_DCV_Setup.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/nesi/support-docs-concept/edit/main/docs/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1944,224 +1578,325 @@ Need help?
   
 
 
-  <h1>NICE DCV Setup</h1>
+  <h1>Hyperthreading</h1>
 
-<p>NICE DCV is a virtual desktop solution that enables users to run
-graphics-intensive OpenGL applications, such as 3D visualisation,
-remotely on the HPC. You get full access to your data on the
-high-performance file systems, as well as the advanced CPU and GPU
-capabilities of the Cray CS clusters Mahuika and Māui Ancil.</p>
-<p>NICE DCV sessions can persist for as long as your SLURM resource
-allocation is valid - you could launch a session in the morning, start a
-complex visualisation job with ParaView or VisIt, disconnect while the
-machine is still rendering the graphics, and reconnect in the afternoon
-to check how your job is coming along.</p>
-<p>Follow the instructions below to set up a new session and connect to it.</p>
-<h2 id="internet-connection">Internet Connection<a class="headerlink" href="#internet-connection" title="Permanent link">&para;</a></h2>
-<p>NICE DCV uses image compression mechanisms to reduce the amount of data
-that needs to be transmitted from the HPC to your laptop or desktop
-computer. However, data volumes can still become significant for longer
-sessions. Please keep this in mind if your internet provider charges by
-data volume.</p>
-<p>While NICE DCV works reasonably well over a WiFi connection, for best
-performance we suggest you use a wired (Ethernet) connection if
-possible.</p>
-<h2 id="creating-a-new-nice-dcv-server-session">Creating a new NICE DCV server session<a class="headerlink" href="#creating-a-new-nice-dcv-server-session" title="Permanent link">&para;</a></h2>
-<h3 id="logging-in">Logging in<a class="headerlink" href="#logging-in" title="Permanent link">&para;</a></h3>
-<h4 id="on-maui">On Māui<a class="headerlink" href="#on-maui" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>1. Connect to the lander node following the instructions
-    [here](https://support.nesi.org.nz/hc/en-gb/sections/360000034315-Accessing-the-HPCs).
-    For example:
+<p>As CPU technology advanced engineers realised that adapting CPU
+architecture to include <em>logical</em> <em>processors</em> within the physical core
+(conventionally, a CPU) allows some computation to occur simultaneously.
+The name for this technology is <em>simultaneous multithreading</em>, and
+Intel's implementation of it is called
+<a href="https://en.wikipedia.org/wiki/Hyper-threading">Hyperthreading</a>.</p>
+<p>CPUs capable of Hyperthreading consists of two logical processors per
+physical core. The logical processors can operate on data/instruction
+<em>threads</em> simultaneously, meaning the physical core can perform two
+operations concurrently. In other words, the difference between logical
+and physical cores is that logical cores are not full stand-alone CPUs,
+and share some hardware with nearby logical cores. Physical cores are
+made up of two logical cores.</p>
+<p>Hyperthreading is enabled by default on NeSI machines, meaning, by
+default, Slurm will allocate two threads to each physical core.</p>
+<h2 id="hyperthreading-with-slurm">Hyperthreading with Slurm<a class="headerlink" href="#hyperthreading-with-slurm" title="Permanent link">&para;</a></h2>
+<p>When Slurm request a CPU, it is <strong>requesting logical cores,</strong> which, as
+mentioned above, there are two of per physical core. If you use
+<code>--ntasks=n</code> to request CPUs, Slurm will start <code>n</code> MPI tasks which are
+each assigned to one physical core. Since Slurm "sees" logical cores,
+once your job starts you will have twice the number of CPUs as <code>ntasks</code>.</p>
+<p>If you set <code>--cpus-per-task=n</code>, Slurm will request <code>n</code> logical CPUs per
+task, i.e., will set <code>n</code> threads for the job. Your code must be capable
+of running Hyperthreaded (for example using
+<a href="../../HPC_Software_Environment/OpenMP_settings/">OpenMP</a>)
+if <code>--cpus-per-task &gt; 1</code>.</p>
+<p>Setting <code>--hint=nomultithread</code> with <code>srun</code> or <code>sbatch</code> causes Slurm to
+allocate only one thread from each core to this job". This will allocate
+CPUs according to the following image:</p>
+<table style="height: 132px;" border="1" width="591" cellspacing="0" cellpadding="3">
+<tbody>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 164.389px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>Node name</strong></font></p>
+</td>
+<td style="height: 22px; width: 403.878px;" colspan="16" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>wbn009</strong></font></p>
+</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 164.389px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>Physical Core id</strong></font></p>
+</td>
+<td style="height: 22px; width: 37.2727px;" colspan="2" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>0</strong></font></p>
+</td>
+<td style="height: 22px; width: 37.2727px;" colspan="2" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>1</strong></font></p>
+</td>
+<td style="height: 22px; width: 37.2727px;" colspan="2" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>2</strong></font></p>
+</td>
+<td style="height: 22px; width: 37.2727px;" colspan="2" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>3</strong></font></p>
+</td>
+<td style="height: 22px; width: 37.2727px;" colspan="2" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>0</strong></font></p>
+</td>
+<td style="height: 22px; width: 47.358px;" colspan="2" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>1</strong></font></p>
+</td>
+<td style="height: 22px; width: 47.358px;" colspan="2" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>2</strong></font></p>
+</td>
+<td style="height: 22px; width: 46.4347px;" colspan="2" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>3</strong></font></p>
+</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 164.389px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>Logical CPU id</strong></font></p>
+</td>
+<td style="height: 22px; width: 13.1818px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>0</strong></font></p>
+</td>
+<td style="height: 22px; width: 13.1818px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>1</strong></font></p>
+</td>
+<td style="height: 22px; width: 13.1818px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>2</strong></font></p>
+</td>
+<td style="height: 22px; width: 13.1818px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>3</strong></font></p>
+</td>
+<td style="height: 22px; width: 13.1818px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>4</strong></font></p>
+</td>
+<td style="height: 22px; width: 13.1818px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>5</strong></font></p>
+</td>
+<td style="height: 22px; width: 13.1818px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>6</strong></font></p>
+</td>
+<td style="height: 22px; width: 13.1818px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>7</strong></font></p>
+</td>
+<td style="height: 22px; width: 13.1818px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>8</strong></font></p>
+</td>
+<td style="height: 22px; width: 13.1818px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>9</strong></font></p>
+</td>
+<td style="height: 22px; width: 18.2244px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>10</strong></font></p>
+</td>
+<td style="height: 22px; width: 18.2244px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>11</strong></font></p>
+</td>
+<td style="height: 22px; width: 18.2244px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>12</strong></font></p>
+</td>
+<td style="height: 22px; width: 18.2244px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>13</strong></font></p>
+</td>
+<td style="height: 22px; width: 18.2244px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>14</strong></font></p>
+</td>
+<td style="height: 22px; width: 17.3011px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>15</strong></font></p>
+</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 164.389px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>Number of Allocated CPUs</strong></font></p>
+</td>
+<td style="height: 22px; width: 181.818px;" colspan="8">
+<p align="CENTER"><font size="1">4</font></p>
+</td>
+<td style="height: 22px; width: 211.151px;" colspan="8">
+<p align="CENTER"><font size="1">4</font></p>
+</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 164.389px;" bgcolor="#e0e0e0">
+<p align="CENTER"><font size="1"><strong>Allocated CPU ids</strong></font></p>
+</td>
+<td style="height: 22px; width: 181.818px;" colspan="8">
+<p align="CENTER"><font size="1">0 2 4 6</font></p>
+</td>
+<td style="height: 22px; width: 211.151px;" colspan="8">
+<p align="CENTER"><font size="1">8 10 12 14</font></p>
+</td>
+</tr>
+</tbody>
+</table>
 
-    ``` sl
-    ssh lander
-    ```
-
-2. Connect from the lander node to one of the NICE DCV server
-    nodes:
-
-    ``` sl
-    ssh w-ndcv01
-    ```
-</code></pre></div>
-<h4 id="on-mahuika">On Mahuika<a class="headerlink" href="#on-mahuika" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>1. Connect to the Mahuika login node:
-
-    ``` sl
-    ssh mahuika
-    ```
-
-2. Connect to the NICE DCV server node (not yet available):
-
-    ``` sl
-    ssh vgpuwbg005
-    ```
-</code></pre></div>
-<h3 id="create-a-new-nice-dcv-session">Create a new NICE DCV session<a class="headerlink" href="#create-a-new-nice-dcv-session" title="Permanent link">&para;</a></h3>
-<p>Replace <code>&lt;session name&gt;</code> with a
-    session name of your choice:</p>
-<div class="highlight"><pre><span></span><code>``` sl
-dcv create-session &lt;session name&gt;
-```
-</code></pre></div>
-<h2 id="establishing-an-ssh-tunnel">Establishing an SSH tunnel<a class="headerlink" href="#establishing-an-ssh-tunnel" title="Permanent link">&para;</a></h2>
-<p>For security reasons, the NICE DCV nodes are not on the public internet
-and so are not directly accessible from your workstation. Therefore, we
-must create an SSH tunnel through the NeSI lander node.</p>
-<h3 id="linux-mac-or-windows-subsystem-for-linux">Linux, Mac, or Windows Subsystem for Linux<a class="headerlink" href="#linux-mac-or-windows-subsystem-for-linux" title="Permanent link">&para;</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If successful, commands to open SSH tunnels will look like they are
- doing nothing (hanging) but it is important to leave them running.
- Once you kill a relevant SSH tunnel connection (e.g. <code>Ctrl-c</code>) you
- will no longer be able to connect to your NICE DCV session.</p>
-</div>
-<ol>
-<li>On your machine run the following command in your Linux terminal
-    emulator (assuming you added the
-    <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Recommended-Terminal-Setup">recommended</a>
-    sections to your <code>~/.ssh/config</code> file). This command opens an SSH
-    tunnel through the NeSI lander node to the SSH port on w-ndcv01.</li>
-</ol>
-<h3 id="to-connect-to-maui">To connect to Māui<a class="headerlink" href="#to-connect-to-maui" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>``` sl
-# The first port number (22222 in this example) can be anything you like &gt; 1024,
-# so long as it&#39;s not in use by another service.
-# We have picked 22222 because it&#39;s easy to remember, the SSH port being 22.
-ssh -L 22222:w-ndcv01.maui.niwa.co.nz:22 -o ExitOnForwardFailure=yes -N lander
-```
-
-If you don&#39;t already have another open connection to or through the
-NeSI lander node, you will at this point be prompted for your
-password and your second factor. Enter them in the usual manner.
-</code></pre></div>
-<h3 id="to-connect-to-mahuika">To connect to Mahuika<a class="headerlink" href="#to-connect-to-mahuika" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>1.  Open an SSH tunnel through the lander node to the Mahuika login
-    node.
-
-    ``` sl
-    # The tunnel port numbers (10022 in this example) can be anything you like &gt; 1024,
-    # so long as neither of them is in use by another service.
-    # We have picked 10022 because it&#39;s easy to remember, the SSH port being 22.
-    ssh -L 10022:login.mahuika.nesi.org.nz:22 -o ExitOnForwardFailure=yes -N lander
-    ```
-
-    If you don&#39;t already have another open connection to or through
-    the NeSI lander node to the Mahuika login node, you will at this
-    point be prompted for your password and your second factor.
-    Enter them in the usual manner.
-
-2.  In a new terminal, open an SSH tunnel through this existing
-    tunnel to Mahuika&#39;s NICE DCV node.
-
-    ``` sl
-    # The tunnel port numbers (22222 in this example) can be anything you like &gt; 1024,
-    # so long as neither of them is in use by another service.
-    # We have picked 22222 because it&#39;s easy to remember, the SSH port being 22.
-    ssh -L 22222:vgpuwbg005:22 -o ExitOnForwardFailure=yes -N -p 10022 -l &lt;nesi_linux_username&gt; localhost
-    ```
-
-    If prompted for a first factor, enter it in the usual manner.
-    The second factor is optional (you can just press Enter), but if
-    you provide a second factor it must be correct.
-</code></pre></div>
-<ol>
-<li>
-<p>Open a second terminal session, and run the following command in it.</p>
-<div class="highlight"><pre><span></span><code># The first port number (28443 in this example) can be anything you like &gt; 1024,
-# so long as it&#39;s not in use by another service.
-# We have picked 28443 because it&#39;s easy to remember, the NICE DCV port being 8443.
-ssh -L 28443:localhost:8443 -o ExitOnForwardFailure=yes -N -p 22222 -l &lt;nesi_linux_username&gt; localhost
-</code></pre></div>
-<p>You will probably be prompted for a first factor and an optional
-second factor.</p>
-<p>Like the above command, this command will apparently hang if
-successful. Do not interrupt it as it is necessary to hold the port
-open for the server.</p>
-</li>
-</ol>
-<h3 id="mobaxterm-on-windows">MobaXTerm on Windows<a class="headerlink" href="#mobaxterm-on-windows" title="Permanent link">&para;</a></h3>
-<p>If using MobaXTerm on Windows, set up and then start port forwarding
-connections to look like this:</p>
-<h4 id="to-connect-to-maui_1">To connect to Māui<a class="headerlink" href="#to-connect-to-maui_1" title="Permanent link">&para;</a></h4>
-<p><img alt="2020-02-11_NICE_DCV_tunnels_in_MobaXTerm.png" src="../../../assets/images/NICE_DCV_Setup.png" /><br />
-When setting up and using the connections, note the following:</p>
-<h4 id="to-connect-to-mahuika_1">To connect to Mahuika<a class="headerlink" href="#to-connect-to-mahuika_1" title="Permanent link">&para;</a></h4>
-<p>A picture is still to come.</p>
+<p>Image adapted from <a href="https://slurm.schedmd.com/cpu_management.html">Slurm's documentation page</a>.</p>
+<h2 id="when-to-use-hyperthreading">When to use Hyperthreading<a class="headerlink" href="#when-to-use-hyperthreading" title="Permanent link">&para;</a></h2>
+<p>Hyperthreading increases the efficiency of some jobs, but the fact that
+Slurm is counting in logical CPUs makes aspects of running
+non-Hyperthreaded jobs confusing, even when Hyperthreading is turned off
+in the job with <code>--hint=nomultithread</code>. To determine if the code you are
+running is capable of running Hyperthreaded, visit the manual pages for
+the software.</p>
+<p>Alternatively, it is possible to perform an ad-hoc test to determine if
+your code is capable of making use of Hyperthreading. First run a job
+that has requested 2 threads per physical core as described above. Then,
+use the <code>nn_seff</code> command to check the jobs CPU efficiency. If CPU
+efficiency is greater than 100%, then your code is making use of
+Hyperthreading, and gaining performance from it. If your job gives an
+error or stays at 100% efficiency, it is likely you can not run your
+code Hyperthreaded. 200% CPU efficiency would be the maximally efficient
+job, however, this is rarely observed and anything over 100% should be
+considered a bonus.</p>
+<h2 id="how-to-use-hyperthreading">How to use Hyperthreading<a class="headerlink" href="#how-to-use-hyperthreading" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The numbers of the forward ports (fourth column) are arbitrary so
-    long as you set them to be greater than 1024, but the SSH server
-    port for the second connection must be the same as the forward port
-    for the first connection.</li>
-<li>The destination port for the first tunnel must be <code>22</code> and that for
-    the second tunnel must be <code>8443</code>.</li>
-<li>The server port for the first tunnel must be <code>22</code>.</li>
-<li>The tunnel through the lander node must be started before the tunnel
-    through localhost can be started.</li>
-<li>The destination server for the tunnel through the lander node must
-    be the NeSI login node where your NICE DCV server is running.</li>
+<li>Non-hyperthreaded jobs which use  <code>--mem-per-cpu</code> requests should
+    halve their memory requests as those are based on memory per logical
+    CPU, not per the number of threads or tasks.  For non-MPI jobs, or
+    for MPI jobs that request the same number of tasks on every node, we
+    recommend to specify <code>--mem</code> (i.e. memory per node) instead. See
+    <a href="../../../General/FAQs/How_do_I_request_memory/">How to request memory
+    (RAM)</a> for more
+    information.</li>
+<li>Non-MPI jobs which specify <code>--cpus-per-task</code> and use <strong>srun</strong> should
+    also set <code>--ntasks=1</code>, otherwise the program will be run twice in
+    parallel, halving the efficiency of the job.</li>
 </ul>
-<h2 id="connecting-to-a-session">Connecting to a session<a class="headerlink" href="#connecting-to-a-session" title="Permanent link">&para;</a></h2>
-<p>NICE DCV comes with a client for Windows and Linux systems, which can be
-downloaded from the <a href="http://www.nice-software.com/download/dcv">NICE web
-pages</a>. If you use MacOS, or
-if you do not want to install the client, you can also connect to your
-NICE DCV session with a modern browser.</p>
-<p>Before you proceed, make sure that you have a valid SLURM allocation on
-the HPC and that a session has been created.</p>
-<h3 id="connecting-with-a-client">Connecting with a Client<a class="headerlink" href="#connecting-with-a-client" title="Permanent link">&para;</a></h3>
-<p>To connect with the NICE DCV client software:</p>
-<ol>
-<li>Launch the client on your laptop or desktop computer.</li>
-<li>Enter the server and session name in the login screen using the
-    format <code>localhost:28443#&lt;session_name&gt;</code>, or whatever port number you
-    used for the second SSH tunnel as an alternative to 28443.</li>
-<li>Click on "Connect".</li>
-<li>Enter your NeSI Linux username and password.</li>
-<li>Click on "Login".</li>
-</ol>
-<h3 id="connecting-with-a-browser">Connecting with a Browser<a class="headerlink" href="#connecting-with-a-browser" title="Permanent link">&para;</a></h3>
-<p>To connect with a browser:</p>
-<ol>
-<li>Launch the browser or open a new tab</li>
-<li>Enter "https://localhost:28443/#&lt;session name&gt;" in the URL
-    bar. If you used a port other than 28443 when creating the second
-    SSH tunnel, make the necessary modifications to this URL.</li>
-<li>You may need to accept the insecure certificate in your browser
-    before you can proceed</li>
-<li>Enter your HPC account credentials (first factor)</li>
-<li>Click on "Login"</li>
-</ol>
-<h2 id="using-the-desktop-environment">Using the Desktop Environment<a class="headerlink" href="#using-the-desktop-environment" title="Permanent link">&para;</a></h2>
-<p>You should be presented with a Linux desktop environment after
-successful login with the client or browser. You can then use the
-application launcher to start an application. You can also launch the
-terminal application by right-clicking on the desktop and selecting
-"Konsole". This will give you access to the NeSI software stack that
-includes various <a href="https://support.nesi.org.nz/knowledge/articles/360000700295/en-gb?brand_id=30406&amp;return_to=%2Fhc%2Fen-gb%2Farticles%2F360000700295">visualisation software
-solutions</a>.</p>
-<h2 id="disconnecting-and-stopping-a-session">Disconnecting and Stopping a Session<a class="headerlink" href="#disconnecting-and-stopping-a-session" title="Permanent link">&para;</a></h2>
-<p>Sessions can persist on the HPC for as long as the SLURM resource
-allocation is valid. You can disconnect and reconnect to the session as
-often as you like.</p>
-<h3 id="disconnecting-from-a-session-without-stopping-it">Disconnecting from a session without stopping it<a class="headerlink" href="#disconnecting-from-a-session-without-stopping-it" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Click on the machine URL in the top-right corner of the NICE DCV
-    window</li>
-<li>Select "Disconnect"</li>
-<li>Close the NICE DCV client or browser window</li>
-</ol>
-<h3 id="disconnecting-and-stopping-a-session_1">Disconnecting and stopping a session<a class="headerlink" href="#disconnecting-and-stopping-a-session_1" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Click on the application launcher icon in the top-left corner of the
-    virtual desktop</li>
-<li>Click on "Leave"</li>
-<li>Click on "Log out"</li>
-<li>Confirm the logout in the dialog box that appears</li>
-<li>Close the NICE DCV client or browser window</li>
-</ol>
-<p>A running session will automatically stop if your SLURM resource
-allocation finishes.</p>
+<p>The precise rules about when Hyperthreading applies are as follows:</p>
+<table style="width: 697px;">
+<tbody>
+<tr>
+<th style="width: 109px;">&nbsp;</th>
+<th class="wysiwyg-text-align-center" style="width: 205px;">Mahuika</th>
+<th class="wysiwyg-text-align-center" style="width: 376px;">Māui</th>
+</tr>
+<tr>
+<td style="width: 109px;">Jobs</td>
+<td class="wysiwyg-text-align-center" style="width: 581px;" colspan="2">Never share physical cores</td>
+</tr>
+<tr>
+<td style="width: 109px;">MPI tasks within the same job</td>
+<td class="wysiwyg-text-align-center" style="width: 205px;">Never share physical cores</td>
+<td class="wysiwyg-text-align-center" style="width: 376px;">Share physical cores by default. You can override this behaviour by using <code>--hint=nomultithread</code> in your job submission script.</td>
+</tr>
+<tr>
+<td style="width: 109px;">Threads within the same task</td>
+<td class="wysiwyg-text-align-center" style="width: 581px;" colspan="2">Share physical cores by default. You can override this behaviour by using<br><code>--hint=nomultithread</code> in your job submission script.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="how-many-logical-cpus-will-my-job-use-or-be-charged-for">How many logical CPUs will my job use or be charged for?<a class="headerlink" href="#how-many-logical-cpus-will-my-job-use-or-be-charged-for" title="Permanent link">&para;</a></h3>
+<p>The possible job configurations and their results are shown in the
+following table. We have also included some recommendations to help you
+make the best choices, depending on the needs of your workflow.</p>
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr class="header">
+<th>Job
+configuration</th>
+<th>Mahuika</th>
+<th>Māui</th>
+</tr>
+<tr>
+<td><ul>
+<li>Only one task</li>
+<li><code class="sl">--cpus-per-task</code> is not used</li>
+</ul></td>
+<td>The job gets,
+and is charged for, two logical CPUs. <code class="sl">--hint=nomultithread</code> is irrelevant.</td>
+<td>The job
+gets one logical CPU, but is charged for 80.<br />
+<code class="sl">--hint=nomultithread</code> is irrelevant.
+<span>This configuration is extremely uneconomical on Māui.
+Consider using Mahuika or the Māui ancillary nodes
+instead.</span></td>
+</tr>
+<tr>
+<td><ul>
+<li>Only one task</li>
+<li><code class="sl">--cpus-per-task=</code><em>N</em></li>
+<li><code class="sl">--hint=nomultithread</code> is not used</li>
+</ul></td>
+<td>The job
+gets, and is charged for, <em>N</em> logical CPUs, rounded up to the
+nearest even number.
+Set <em>N</em> to an even number if
+possible.</td>
+<td>The job gets <em>N</em> logical CPUs, but is charged for 80.
+Set <em>N</em> to 80 if possible.</td>
+</tr>
+<tr>
+<td><ul>
+<li>Only one task</li>
+<li><code class="sl">--cpus-per-task=</code><em>N</em></li>
+<li><code class="sl">--hint=nomultithread</code> is used</li>
+</ul></td>
+<td>The job gets,
+and is charged for, 2<em>N</em> logical CPUs.</td>
+<td>The job
+gets 2<em>N</em> logical CPUs, but is charged for 80.
+Set <em>N</em> to 40 if possible.</td>
+</tr>
+<tr>
+<td><ul>
+<li>More than one task on one or more nodes</li>
+<li><code class="sl">--cpus-per-task</code> is not used</li>
+<li><code class="sl">--hint=nomultithread</code> is not used</li>
+</ul></td>
+<td rowspan="2">Each task gets two logical CPUs. The job is
+charged for two logical CPUs per task. <code class="sl">--hint=nomultithread</code> is irrelevant.</td>
+<td>Each task
+gets one logical CPU. The job is charged for 80 logical CPUs per
+allocated node. If possible, set the number of tasks per node to 80.</td>
+</tr>
+<tr>
+<td><ul>
+<li>More than one task on one or more nodes</li>
+<li><code class="sl">--cpus-per-task</code> is not used</li>
+<li><code class="sl">--hint=nomultithread</code> is used</li>
+</ul></td>
+<td>Each task
+gets two logical CPUs. The job is charged for 80 logical CPUs per
+allocated node.
+If possible, set the number of tasks per node to
+40.</td>
+</tr>
+<tr>
+<td><ul>
+<li>More than one task on one or more nodes</li>
+<li><code class="sl">--cpus-per-task=</code><em>N</em></li>
+<li><code class="sl">--hint=nomultithread</code> is not used</li>
+</ul></td>
+<td>Each task
+gets <em>N</em> logical CPUs, rounded up to the nearest even number. The
+job is charged for that number of logical CPUs per task.
+<strong>Set <em>N</em> to an even number if
+possible.</strong></td>
+<td>Each task
+gets <em>N</em> logical CPUs. The job is charged for 80 logical CPUs per
+allocated node.
+If possible, set <em>N</em> and the number of tasks per node
+such that <em>N</em> × (tasks per node) = 80.</td>
+</tr>
+<tr>
+<td><ul>
+<li>More than one task on one or more nodes</li>
+<li><code class="sl">--cpus-per-task=</code><em>N</em></li>
+<li><code class="sl">--hint=nomultithread</code> is used</li>
+</ul></td>
+<td>Each task
+gets 2<em>N</em> logical CPUs. The job is charged for 2<em>N</em>
+logical CPUs per task.</td>
+<td>Each task
+gets 2<em>N</em> logical CPUs. The job is charged for 80 logical CPUs
+per allocated node.
+If possible, set <em>N</em> and the number of tasks per node
+such that <em>N</em> × (tasks per node) = 40.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -2184,7 +1919,7 @@ allocation finishes.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 19, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2024</span>
   </span>
 
     
