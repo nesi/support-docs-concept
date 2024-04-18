@@ -6,7 +6,7 @@ These could be be migration filters, post build checks, specifications or all.
 - [] Extra long articles
 - [] Unbalanced structure. e.g.
   - [X] Excessivly long titles.
-  - [] More than two children, less than 10.
+  - [X] More than two children, less than 10.
   - [] Load balancing (check with usage statistics).
 - [] Long unbroken paragraphs.
 - [] Unbalanced headings e.g.

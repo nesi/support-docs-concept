@@ -59,7 +59,6 @@ def main():
         input_path = Path(input_string)
         if any(re.match(pattern, input_string) for pattern in EXCLUDED_FROM_CHECKS):
             continue
-        _nav_check()
         with open(input_path, "r") as f:
             print(f"Checking meta for {f.name}")
             try:
@@ -68,15 +67,14 @@ def main():
                 if not match:
                     print(
                         f"::warning file={input_path},title=meta.parse,col=0,endColumn=99,line=1\
-    ::Meta block missing or malformed."
+                          ::Meta block missing or malformed."
                     )
                     meta = {}
                 else:
                     meta = yaml.safe_load(match.group(1))
 
-                title_from_filename = _title_from_filename()
-                title_from_h1 = _title_from_h1()
-                title = meta["title"] if "title" in meta else "" or title_from_h1 or title_from_filename
+                # Get title according to mkdocs title prioroty.
+                title = meta["title"] if "title" in meta else "" or _title_from_h1() or _title_from_filename()
                 # global lineno, line, in_code_block, last_header_level, last_header_lineno, sibling_headers
 
                 header = ""
@@ -96,89 +94,10 @@ def main():
             except Exception as e:
                 print(f"::error file={input_path},title=misc,col=0,endColumn=0,line=1 ::{e}")
 
-def _run_check(f):
-    for r in f():
-        print(f"::{r.get('level', 'warning')} file={input_path},title={f.__name__},col={r.get('col', 0)},endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}")
-        sys.stdout.flush()
 
-
-def _title_from_filename():
-    """
-    I think this is the same as what mkdocs does.
-    """
-    name = " ".join(input_path.name[0:-3].split("_"))
-    return name[0].upper() + name[1:]
-
-
-def _title_from_h1():
-    m = re.search(r"^ #(\S*)$", contents, flags=re.MULTILINE)
-    return m.group(1) if m else ""
-
-
-def _get_lineno(pattern):
-    i = 1
-    for line in contents.split("\n"):
-        m = re.match(pattern, line)
-        if m:
-            return i
-        i += 1
-    return 0
-
-
-def _get_nav_tree():
-    """Makes a nice dictionary of header tree"""
-    global toc, toc_parents
-
-    def _unpack(toc, a):
-        if len(a) < 1:
-            return toc
-        if len(a) < 2:
-            return toc[a[0]]
-        return _unpack(toc[a[0]]["children"], a[1:])
-
-    if in_code_block:
-        return
-
-    header_match = re.match(r"^(#+)\s*(.*)$", line)
-
-    if not header_match:
-        return
-    
-    header_level = len(header_match.group(1))
-    header_name = header_match.group(2)
-
-    if header_level == 1:
-        toc = {header_name: {"lineno": lineno, "children": {}}}
-        toc_parents = [header_name]
-
-    while header_level < len(toc_parents)+1:
-        toc_parents.pop(-1)
-
-    _unpack(toc, toc_parents)["children"][header_name] = {"level": header_level, "lineno": lineno, "children": {}}
-    toc_parents += [header_name]
-
-
-def _nav_check():
-    doc_root = Path(DOC_ROOT).resolve()
-    rel_path = input_path.resolve().relative_to(doc_root)
-    for i in range(1, len(rel_path.parts)):
-        num_siblings = 0
-        for file_name in os.listdir(doc_root.joinpath(Path(*rel_path.parts[:i]))):
-            if not any(re.match(pattern, file_name) for pattern in EXCLUDED_FROM_CHECKS):
-                num_siblings += 1
-        if num_siblings < RANGE_SIBLING[0]:
-            print(
-                f"::warning file={input_path},title=meta.siblings,col=0,endColumn=99,line=1::Parent category \
-'{rel_path.parts[i-1]}' has too few children ({num_siblings}). Try to nest '{RANGE_SIBLING[0]}' or more \
-items here to justify it's existence."
-            )
-        elif num_siblings > RANGE_SIBLING[1]:
-            print(
-                f"::warning file={input_path},title=meta.siblings,col=0,endColumn=99,line=1::Parent category \
-'{rel_path.parts[i-1]}' has too many children ({num_siblings}). Try to keep number of items in a category \
-under '{RANGE_SIBLING[1]}', maybe add some new categories?"
-            )
-
+###
+# Definition of checks start here.
+###
 
 def title_redundant():
     lineno = _get_lineno(r"^title:.*$")
@@ -261,6 +180,75 @@ ENDCHECKS = [title_redundant, title_length, meta_missing_description, meta_unexp
 
 # Checks to be run on each line
 WALKCHECKS = [click_here]
+
+
+def _run_check(f):
+    """
+    Runs check function f(), and parses output in github format.
+    """
+    for r in f():
+        print(f"::{r.get('level', 'warning')} file={input_path},title={f.__name__},col={r.get('col', 0)},endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}")
+        sys.stdout.flush()
+
+
+def _title_from_filename():
+    """
+    I think this is the same as what mkdocs does.
+    """
+    name = " ".join(input_path.name[0:-3].split("_"))
+    return name[0].upper() + name[1:]
+
+
+def _title_from_h1():
+    """Returns Title if set in H1"""
+    m = re.search(r"^ #(\S*)$", contents, flags=re.MULTILINE)
+    return m.group(1) if m else ""
+
+
+def _get_lineno(pattern):
+    """Returns linenumber of pattern, hacky workaround of some checks not returning line number"""
+    i = 1
+    for line in contents.split("\n"):
+        m = re.match(pattern, line)
+        if m:
+            return i
+        i += 1
+    return 0
+
+
+def _get_nav_tree():
+    """Makes a nice dictionary of header heirachy"""
+    global toc, toc_parents
+
+    def _unpack(toc, a):
+        if len(a) < 1:
+            return toc
+        if len(a) < 2:
+            return toc[a[0]]
+        return _unpack(toc[a[0]]["children"], a[1:])
+
+    if in_code_block:
+        return
+
+    header_match = re.match(r"^(#+)\s*(.*)$", line)
+
+    if not header_match:
+        return
+
+    header_level = len(header_match.group(1))
+    header_name = header_match.group(2)
+
+    if header_level == 1:
+        toc = {header_name: {"lineno": lineno, "children": {}}}
+        toc_parents = [header_name]
+
+    while header_level < len(toc_parents)+1:
+        toc_parents.pop(-1)
+
+    _unpack(toc, toc_parents)["children"][header_name] = {"level": header_level, "lineno": lineno, "children": {}}
+    toc_parents += [header_name]
+
+
 
 
 if __name__ == "__main__":

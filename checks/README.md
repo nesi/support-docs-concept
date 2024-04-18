@@ -9,9 +9,9 @@ Tests should be made as Python scripts to allow flexibility of use. Currently th
 
 ## Spellcheck
 
-*This linter is defined in [run_pyspelling.py](run_pyspelling.py) script.*
-
-Spellcheck pipeline settings can be modified in [.spellcheck.yml](../.spellcheck.yml).
+**script:** [run_pyspelling.py](run_pyspelling.py)  
+**config:** [.spellcheck.yml](../.spellcheck.yml)  
+**triggered:** changes in `docs/**/*.md`  
 
 List of custom words can be found in [dictionary.txt](../docs/assets/glossary/dictionary.txt),
 however you **should not edit this manually**, see [adding-words-to-dictionary](../docs/CONTRIBUTING.md#adding-words-to-dictionary).
@@ -25,7 +25,9 @@ the typo is probably occuring elsewhere in the text in a valid context, fix it h
 
 ## Prose Lint
 
-*This linter is defined in [run_proselint.py](run_proselint.py) script.*
+**script:** [run_proselint.py](run_proselint.py)  
+**config:** [.proselint.json](../.proselint.json)  
+**triggered:** changes in `docs/**/*.md`  
 
 Checks text follows best practice for English language.
 
@@ -33,23 +35,36 @@ Individual rules can be disabled/enabled in [.proselint.json](../.proselint.json
 
 ## Markdown Lint
 
+**script:** [run_proselint.py](run_proselint.py)  
+**config:** [.proselint.json](.markdownlint.json)  
+**triggered:** changes in `docs/**/*.md`  
+
 Checks markdown for complience against general [best practice rules](https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md).
 
 Individual rules can be disabled/enabled in [.markdownlint.json](../.markdownlint.json)
 
 ## Meta Checks
 
-*This linter is defined in [run_meta_check.py](run_meta_check.py) script.*
+**script:** [run_meta_check.py](run_meta_check.py)
 
 Catch-all for custom checks.
 Currently defined checks are:
 
-- title_redundant,
-- title_length,
-- meta_missing_description,
-- meta_unexpected_key,
-- minimum_tags,
-- walk_toc.
+### title_redundant
+
+If title is already defined in a higher prioroty way.
+
+### title_length
+
+
+
+### meta_missing_description
+
+### meta_unexpected_key
+
+### minimum_tags
+
+### walk_toc
 
 ## Test Build
 
